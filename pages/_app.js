@@ -7,8 +7,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Meta />
-      <Component {...pageProps} />
       <Header />
+      <Component {...pageProps} />
       <Middle />
     </>
   );
