@@ -1,12 +1,16 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { useEffect } from "react";
+import styles from "../styles/Home.module.css";
 import Test from '../components/carousel'
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Test />,
-    </div>
-  )
+  useEffect(() => {
+    fetch("/api/hello")
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }, []);
+  return( 
+  <div className={styles.container}>test
+        <Test />,
+  </div>
+  );
 }
