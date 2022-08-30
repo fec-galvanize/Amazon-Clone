@@ -1,5 +1,16 @@
 import React from "react";
 
-export default function Cart() {
-  return <div>Cart</div>;
-}
+const Cart = () => {
+
+
+
+    return (
+    <div> 
+       <button class="btn-cart" >Shopping Cart</button> 
+    
+    </div>
+
+    )
+  };
+  
+  export default Cart;
