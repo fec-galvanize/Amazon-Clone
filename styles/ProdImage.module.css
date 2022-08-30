@@ -1,0 +1,41 @@
+.btn {
+  width: 1.75rem;
+  height: 2rem;
+  padding: 0;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+.btn.active {
+  border: 3px solid red;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.display {
+  max-height: 25rem;
+  max-width: 20rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  position: relative;
+}
+.btnDisplay {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  margin-right: 0.5rem;
+}
+.container {
+  display: flex;
+}
+.share {
+  position: absolute;
+  right: 1rem;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+  font-weight: 900;
+  font-size: 1rem;
+  cursor: pointer;
+}

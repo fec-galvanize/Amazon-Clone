@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import styles from "../styles/Home.module.css";
-import Cart from "../components/Cart"
 
 // Imported Components
+import Cart from "../components/Cart"
 import Middle from "../components/Middle";
 import ProdImage from "../components/ProdImage";
 
