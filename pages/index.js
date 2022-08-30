@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styles from "../styles/Home.module.css";
-import cart from "../components/cart"
+import Cart from "../components/Cart"
 
 // Imported Components
 import Middle from "../components/Middle";
