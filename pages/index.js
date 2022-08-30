@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import styles from "../styles/Home.module.css";
+import cart from "../components/cart"
 
 export default function Home() {
   useEffect(() => {
