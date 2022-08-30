@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import styles from "../styles/Home.module.css";
 
 // Imported Components
-import Middle from "../components/Middle";
+import Middle from "../components/middle/Middle";
 import ProdImage from "../components/ProdImage";
 
 export default function Home() {
