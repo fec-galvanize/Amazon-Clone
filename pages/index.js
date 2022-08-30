@@ -17,6 +17,7 @@ export default function Home() {
     <div className={styles.container}>
       <ProdImage />
       <Middle />
+      <Cart /> 
     </div>
   );
 }
