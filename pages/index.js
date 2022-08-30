@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import styles from "../styles/Home.module.css";
+import Cart from "../components/Cart"
 
 // Imported Components
 import Middle from "../components/Middle";
@@ -16,6 +17,7 @@ export default function Home() {
     <div className={styles.container}>
       <ProdImage />
       <Middle />
+      <Cart /> 
     </div>
   );
 }
