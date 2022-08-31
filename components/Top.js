@@ -5,7 +5,9 @@ export default function Top() {
   return (
     <div className="search">
       <img src={amazonlogo} alt="amazon logo" />
-      <form></form>
+      <form>
+        <input type="text" />
+      </form>
     </div>
   );
 }
