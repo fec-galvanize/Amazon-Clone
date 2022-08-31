@@ -61,7 +61,7 @@
   border: 10px solid transparent;
   border-bottom: 10px solid rgba(0, 0, 0, 0.2);                
   position: absolute;
-  top: -6.7%;
+  top: -5.7%;
   left: 85%;
   z-index: 4;
 }
@@ -74,24 +74,25 @@
   border: 9px solid transparent;
   border-bottom: 9px solid white;                
   position: absolute;
-  top: -6%;
+  top: -5%;
   left: 85%;
-  z-index: 45
+  z-index: 5;
 }
 
 .linksDisplay > a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0.3rem;
+  padding-bottom: .4rem;
   padding-left:.5rem ;
   font-size: 0.75rem;
   text-align: left;
   width: 100%;
+  color: #0F1111;
 }
 .linksDisplay > a > span {
  margin-left: .5rem;
- padding-bottom: 1rem;
 }
-.linksDisplay > a > span:hover {
+.linksDisplay > a:hover {
 color: orange;
 }
 .linksDisplay > a:last-child {
