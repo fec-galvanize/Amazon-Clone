@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import imageReducer from "./features/image-slice";
+import prodInfoReducer from "./features/prodInfo-slice";
 export const store = configureStore({
   reducer: {
-    img:imageReducer
+    prodInfo:prodInfoReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
