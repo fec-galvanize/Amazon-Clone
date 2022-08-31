@@ -2,9 +2,9 @@ import { useState } from "react";
 import { IoShareOutline } from "react-icons/io5";
 
 import { useSelector, useDispatch } from "react-redux";
-import { changeImage } from "../redux/features/image-slice";
+import { changeImage } from "../../redux/features/image-slice";
 
-import style from "../styles/ProdImage.module.css";
+import style from "../../styles/ProdImage.module.css";
 const ProdImage = () => {
   const displayImg = useSelector(({ img }) => img.image);
   const imgArray = [
