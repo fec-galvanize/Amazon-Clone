@@ -52,11 +52,15 @@ const ImgBtn = ({ image }) => {
 };
 
 const ShareBtn = () => {
-  const [copyText, setCopyText] = useState('Copy Link');
+  const [copyText, setCopyText] = useState("Copy Link");
+  const [linksDisplay, setLinksDisplay] = useState({ display: "none" });
+  const copyUrl = useSelector(({ prodInfo }) => prodInfo.pageUrl);
   const copyLink = () => {
-    console.log(navigator.clipboard.writeText(''));
-    
-  }
+    navigator.clipboard
+      .writeText(copyUrl)
+      .then((res) => setCopyText("Link Copied!"))
+      .then((res) => setTimeout(() => setCopyText("Copy Link"), 1000));
+  };
   const href = {
     email:
       "mailto:?body=I%20want%20to%20recommend%20this%20product%20at%20Amazon%0A%0AThe%20Party%20Don%27t%20Start%20Til%20l%20Croc%20In%20T-Shirt%0Aby%20Amazon.com%0ALearn%20more%3A%20https%3A%2F%2Fwww.amazon.com%2Fdp%2FB08QV53WTG%2Fref%3Dcm_sw_em_r_mt_dp_15W5YPJXG8ZK0V2WN22S%3F_encoding%3DUTF8%26psc%3D1&subject=Check%20this%20out%20on%20Amazon",
@@ -67,26 +71,26 @@ const ShareBtn = () => {
 
   return (
     <>
-      <div className={`${style.linksDisplay}`}>
+      <div className={`${style.linksDisplay}`} style={linksDisplay}>
         <a href={href.email} target="_" title="Share via Email">
           <AiOutlineMail className={style.pin} /> <span>Email</span>
         </a>
         <a href={href.pin} target="_" title="Pin it on Pinterest">
-          <FaPinterest className={style.pin} style={{ color: "darkred" }} />{" "}
+          <FaPinterest className={style.pin} style={{ color: "darkred" }} />
           <span>Pinterest</span>
         </a>
         <a href={href.fb} target="_" title="Share on Facebook">
-          <FaFacebook className={style.pin} style={{ color: "blue" }} />{" "}
+          <FaFacebook className={style.pin} style={{ color: "blue" }} />
           <span>Facebook</span>
         </a>
         <a href={href.tw} target="_" title="Share on Twitter">
           <AiFillTwitterCircle
             className={style.pin}
             style={{ color: "skyblue" }}
-          />{" "}
+          />
           <span>Twitter</span>
         </a>
-        <a href="#"  title="Copy Links" onClick={() => copyLink()}>
+        <a href="#" title="Copy Links" onClick={() => copyLink()}>
           <ImLink className={style.pin} /> <span>{copyText}</span>
         </a>
       </div>
@@ -94,6 +98,7 @@ const ShareBtn = () => {
         aria-label="share"
         title="Share"
         className={`${style.share}`}
+        onClick={() => linksDisplay.display === 'none' ? setLinksDisplay({ display: "flex" }):setLinksDisplay({ display: "none" }) }
       >
         <IoShareOutline />
       </button>

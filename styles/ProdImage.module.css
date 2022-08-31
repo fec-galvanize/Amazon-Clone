@@ -45,7 +45,7 @@
   flex-direction: column;
   position: absolute;
   z-index: 1;
-  background: rgb(244, 244, 244);
+  background: white;
   width: 7rem;
   padding: 0.5rem 0;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -59,14 +59,28 @@
   width: 0px;
   height: 0px;
   border: 10px solid transparent;
-  border-bottom: 10px solid rgb(244, 244, 244);
+  border-bottom: 10px solid rgba(0, 0, 0, 0.2);                
   position: absolute;
-  top: -7%;
+  top: -6.7%;
   left: 85%;
+  z-index: 4;
+}
+.linksDisplay:before {
+  content: "";
+  margin-top: -9px;
+  margin-left: -9px;
+  width: 0px;
+  height: 0px;
+  border: 9px solid transparent;
+  border-bottom: 9px solid white;                
+  position: absolute;
+  top: -6%;
+  left: 85%;
+  z-index: 45
 }
 
 .linksDisplay > a {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0.3rem;
   padding-left:.5rem ;
   font-size: 0.75rem;
@@ -76,6 +90,9 @@
 .linksDisplay > a > span {
  margin-left: .5rem;
  padding-bottom: 1rem;
+}
+.linksDisplay > a > span:hover {
+color: orange;
 }
 .linksDisplay > a:last-child {
   border-bottom: none;
