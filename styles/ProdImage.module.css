@@ -14,8 +14,8 @@
   object-fit: fill;
 }
 .display {
-  max-height: 25rem;
-  max-width: 20rem;
+  height: min(25rem,25rem);
+  width: min(20rem,20rem);
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.5rem;
   position: relative;
@@ -39,4 +39,7 @@
   font-weight: 900;
   font-size: 1rem;
   cursor: pointer;
+}
+.tooltip{
+  position: fixed;
 }
