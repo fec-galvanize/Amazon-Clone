@@ -58,8 +58,8 @@ const ShareBtn = () => {
   const copyLink = () => {
     navigator.clipboard
       .writeText(copyUrl)
-      .then((res) => setCopyText("Link Copied!"))
-      .then((res) => setTimeout(() => setCopyText("Copy Link"), 1000));
+      .then(() => setCopyText("Link Copied!"))
+      .then(() => setTimeout(() => setCopyText("Copy Link"), 1000));
   };
   const href = {
     email:
