@@ -1,5 +1,9 @@
 import { useState } from "react";
+
+import { FaFacebook, FaPinterest } from "react-icons/fa";
 import { IoShareOutline } from "react-icons/io5";
+import { AiOutlineMail, AiFillTwitterCircle } from "react-icons/ai";
+import { ImLink } from "react-icons/im";
 
 import { useSelector, useDispatch } from "react-redux";
 import { changeImage } from "../../redux/features/image-slice";
@@ -50,47 +54,32 @@ const ImgBtn = ({ image }) => {
 const ShareBtn = () => {
   const [position, setPosition] = useState({ display: "none" });
 
-  let trackMp = [];
-  const displayTooltip = (e) => {
-    trackMp.push([e.pageX, e.pageY]);
-    const left = e.pageX + 10;
-    const top = e.pageY + 12;
-    console.log(trackMp);
-
-    setTimeout(() => {
-      if (
-        trackMp.length >= 2 &&
-        trackMp[trackMp.length - 2][0] === left - 10 &&
-        trackMp[trackMp.length - 2][1] == top - 12
-      ) {
-        setPosition({ display: "block", left, top });
-        setTimeout(() => {}, 1000);
-      }
-    }, 1000);
-
-    if (window.pageX === left - 10 && window.pageY === top) {
-      setPosition({ display: "block", left, top });
-    }
-  };
-  const hideTooltip = (e) => {
-    position.display !== "none" && setPosition({ display: "none" });
-    trackMp = [];
-  };
   return (
     <>
       <div className={`${style.linksDisplay}`}>
-        <a href="#">Email</a>
-        <a href="#">Pinterest</a>
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-        <a href="#">Copy Link</a>
+        <a href="#">
+          <AiOutlineMail className={style.pin} /> <span>Email</span>
+        </a>
+        <a href="#">
+          <FaPinterest className={style.pin} style={{ color: "darkred" }} />{" "}
+          <span>Pinterest</span>
+        </a>
+        <a href="#">
+          <FaFacebook className={style.pin} style={{ color: "blue" }} />{" "}
+          <span>Facebook</span>
+        </a>
+        <a href="#">
+          <AiFillTwitterCircle
+            className={style.pin}
+            style={{ color: "skyblue" }}
+          />{" "}
+          <span>Twitter</span>
+        </a>
+        <a href="#">
+          <ImLink className={style.pin} /> <span>Copy Link</span>
+        </a>
       </div>
-      <button
-        aria-label="share"
-        className={`${style.share}`}
-        onMouseMove={displayTooltip}
-        onMouseLeave={hideTooltip}
-      >
+      <button aria-label="share" title="Share" className={`${style.share}`}>
         <IoShareOutline />
       </button>
       <span className={`${style.tooltip}`} style={position}>
