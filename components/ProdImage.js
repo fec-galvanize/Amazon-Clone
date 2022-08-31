@@ -56,7 +56,7 @@ const ShareBtn = () => {
     const left = e.pageX + 10;
     const top = e.pageY + 12;
     console.log(trackMp);
-    
+
     setTimeout(() => {
       if (
         trackMp.length >= 2 &&
@@ -78,7 +78,15 @@ const ShareBtn = () => {
   };
   return (
     <>
+      <div className={`${style.linksDisplay}`}>
+        <a href="#">Email</a>
+        <a href="#">Pinterest</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Copy Link</a>
+      </div>
       <button
+        aria-label="share"
         className={`${style.share}`}
         onMouseMove={displayTooltip}
         onMouseLeave={hideTooltip}
