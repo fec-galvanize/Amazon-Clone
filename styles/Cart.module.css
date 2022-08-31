@@ -1,0 +1,8 @@
+.container {
+    padding: 1%;
+    border-radius: 4%;
+    border: 1px solid rgb(219, 216, 216);
+    display: flex;
+    float: right;
+}
+
