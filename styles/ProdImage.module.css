@@ -2,11 +2,12 @@
   width: 1.75rem;
   height: 2rem;
   padding: 0;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.4rem;
   cursor: pointer;
 }
 .btn.active {
-  border: 3px solid red;
+  border: 1px solid #e77600;
+  box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
 }
 .img {
   width: 100%;
