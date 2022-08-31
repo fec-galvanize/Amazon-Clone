@@ -1,4 +1,3 @@
-import React from "react";
 import Top from "./Top.js";
 import Mid from "./Mid.js";
 import AFash from "./AFash.js";

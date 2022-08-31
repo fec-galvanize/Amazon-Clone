@@ -14,8 +14,8 @@
   object-fit: fill;
 }
 .display {
-  height: min(25rem,25rem);
-  width: min(20rem,20rem);
+  height: min(25rem, 25rem);
+  width: min(20rem, 20rem);
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.5rem;
   position: relative;
@@ -27,12 +27,11 @@
   margin-right: 0.5rem;
 }
 .container {
-  float: left;
   display: flex;
 }
 .share {
   position: absolute;
-  right: 1rem;
+  right: 4%;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background: white;
@@ -40,6 +39,39 @@
   font-size: 1rem;
   cursor: pointer;
 }
-.tooltip{
+.tooltip {
   position: fixed;
+  z-index: 2;
+}
+.linksDisplay {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  position: absolute;
+  z-index: 1;
+  background: rgb(244,244,244);
+  width: fit-content;
+  padding: .4rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  right: 3%;
+  top: 10%;
+}
+.linksDisplay:after {
+  content: "";
+  margin-top: -10px;
+  margin-left: -10px;
+  width: 0px;
+  height: 0px;
+  border: 10px solid transparent;
+  border-bottom: 10px solid rgb(244,244,244);
+  position: absolute;
+  top: -7%;
+  left: 73%;
+}
+
+.linksDisplay > a{
+  border-bottom: 1px solid black;
+}
+.linksDisplay > a:last-child{
+  border-bottom: none;
 }

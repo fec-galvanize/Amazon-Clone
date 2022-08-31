@@ -2,9 +2,7 @@ import { useEffect } from "react";
 import styles from "../styles/Home.module.css";
 
 // Imported Components
-import Cart from "../components/Cart"
-import Middle from "../components/Middle";
-import ProdImage from "../components/ProdImage";
+import ProductInfo from "../components/ProductInfo";
 
 export default function Home() {
   useEffect(() => {
@@ -15,9 +13,7 @@ export default function Home() {
   }, []);
   return (
     <div className={styles.container}>
-      <ProdImage />
-      <Middle />
-      <Cart /> 
+      <ProductInfo />
     </div>
   );
 }
