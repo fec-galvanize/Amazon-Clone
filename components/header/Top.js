@@ -1,5 +1,5 @@
-import React from "react";
-import amazonlogo from "./images/amazon-logo-top.jpg";
+
+import amazonlogo from "../../public/images/amazon-logo-top.jpg";
 
 export default function Top() {
   return (

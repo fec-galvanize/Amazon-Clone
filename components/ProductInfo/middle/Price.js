@@ -1,5 +1,4 @@
-import React from "react";
-import style from "../../styles/Middle.module.css";
+import style from "../../../styles/Middle.module.css";
 
 const Price = () => {
   return (
