@@ -73,7 +73,7 @@ const addToList = () => {
         </div><br></br>
 
              <div>
-                 <button class={`${style.btnCart}`} style={{backgroundColor: 'yellow', color: 'black', }} onClick={addToCart}>Add to Cart</button> 
+                 <button class={`${style.btnCart}`} title="Add to Shopping Cart" style={{backgroundColor: 'yellow', color: 'black', }}  onClick={addToCart}>Add to Cart</button> 
              </div>
              <div>
                  <button class={`${style.btnBuyNow}`} style={{backgroundColor: 'orange', color: 'black'}} onClick={buyNow}> Buy Now</button> 
