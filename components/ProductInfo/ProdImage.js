@@ -2,9 +2,9 @@ import { useState } from "react";
 import { IoShareOutline } from "react-icons/io5";
 
 import { useSelector, useDispatch } from "react-redux";
-import { changeImage } from "../redux/features/image-slice";
+import { changeImage } from "../../redux/features/image-slice";
 
-import style from "../styles/ProdImage.module.css";
+import style from "../../styles/ProdImage.module.css";
 const ProdImage = () => {
   const displayImg = useSelector(({ img }) => img.image);
   const imgArray = [
@@ -50,21 +50,21 @@ const ImgBtn = ({ image }) => {
 const ShareBtn = () => {
   const [position, setPosition] = useState({ display: "none" });
 
-  let trackL = [];
-  let trackT = [];
+  let trackMp = [];
   const displayTooltip = (e) => {
-    trackL.push(e.pageX);
-    trackT.push(e.pageY);
+    trackMp.push([e.pageX, e.pageY]);
     const left = e.pageX + 10;
     const top = e.pageY + 12;
+    console.log(trackMp);
+
     setTimeout(() => {
-      if(
-        trackL[trackL.length - 2] ===
-        left - 10 &&
-        trackT[trackT.length - 2] ==
-        top - 12
-      ){
-        setPosition({display:'block',left,top})
+      if (
+        trackMp.length >= 2 &&
+        trackMp[trackMp.length - 2][0] === left - 10 &&
+        trackMp[trackMp.length - 2][1] == top - 12
+      ) {
+        setPosition({ display: "block", left, top });
+        setTimeout(() => {}, 1000);
       }
     }, 1000);
 
@@ -74,12 +74,19 @@ const ShareBtn = () => {
   };
   const hideTooltip = (e) => {
     position.display !== "none" && setPosition({ display: "none" });
-    trackL = []
-    trackT = []
+    trackMp = [];
   };
   return (
     <>
+      <div className={`${style.linksDisplay}`}>
+        <a href="#">Email</a>
+        <a href="#">Pinterest</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Copy Link</a>
+      </div>
       <button
+        aria-label="share"
         className={`${style.share}`}
         onMouseMove={displayTooltip}
         onMouseLeave={hideTooltip}
