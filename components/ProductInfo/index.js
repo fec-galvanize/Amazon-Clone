@@ -51,11 +51,11 @@ const ProdPath = () => {
     },
   ];
   return (
-    <div>
+    <div className={style.pathWrapper}>
       {paths.map(({ text, url }, i) => {
         return (
           <>
-            <a href={url}>{text}</a>
+            <a href={url} className={style.pathLink} >{text}</a>
             { i !== paths.length - 1 && <span>{'>'}</span>}
           </>
         );
