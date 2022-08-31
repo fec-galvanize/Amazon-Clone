@@ -21,12 +21,12 @@ const addToList = () => {
     return (
     <div className={`${style.container}`}> 
         <div>
-            <div className="pricing">
+            <div className={`${style.pricing}`}>
                 <div className="numbers">
                     <span id="symbol">$</span>
                     <span id="dollars">17</span>
                     <span id="decimal">.</span>
-                    <span id="fraction">99</span>
+                    <span id={`${style.fraction}`}>99</span>
                 </div>
             </div>
             <br></br>
@@ -57,33 +57,47 @@ const addToList = () => {
                 <span class="text-bold">
                     <span>Or fastest delivary <b>Saturday,</b><br></br><b>September 3. </b> Order within </span> <br></br>
                     <span id="countdown">
-                        <span class="hours" style={{color: 'green'}}>13 hrs </span>
+                        <span class="hours" style={{color: 'rgb(0, 118, 0)'}}>13 hrs </span>
                         <span class="minutes" style={{color: 'green'}}>21 mins</span>
                     </span>
                 </span>
             </div><br></br>
             <div class="select-location">
+                <div id={`${style.pinPoint}`}></div>
                 <a href="javascript:void(0)"> Select delivary location </a>
             </div>
         
         <div>
             <p style={{color: 'green'}}> In Stock. </p>
-            <button className="btn-quantity" onClick={qtyDropdown}>Qty:</button>
+            <button className="btn-quantity" onClick={qtyDropdown}>Qty:</button>      
         </div><br></br>
-             <div>
-            <button class={`${style.btnCart}`} style={{backgroundColor: 'yellow', color: 'black', }} onClick={addToCart}>Add to Cart</button> 
-            </div>
-        <div>
-             <button class={`${style.btnBuyNow}`} style={{backgroundColor: 'orange', color: 'black'}} onClick={buyNow}> Buy Now</button> 
-        </div><br></br>
-        <div id="secure-transaction">
 
-        </div>
-        <div>
+             <div>
+                 <button class={`${style.btnCart}`} style={{backgroundColor: 'yellow', color: 'black', }} onClick={addToCart}>Add to Cart</button> 
+             </div>
+             <div>
+                 <button class={`${style.btnBuyNow}`} style={{backgroundColor: 'orange', color: 'black'}} onClick={buyNow}> Buy Now</button> 
+            </div><br></br>
+            
+            <div id="secure-transaction">
+             <div> 
+                <img src="https://images-na.ssl-images-amazon.com/images/G/01/x-locale/checkout/truespc/secured-ssl._CB485936932_.png" height="15px"></img>
+                <a href="javascript:void(0)"> Secure transaction</a>
+            </div>
+            </div><br></br>
+            <div>
+
+            </div>
+
+
+
+             <div>
                 <button className={`${style.btnAdd}`} onClick={addToList}>Add to List</button>
+             </div>
+             
+            
         </div>
-        </div>
-    
+        
     </div>
 
     )

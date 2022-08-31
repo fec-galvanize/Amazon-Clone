@@ -27,7 +27,7 @@
   margin-right: 0.5rem;
 }
 .container {
-
+  float: left;
   display: flex;
 }
 .share {

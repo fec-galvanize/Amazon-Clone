@@ -6,3 +6,27 @@
     float: right;
 }
 
+#pinPoint {
+    min-width: 16px;
+    height: 14px;
+    float: left;
+    background-image: url(https://m.media-amazon.com/images/S/sash/kIT-Lj9i1Bch8yi.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    margin-right: 5px;
+    margin-top: 2px;
+}
+
+
+#pricing {
+    font-size: large;
+    font-weight: bold;
+}
+
+#fraction {
+    font-size: small;
+    font-weight: bold;
+    vertical-align: text-top;
+}
+
