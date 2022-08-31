@@ -8,6 +8,9 @@ const Middle = () => {
   return (
     <div id="center">
       <Title />
+      <Price />
+      <ShirtOptions />
+      <Details />
     </div>
   );
 };
