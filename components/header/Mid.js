@@ -16,7 +16,7 @@ export default function Mid() {
     <div className={`${style.midhead}`}>
       <div className={`${style.allcat}`}>ALL</div>
       <ul className={`${style.cats}`}>
-        <li>Primo Video</li>
+        <li className={`${style.li}`}>Primo Video</li>
         <li>Health and Household</li>
         <li>Shopper Toolkit</li>
         <li>Pet Supplies</li>

@@ -52,10 +52,10 @@
 }
 
 .midhead{
-    height:30px;
+    height:fit-content;
     width:100%;
-    display:inline-block;
-    flex-flow: column;
+    display:flex;
+    flex-direction: row;
     color: white;
     background-color: #232f3e;
 }
@@ -63,6 +63,7 @@
 .allcat{
     margin:4px;
     padding:4px;
+    justify-content: center;
 
 }
 
@@ -70,4 +71,12 @@
     color:white;
     display:flex;
     flex-direction: row;
+    list-style: none;
+    margin-left: 4px;
+}
+
+.li{
+    margin:auto;
+    justify-content: center;
+    margin-left: 4px;
 }
