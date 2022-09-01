@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.pathLink{
+    color: #565959;
+    margin: 0 .3rem;
+}
+.pathLink:hover{
+    color: #565959;
+    text-decoration: underline;
+}
+.pathWrapper{
+    font-size: .55rem;
+    margin-bottom: 1rem;
+    
+}
