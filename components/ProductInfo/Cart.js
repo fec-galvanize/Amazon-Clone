@@ -133,9 +133,6 @@ const addToCart = () => {
  
 }
 
-const qtyDropdown = () => {
-
-}
 
 const buyNow = () => {
 
@@ -148,11 +145,9 @@ const addToList = () => {
     <div className={`${style.container}`}> 
         <div>
             <div className="pricing">
-                <div className="numbers">
                     <span id={style.symbol}>$</span>
                     <span id={style.dollars}>17</span>
                     <span id={style.fraction}>99</span>
-                </div>
             </div>
             <br></br>
             <div className={style.delivery}>
@@ -182,8 +177,8 @@ const addToList = () => {
                 <span className="text-bold">
                     <span>Or fastest delivary <b>Saturday,</b><br></br><b>September 3. </b> Order within </span> <br></br>
                     <span id="countdown">
-                        <span className="hours" style={{color: 'rgb(0, 118, 0)'}}>13 hrs </span>
-                        <span className="minutes" style={{color: 'green'}}>21 mins</span>
+                        <span className={style.time}>13 hrs </span>
+                        <span className={style.time}>21 mins</span>
                     </span>
                 </span>
             </div><br></br>
@@ -193,7 +188,7 @@ const addToList = () => {
             </div>
         
         <div>
-            <p style={{color: 'green'}}> In Stock. </p>
+            <p className={style.stock}> In Stock. </p>
             <span className={style.boxshadow}>
              <span className={`${style.quantity}`}>
              <label for="select-quantity"> Qty: </label>
@@ -237,7 +232,24 @@ const addToList = () => {
                 <span className={style.amazon}> Amazon.com </span>
             </div><br></br>
 
-            
+            <div className={style.returnpolicy}>
+              <span>Return policy: </span>
+              <a href="javascript:void(0)" role="button">Eligible for Return, 
+              Refund or Replacement within 30 days of receipt</a><span id={style.icon}></span> 
+            </div><br></br>
+
+            <div className={style.primerow}>
+              <span className="logo">
+                <a href='#'>
+                  <img src="https://m.media-amazon.com/images/G/01/marketing/prime/Prime_Logo_RGB._CB633150114_.png"
+                  alt="Amazon Prime logo" className={style.logo}></img>
+                </a>
+              </span>
+              <span className={style.text}>Enjoy fast, FREE delivary, 
+              exclusive deals and award-winning movies & TV shows with Prime </span>
+            </div><br></br>
+            <a id={style.primetext} href="#">Try Prime and start saving today with Fast, FREE Delivery</a>
+
         
 
 

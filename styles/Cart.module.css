@@ -1,10 +1,12 @@
 .container {
-    padding: 1%;
+    padding: 14px 18px;
     border-radius: 8px;
-    border: 1px solid rgb(219, 216, 216);
+    border: 1px #D5D9D9 solid;
     display: flex;
     font-family: "Amazon Ember", Arial, sans-serif;
-    width: 600px;
+    width: auto;
+    height: fit-content;
+    margin-left: 10px;
 }
 
 #pinPoint {
@@ -19,19 +21,34 @@
     margin-top: 2px;
 }
 
-.delivery {
+.time {
+    font-size: 14px;
+    color: #007600;
+    font-family: "Amazon Ember", Arial, sans-serif;
+}
+.stock {
+    font-size: 18px;
+    color: #007600;
+    font-family: "Amazon Ember", Arial, sans-serif;
+}
+.delivery, .returnpolicy {
     font-size: 14px;
 }
 
-#pricing {
+
+
+#dollars {
     font-size: 28px;
     color: #0F1111;
+    font-family: "Amazon Ember", Arial, sans-serif;
+    line-height: normal;
 }
 
 #symbol, #fraction {
     font-size: 13px;
-    vertical-align: text-top;
+    vertical-align: top;
     color: #0F1111;
+    font-family: "Amazon Ember", Arial, sans-serif;
 }
 
 .boxshadow{
@@ -108,6 +125,7 @@
     font-size: 13px;
     padding: 0 10px 0 11px;
     line-height: 25px;
+    margin-top: 20px;
 }
 
 .shipsold {
@@ -130,4 +148,30 @@
     font-size: 12px;
     font-family: "Amazon Ember", Arial, sans-serif;
     line-height: 16px!important;
+}
+
+.primerow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.text{
+    font-size: 14px!important;
+    line-height: 20px!important;  
+    padding-left: 10px;
+}
+
+.logo {
+    padding-top: 75%;
+    width: 50px!important;
+    vertical-align: top;
+    padding-right: 3px;
+}
+
+#primetext {
+    font-size: 14px;
+    padding-bottom: 10px;
+    margin-bottom: 3px;
 }
