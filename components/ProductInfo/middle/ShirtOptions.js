@@ -1,10 +1,27 @@
 import { useState } from "react";
 import style from "../../../styles/Middle.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  changeCurrentImage,
+  changeVisibleImage,
+} from "../../../redux/features/prodInfo-slice";
 
 const ShirtOptions = () => {
   const [gender, setGender] = useState("male");
   const [color, setColor] = useState("");
   const [see, setSee] = useState(false);
+
+  const dispatch = useDispatch();
+  const displayImg = useSelector(({ prodInfo }) => prodInfo.image);
+  const currentDisplay = displayImg;
+
+  const mouseEnter = (newImage) => {
+    dispatch(changeVisibleImage(newImage));
+  };
+
+  const mouseLeave = () => {
+    dispatch(changeVisibleImage(currentDisplay));
+  };
 
   const shirtColors = [
     {
@@ -79,7 +96,11 @@ const ShirtOptions = () => {
               return (
                 <li className={style.option} key={i}>
                   <div className={style.optionBox}>
-                    <button className={style.optionBtn}>
+                    <button
+                      className={style.optionBtn}
+                      onMouseEnter={() => mouseEnter(shirt.img)}
+                      onMouseLeave={() => mouseLeave()}
+                    >
                       <img
                         className={style.optionIMG}
                         alt={shirt.color}
