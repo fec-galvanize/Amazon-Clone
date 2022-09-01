@@ -2,11 +2,12 @@
   width: 1.75rem;
   height: 2rem;
   padding: 0;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.4rem;
   cursor: pointer;
 }
 .btn.active {
-  border: 3px solid red;
+  border: 1px solid #e77600;
+  box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
 }
 .img {
   width: 100%;
@@ -28,6 +29,9 @@
 }
 .container {
   display: flex;
+  position: sticky;
+  top: 4px;
+  height: 100%;
 }
 .share {
   position: absolute;
@@ -39,22 +43,18 @@
   font-size: 1rem;
   cursor: pointer;
 }
-.tooltip {
-  position: fixed;
-  z-index: 2;
-}
+
 .linksDisplay {
   display: flex;
   flex-direction: column;
-  font-size: 0.75rem;
   position: absolute;
   z-index: 1;
-  background: rgb(244,244,244);
-  width: fit-content;
-  padding: .4rem;
+  background: white;
+  width: 7rem;
+  padding: 0.5rem 0;
   border: 1px solid rgba(0, 0, 0, 0.2);
   right: 3%;
-  top: 10%;
+  top: 11%;
 }
 .linksDisplay:after {
   content: "";
@@ -63,15 +63,49 @@
   width: 0px;
   height: 0px;
   border: 10px solid transparent;
-  border-bottom: 10px solid rgb(244,244,244);
+  border-bottom: 10px solid rgba(0, 0, 0, 0.2);                
   position: absolute;
-  top: -7%;
-  left: 73%;
+  top: -5.7%;
+  left: 85%;
+  z-index: 4;
+}
+.linksDisplay:before {
+  content: "";
+  margin-top: -9px;
+  margin-left: -9px;
+  width: 0px;
+  height: 0px;
+  border: 9px solid transparent;
+  border-bottom: 9px solid white;                
+  position: absolute;
+  top: -5%;
+  left: 85%;
+  z-index: 5;
 }
 
-.linksDisplay > a{
-  border-bottom: 1px solid black;
+.linksDisplay > a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.3rem;
+  padding-bottom: .4rem;
+  padding-left:.5rem ;
+  font-size: 0.75rem;
+  text-align: left;
+  width: 100%;
+  color: #0F1111;
 }
-.linksDisplay > a:last-child{
+.linksDisplay > a > span {
+ margin-left: .5rem;
+}
+.linksDisplay > a:hover {
+color: orange;
+}
+.linksDisplay > a:last-child {
   border-bottom: none;
+  padding-bottom: 0;
+}
+.linksDisplay > a:first-child {
+  padding-top: 0;
+}
+.pin {
+  font-size: 1rem;
 }
