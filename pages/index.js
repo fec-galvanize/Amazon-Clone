@@ -14,7 +14,6 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <ProductInfo />
-      <div style={{height:'300rem',width:'100%'}}></div>
     </div>
   );
 }

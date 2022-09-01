@@ -1,7 +1,133 @@
 .container {
     padding: 1%;
-    border-radius: 4%;
+    border-radius: 8px;
     border: 1px solid rgb(219, 216, 216);
     display: flex;
+    font-family: "Amazon Ember", Arial, sans-serif;
+    width: 600px;
 }
 
+#pinPoint {
+    min-width: 16px;
+    height: 14px;
+    float: left;
+    background-image: url(https://m.media-amazon.com/images/S/sash/kIT-Lj9i1Bch8yi.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    margin-right: 5px;
+    margin-top: 2px;
+}
+
+.delivery {
+    font-size: 14px;
+}
+
+#pricing {
+    font-size: 28px;
+    color: #0F1111;
+}
+
+#symbol, #fraction {
+    font-size: 13px;
+    vertical-align: text-top;
+    color: #0F1111;
+}
+
+.boxshadow{
+    border-radius: 7px;
+    background: #f0f2f2;
+    height: 20px!important;
+    box-shadow: 0 2px 5px rgb(15 17 17/ 15%);
+}
+
+#location, #secure {
+    font-size: 12px;
+}
+
+.quantity {
+    border: solid black 1px;
+    padding: 1px;
+    border-radius: 8px;
+    background: #f0f2f2;
+    border-color: #d5d9d9;
+    height: 22px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+    vertical-align: middle;
+    position: relative;
+    font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+.selectQuantity {
+    border: 0px;
+    background: #f0f2f2;
+    border-color: #d5d9d9;
+}
+
+.btnCart {
+    border-radius: 20px;
+    background: #FFD814;
+    border-color: #FFD814;
+    text-align: center;
+    vertical-align: middle;
+    border-style: solid;
+    border-width: 1px;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    line-height: 19px;
+    margin-bottom: 4px;
+}
+
+.btnBuyNow {
+    border-radius: 20px;
+    background: #FFA41C;
+    border-color: #FF8F00;
+    text-align: center;
+    vertical-align: middle;
+    border-style: solid;
+    border-width: 1px;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    line-height: 19px;
+}
+
+.btnAdd {
+    border-radius: 3px;
+    background: #e7e9ec;
+    border-color: #adb1b8 #a2a6ac #8d9096;
+    border: 1px solid;
+    height: 100%;
+    width: 100%;
+    text-align: left!important;
+    font-size: 13px;
+    padding: 0 10px 0 11px;
+    line-height: 25px;
+}
+
+.shipsold {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+}
+
+.shipsby, .soldby {
+    font-size: 12px;
+    font-family: "Amazon Ember", Arial, sans-serif;
+    color: #565959!important;
+    line-height: 16px!important;
+    padding-right: 10px;
+}
+
+
+
+.amazon {
+    font-size: 12px;
+    font-family: "Amazon Ember", Arial, sans-serif;
+    line-height: 16px!important;
+}
