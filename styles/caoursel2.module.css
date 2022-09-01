@@ -1,0 +1,45 @@
+.carousel_header{
+    font-weight: 700;
+    font-style: bold;
+    font-size: x-large;
+}
+
+.slide_container{
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.card_entire{
+    max-width: 160px;
+}
+
+.cardAction_area{
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+}
+
+.tShirtImage{
+    max-height: 160px;
+    min-height: 157.63px;
+    max-width: 160px;
+    display: flex;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+}
+
+.tShirt_description{
+    margin-top: 0%;
+    padding-top: 8px;
+    text-align: left;
+    color: #007185;
+}
+
+.starSpan{
+    align-items: left;
+    padding-left: 0%;
+    
+}
