@@ -11,6 +11,9 @@ a {
   text-decoration: none;
 }
 
+a:hover{
+  color: orange;
+}
 * {
   box-sizing: border-box;
 }
