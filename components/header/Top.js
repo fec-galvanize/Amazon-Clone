@@ -1,4 +1,4 @@
-import amazonlogo from "../../public/images/amazon-logo-top.jpg";
+import amazonlogo from "../../public/images/webheadlogo.jpg";
 import React from "react";
 
 import style from "../../styles/Header.module.css";
@@ -6,7 +6,7 @@ import style from "../../styles/Header.module.css";
 export default function Top() {
   return (
     <div className={`${style.search}`}>
-      <img className={`${style.logo}`} src={amazonlogo} alt="amazon logo" />
+      <div className={`${style.logo}`}></div>
       <form className={`${style.form}`}>
         <input className={`${style.input}`} type="text" />
         <button className={`${style.sbtn}`} type="submit">
@@ -16,4 +16,6 @@ export default function Top() {
     </div>
   );
 }
-//comment
+
+//sbtn=> submit button
+//sbm=>submit button magnifying glass

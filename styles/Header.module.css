@@ -3,7 +3,7 @@
     flex-direction: column;
     height: 80px;
     width:100%;
-    background-color:#2e3642;
+    background-color:#282d4d;
 }
 
 .search{
@@ -16,13 +16,21 @@
     height:40px;
     padding:10px;
     border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
     border-style: none;
     margin-top:10px;
 }
 
 .logo{
+    margin-top: 10px;
     float:left;
-    
+    height:50px;
+    width:110px;
+    background: url('../public/images/webheadlogo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+     
 }
 
 .sbtn{
@@ -34,9 +42,34 @@
     width:40px;
     background-color: goldenrod;
     border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
     border-style:none;
 }
 
 .form{
     -webkit-box-align:baseline;
+}
+
+.midhead{
+    height:30px;
+    width:100%;
+    display:flex;
+    flex-flow: column;
+    color: white;
+    background-color: #313550;
+}
+
+.allcat{
+    margin:4px;
+    padding:4px;
+    display:inline;
+
+}
+
+.cats{
+    color:white;
+    display:inline-block;
+    justify-content: center;
+    width: calc(1em/8);
 }
