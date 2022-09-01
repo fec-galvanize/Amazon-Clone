@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 
 import { FaFacebook, FaPinterest } from "react-icons/fa";
 import { IoShareOutline } from "react-icons/io5";
@@ -6,11 +6,14 @@ import { AiOutlineMail, AiFillTwitterCircle } from "react-icons/ai";
 import { ImLink } from "react-icons/im";
 
 import { useSelector, useDispatch } from "react-redux";
-import { changeImage } from "../../redux/features/prodInfo-slice";
+import {
+  changeCurrentImage,
+  changeVisibleImage,
+} from "../../redux/features/prodInfo-slice";
 
 import style from "../../styles/ProdImage.module.css";
 const ProdImage = () => {
-  const displayImg = useSelector(({ prodInfo }) => prodInfo.image);
+  const displayImg = useSelector(({ prodInfo }) => prodInfo.visibleImage);
   const imgArray = [
     "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C81t54H7ZpXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UX385_.png",
     "https://m.media-amazon.com/images/I/71deJMlACUL._AC_UX466_.jpg",
@@ -39,12 +42,12 @@ export default ProdImage;
 
 const ImgBtn = ({ image }) => {
   const dispatch = useDispatch();
-  const displayImg = useSelector(({ prodInfo }) => prodInfo.image);
+  const displayImg = useSelector(({ prodInfo }) => prodInfo.visibleImage);
 
   return (
     <button
       className={`${style.btn} ${displayImg === image && style.active}`}
-      onMouseEnter={() => dispatch(changeImage(image))}
+      onMouseEnter={() => dispatch(changeVisibleImage(image))}
     >
       <img src={image} className={`${style.img}`} />
     </button>
