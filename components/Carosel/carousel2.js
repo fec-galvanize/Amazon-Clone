@@ -40,7 +40,7 @@ const T_shirt_line = () => {
         );
       }
         const tShirtArray = tshirts.data.tshirt;
-        console.log(tShirtArray);
+        // console.log(tShirtArray);
         const starRating = starPower();
 
     return (
