@@ -1,0 +1,42 @@
+.allHead{
+    display:flex;
+    flex-direction: column;
+    height: 80px;
+    width:100%;
+    background-color:#2e3642;
+}
+
+.search{
+    display:flex;
+    flex-direction: row;
+}
+
+.input{
+    width:500px;
+    height:40px;
+    padding:10px;
+    border-radius: 5px;
+    border-style: none;
+    margin-top:10px;
+}
+
+.logo{
+    float:left;
+    
+}
+
+.sbtn{
+    vertical-align:top;
+    margin-top:10px;
+    margin-left:0;
+    padding: 10px;
+    height:40px;
+    width:40px;
+    background-color: goldenrod;
+    border-radius: 5px;
+    border-style:none;
+}
+
+.form{
+    -webkit-box-align:baseline;
+}
