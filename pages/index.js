@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import styles from "../styles/Home.module.css";
-import Test from '../components/carousel'
-
+import T_shirt_line from "../components/Carosel/carousel2";
 export default function Home() {
   useEffect(() => {
     fetch("/api/hello")
@@ -9,8 +8,7 @@ export default function Home() {
       .then((data) => console.log(data));
   }, []);
   return( 
-  <div className={styles.container}>test
-        <Test />,
-  </div>
-  );
+  <div className={styles.container}>
+    <T_shirt_line />
+  </div>);
 }
