@@ -17,12 +17,12 @@ export default function Mid() {
       <div className={`${style.allcat}`}>ALL</div>
       <ul className={`${style.cats}`}>
         <li className={`${style.li}`}>Primo Video</li>
-        <li>Health and Household</li>
-        <li>Shopper Toolkit</li>
-        <li>Pet Supplies</li>
-        <li>Amazon Home</li>
-        <li>Pharmacy</li>
-        <li>Amazon Launchpad</li>
+        <li className={`${style.li}`}>Health and Household</li>
+        <li className={`${style.li}`}>Shopper Toolkit</li>
+        <li className={`${style.li}`}>Pet Supplies</li>
+        <li className={`${style.li}`}>Amazon Home</li>
+        <li className={`${style.li}`}>Pharmacy</li>
+        <li className={`${style.li}`}>Amazon Launchpad</li>
       </ul>
     </div>
   );
