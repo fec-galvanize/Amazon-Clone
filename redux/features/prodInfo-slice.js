@@ -16,5 +16,5 @@ export const prodInfoSlice = createSlice({
   },
 });
 
-export const {changeImage} = prodInfoSlice.actions
-export default prodInfoSlice.reducer
+export const { changeImage } = prodInfoSlice.actions;
+export default prodInfoSlice.reducer;

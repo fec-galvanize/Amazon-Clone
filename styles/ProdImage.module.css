@@ -29,6 +29,9 @@
 }
 .container {
   display: flex;
+  position: sticky;
+  top: 4px;
+  height: 100%;
 }
 .share {
   position: absolute;

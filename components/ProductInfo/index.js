@@ -1,4 +1,3 @@
-import React from "react";
 import Cart from "./Cart";
 import ProdImage from "./ProdImage";
 import Middle from "./middle/Middle";
@@ -7,7 +6,7 @@ import style from "../../styles/ProdInfo.module.css";
 const ProductInfo = () => {
   return (
     <>
-    <ProdPath />
+      <ProdPath />
       <div className={`${style.container}`}>
         <ProdImage />
         <Middle />
@@ -55,8 +54,10 @@ const ProdPath = () => {
       {paths.map(({ text, url }, i) => {
         return (
           <>
-            <a href={url} className={style.pathLink} >{text}</a>
-            { i !== paths.length - 1 && <span>{'>'}</span>}
+            <a href={url} className={style.pathLink}>
+              {text}
+            </a>
+            {i !== paths.length - 1 && <span>{">"}</span>}
           </>
         );
       })}

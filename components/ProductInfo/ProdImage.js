@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 
 import { FaFacebook, FaPinterest } from "react-icons/fa";
 import { IoShareOutline } from "react-icons/io5";
@@ -72,8 +72,9 @@ const ShareBtn = () => {
   return (
     <>
       <div className={`${style.linksDisplay}`} style={linksDisplay}>
-        <a href={href.email} target="_" title="Share via Email" >
-          <AiOutlineMail className={style.pin} style={{ color: "black" }} /> <span>Email</span>
+        <a href={href.email} target="_" title="Share via Email">
+          <AiOutlineMail className={style.pin} style={{ color: "black" }} />{" "}
+          <span>Email</span>
         </a>
         <a href={href.pin} target="_" title="Pin it on Pinterest">
           <FaPinterest className={style.pin} style={{ color: "darkred" }} />
@@ -91,14 +92,19 @@ const ShareBtn = () => {
           <span>Twitter</span>
         </a>
         <a href="#" title="Copy Links" onClick={() => copyLink()}>
-          <ImLink className={style.pin} style={{ color: "black" }} /> <span>{copyText}</span>
+          <ImLink className={style.pin} style={{ color: "black" }} />{" "}
+          <span>{copyText}</span>
         </a>
       </div>
       <button
         aria-label="share"
         title="Share"
         className={`${style.share}`}
-        onClick={() => linksDisplay.display === 'none' ? setLinksDisplay({ display: "flex" }):setLinksDisplay({ display: "none" }) }
+        onClick={() =>
+          linksDisplay.display === "none"
+            ? setLinksDisplay({ display: "flex" })
+            : setLinksDisplay({ display: "none" })
+        }
       >
         <IoShareOutline />
       </button>
