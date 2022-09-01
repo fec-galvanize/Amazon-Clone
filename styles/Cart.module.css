@@ -58,8 +58,12 @@
     box-shadow: 0 2px 5px rgb(15 17 17/ 15%);
 }
 
-#location, #secure {
+#location {
     font-size: 12px;
+}
+
+#secure {
+    font-size: 14px;
 }
 
 .quantity {
@@ -157,7 +161,7 @@
     margin-bottom: 4px;
 }
 
-.text{
+.text {
     font-size: 14px!important;
     line-height: 20px!important;  
     padding-left: 10px;
