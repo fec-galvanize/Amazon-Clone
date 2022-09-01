@@ -4,9 +4,9 @@ const Price = () => {
   return (
     <div className={style.price}>
       <div className={style.numbers}>
-        <span id={style.symbol}>$</span>
-        <span id={style.dollars}>17</span>
-        <span id={style.cents}>99</span>
+        <span className={style.symbol}>$</span>
+        <span className={style.dollars}>17</span>
+        <span className={style.cents}>99</span>
       </div>
       <div className={style.primePlug}>
         <span>
@@ -23,6 +23,7 @@ const Price = () => {
       <div className={style.merchPlug}>
         <div className={style.image}>
           <img
+            className={style.merchpic}
             alt="Amazon merch on demand"
             src="https://images-na.ssl-images-amazon.com/images/G/01/Merch/logo/amazon_merch_on_demand_logo2x._CB650496796_.png"
           ></img>

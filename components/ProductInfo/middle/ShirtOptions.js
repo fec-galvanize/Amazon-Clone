@@ -142,8 +142,8 @@ const ShirtOptions = () => {
         </div>
 
         <div className={style.sizeContainer}>
-          <div className={style.sizeLable}>
-            <label>Size:</label>
+          <div className={style.size}>
+            <label className={style.sizeLabel}>Size:</label>
           </div>
           <span className={style.dropdownContainer}>
             <select className={style.sizeDropDown}>
