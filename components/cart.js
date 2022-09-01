@@ -1,4 +1,5 @@
-import style from "../../styles/Cart.module.css";
+import React from "react";
+import style from "../styles/Cart.module.css";
 
 const Cart = () => {
 
@@ -20,15 +21,15 @@ const addToList = () => {
     return (
     <div className={`${style.container}`}> 
         <div>
-            <div className="pricing">
+            <div className={`${style.pricing}`}>
                 <div className="numbers">
-                    <span id={style.symbol}>$</span>
-                    <span id={style.dollars}>17</span>
-                    <span id={style.fraction}>99</span>
+                    <span id="symbol">$</span>
+                    <span id="dollars">17</span>
+                    <span id={`${style.fraction}`}>99</span>
                 </div>
             </div>
             <br></br>
-            <div className={style.delivery}>
+            <div>
                 <span id="shipping-message">
                 Get
                 <b> Fast, Free Shipping </b>
@@ -43,7 +44,7 @@ const addToList = () => {
                 </span>
             </div>
             <br></br>
-            <div className={style.delivery}>
+            <div className="delivery-block">
                 <a className="delivery-link" href="https://www.amazon.com/gp/help/customer/display.html?nodeId=GZXW7X6AKTHNUP6H"> FREE delivery </a>
                 <span className="text-bold">
                     <span><b>Tuesday, </b></span> <br></br>
@@ -51,7 +52,7 @@ const addToList = () => {
                 </span>
                 if you spend $25 <br></br> on items shipped by Amazon
             </div><br></br>
-            <div className={style.delivery}>
+            <div className="fastest-delivery-block">
                 <span className="text-bold">
                     <span>Or fastest delivary <b>Saturday,</b><br></br><b>September 3. </b> Order within </span> <br></br>
                     <span id="countdown">
@@ -62,56 +63,31 @@ const addToList = () => {
             </div><br></br>
             <div className="select-location">
                 <div id={`${style.pinPoint}`}></div>
-                <a href="javascript:void(0)" id={style.location}> Select delivary location </a>
+                <a href="javascript:void(0)"> Select delivary location </a>
             </div>
         
         <div>
             <p style={{color: 'green'}}> In Stock. </p>
-            <span className={style.boxshadow}>
-             <span className={`${style.quantity}`}>
-             <label for="select-quantity"> Qty: </label>
-             <select className={`${style.selectQuantity}`} name="select-quantity">
-               <option value="1">1</option>
-               <option value="2">2</option>
-               <option value="3">3</option>
-               <option value="4">4</option>
-               <option value="5">5</option>
-               <option value="6">6</option>
-               <option value="7">7</option>
-               <option value="8">8</option>
-               <option value="9">9</option>
-               <option value="10">10</option>
-               </select>   
-              </span>   
-            </span>
+            <select className="select-quantity" onClick={qtyDropdown}>Qty:</select>      
         </div><br></br>
 
              <div>
-              <span>
-                 <button className={`${style.btnCart}`} title="Add to Shopping Cart" onClick={addToCart}>Add to Cart</button> 
-              </span>
+                 <button className={`${style.btnCart}`} title="Add to Shopping Cart" style={{backgroundColor: 'FFD814', color: 'black', }}  onClick={addToCart}>Add to Cart</button> 
              </div>
-
              <div>
-                 <button className={`${style.btnBuyNow}`} onClick={buyNow}> Buy Now</button> 
+                 <button className={`${style.btnBuyNow}`} style={{backgroundColor: 'orange', color: 'black'}} onClick={buyNow}> Buy Now</button> 
             </div><br></br>
             
-            <div id={style.secure}>
+            <div id="secure-transaction">
              <div> 
                 <img src="https://images-na.ssl-images-amazon.com/images/G/01/x-locale/checkout/truespc/secured-ssl._CB485936932_.png" height="15px"></img>
                 <a href="javascript:void(0)"> Secure transaction</a>
             </div>
             </div><br></br>
-
-            <div className={style.shipsold}>
-                <span className={style.shipsby}> Ships from </span> 
-                <span className={style.amazon}> Amazon.com </span>
-                <span className={style.soldby}> Sold by </span> 
-                <span className={style.amazon}> Amazon.com </span>
-            </div><br></br>
-
-            
-        
+            <div>
+                <span> Ships from         Amazon.com</span>
+                <span> Sold By         Amazon.poop</span>
+            </div>
 
 
 
