@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import Meta from "../components/Meta";
-import Header from "../components/Header";
+import Header from "../components/header/Header";
 import { Provider } from "react-redux";
 import { store } from "../redux";
 
