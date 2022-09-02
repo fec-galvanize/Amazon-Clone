@@ -37,7 +37,7 @@ const addToList = () => {
                 </span>
                 <br></br>
                 <span>
-                    <a className="popover-trigger" href="javascript:void(0)">
+                    <a className="popover-trigger" href="#">
                     FREE Returns 
                     </a>
                 </span>
@@ -62,14 +62,14 @@ const addToList = () => {
             </div><br></br>
             <div className="select-location">
                 <div id={`${style.pinPoint}`}></div>
-                <a href="javascript:void(0)" id={style.location}> Select delivary location </a>
+                <a href="#" id={style.location}> Select delivary location </a>
             </div>
         
         <div>
             <p style={{color: 'green'}}> In Stock. </p>
             <span className={style.boxshadow}>
              <span className={`${style.quantity}`}>
-             <label for="select-quantity"> Qty: </label>
+             <label htmlFor="select-quantity"> Qty: </label>
              <select className={`${style.selectQuantity}`} name="select-quantity">
                <option value="1">1</option>
                <option value="2">2</option>
@@ -99,7 +99,7 @@ const addToList = () => {
             <div id={style.secure}>
              <div> 
                 <img src="https://images-na.ssl-images-amazon.com/images/G/01/x-locale/checkout/truespc/secured-ssl._CB485936932_.png" height="15px"></img>
-                <a href="javascript:void(0)"> Secure transaction</a>
+                <a href="#"> Secure transaction</a>
             </div>
             </div><br></br>
 
