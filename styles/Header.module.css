@@ -1,7 +1,7 @@
 .allHead{
     display:flex;
     flex-direction: column;
-    height: 80px;
+    height: fit-content;
     width:100%;
     background-color:#131921;
 }
@@ -81,4 +81,8 @@
     margin-top:2px;
     margin-bottom:2px;
     margin-left:20px;
+}
+
+.afash{
+    background-color: #fff;
 }
