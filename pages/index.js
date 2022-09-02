@@ -1,7 +1,8 @@
 import styles from "../styles/Home.module.css";
-import T_shirt_line from "../components/Carosel/carousel2";
 // Imported Components
 import ProductInfo from "../components/ProductInfo";
+import T_shirt_line from "../components/Carosel/carousel2";
+import Reviews from '../components/Reviews' 
 
 export default function Home() {
 
@@ -9,6 +10,7 @@ export default function Home() {
     <div className={styles.container}>
       <ProductInfo />
       <T_shirt_line />
+      <Reviews />
     </div>
   );
 }
