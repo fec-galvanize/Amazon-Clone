@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "../../styles/caoursel2.module.css";
 import tshirts from "./tShirtData";
-import starPower from "./starRating";
+import StarRating from "../StarRating";
 
 const T_shirt_line = () => {
 
@@ -40,8 +40,7 @@ const T_shirt_line = () => {
         );
       }
         const tShirtArray = tshirts.data.tshirt;
-        console.log(tShirtArray);
-        const starRating = starPower();
+        // console.log(tShirtArray);
 
     return (
         <footer>
@@ -60,7 +59,7 @@ const T_shirt_line = () => {
                       <img className={styles.tShirtImage} src={tShirtArray[index].img} alt="sample" />
                       <div>
                         <h5 className={styles.tShirt_description}>{tShirtArray[index].description}</h5>
-                        <h6 className={styles.starSpan}>{starRating}</h6>
+                        <h6 className={styles.starSpan}>{<StarRating/>}</h6>
                         <h7>{tShirtArray[index].price}</h7>
                       </div>
                     </button>
