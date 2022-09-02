@@ -1,4 +1,4 @@
-import amazonlogo from "../../public/images/webheadlogo.jpg";
+
 import React from "react";
 
 import style from "../../styles/Header.module.css";
