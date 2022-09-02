@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@angular/cli": "^14.2.1",
     "@reduxjs/toolkit": "^1.8.5",
     "next": "^12.2.5",
     "react": "18.2.0",
