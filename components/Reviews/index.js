@@ -1,9 +1,8 @@
-import StarRating from "../StarRating"
-
+import Stats from "./Stats"
 const Reviews = () => {
   return (
     <div>
-      <StarRating rating={4} />
+      <Stats />
     </div>
   )
 }
