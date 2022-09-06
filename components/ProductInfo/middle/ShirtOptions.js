@@ -122,26 +122,26 @@ const ShirtOptions = () => {
             {shirtColors.map(({ color, img, displayImg }, i) => {
               return (
                 <li className={style.option} key={i}>
-                  {/* <div className={style.optionBox}> */}
-                  <button
-                    type="submit"
-                    className={`${
-                      imageDisplayBtnArr[0] === displayImg && style.active
-                    } ${style.optionBtn}`}
-                    onMouseEnter={() => mouseEnter(displayImg)}
-                    onMouseLeave={() => mouseLeave()}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      mouseClick(displayImg);
-                    }}
-                  >
-                    <img
-                      className={style.optionIMG}
-                      alt={color}
-                      src={img}
-                    ></img>
-                  </button>
-                  {/* </div> */}
+                  <div className={style.optionBox}>
+                    <button
+                      type="submit"
+                      className={`${
+                        imageDisplayBtnArr[0] === displayImg && style.active
+                      } ${style.optionBtn}`}
+                      onMouseEnter={() => mouseEnter(displayImg)}
+                      onMouseLeave={() => mouseLeave()}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        mouseClick(displayImg);
+                      }}
+                    >
+                      <img
+                        className={style.optionIMG}
+                        alt={color}
+                        src={img}
+                      ></img>
+                    </button>
+                  </div>
                 </li>
               );
             })}
