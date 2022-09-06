@@ -51,7 +51,9 @@ export default function AFash() {
           {fashCat.map((e) => {
             return (
               <li className={`${style.lif}`}>
-                <a href={e.ulink}>{e.title}</a>
+                <a className={`${style.lif}`} href={e.ulink}>
+                  {e.title}
+                </a>
               </li>
             );
           })}

@@ -8,10 +8,12 @@ import style from "../../styles/Header.module.css";
 export default function Top() {
   //useState to loggedin true, loggedin false
   const [loggedIn, setLoggedIn] = useState(false);
-
+  const cartCount = 0;
   return (
     <div className={`${style.search}`}>
-      <div className={`${style.logo}`}></div>
+      <div className={`${style.logo}`}>
+        <a href="https://www.amazon.com/ref=nav_logo"></a>
+      </div>
       <div className={`${style.location}`}>
         <IoLocationOutline className={`${style.locpin}`} />
         city, state
@@ -42,6 +44,7 @@ export default function Top() {
       </div>
       <div className={`${style.shoppingCart}`}>
         <BiCart className={`${style.SCI}`} />
+        {`Cart ${cartCount}`}
       </div>
     </div>
   );
@@ -52,3 +55,4 @@ export default function Top() {
 //I think i will want to set a recoil state so that if they click the add to cart
 //it will increment the number by the cart accordingly
 //make user table for backend that will have First, Last, email, password, location, userID
+//tried to make anchor tag in logo work, it does not
