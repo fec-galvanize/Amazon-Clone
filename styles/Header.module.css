@@ -1,3 +1,4 @@
+/* Header component styles */
 .allHead{
     display:flex;
     flex-direction: column;
@@ -6,10 +7,12 @@
     background-color:#131921;
 }
 
+/* TOP.js  */
 .search{
     display:flex;
     flex-direction: row;
 }
+
 
 .input{
     width:500px;
@@ -51,6 +54,45 @@
     -webkit-box-align:baseline;
 }
 
+
+.shoppingCart {
+    color: white;
+    width: 50px;
+}
+
+.SCI{
+    height:50px;
+    width:100%;
+}
+
+.login{
+    color: white;
+    display:flex;
+    justify-content: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+.location{
+    color: white;
+    height: 100%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    margin: 5px;
+    padding: 5px;
+}
+
+.locpin{
+    color: white;
+    height: 20px;
+    width: 20px;
+}
+
+
+/* MID.js */
+
 .midhead{
     height:40px;
     width:100%;
@@ -84,7 +126,13 @@
     margin-left:20px;
 }
 
+.iconlist{
+    height: 25px;
+    width: 25px;
+}
 
+
+/* AFASH.js */
 .afash{
     display:flex;
     flex-direction: row;
@@ -110,3 +158,4 @@
     color:black;
     font-size:12px;
 }
+
