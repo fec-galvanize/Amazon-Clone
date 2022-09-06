@@ -10,7 +10,9 @@ const Title = () => {
         The Party Don't Start Til I Croc In T-Shirt
       </div>
       <div className={style.ratings}>
-        <div className={style.stars}>Put Stars and down arrow here!</div>
+        <div className={style.stars}>
+          <i className={style.starsPic}></i>
+        </div>
         <div className={style.numRatings}>23 ratings</div>
       </div>
     </div>
