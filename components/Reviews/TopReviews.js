@@ -21,7 +21,7 @@ const TopReviews = () => {
   ];
   return (
     <div className={style.container}>
-      <select name="reviewType" id="reviewType">
+      <select name="reviewType" className={style.reviewType}>
         <option value="top_reviews">Top Reviews</option>
         <option value="most_recent">Most Recent</option>
       </select>
