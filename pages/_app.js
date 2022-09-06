@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "../redux";
 import Footer from "../components/Footer/Footer";
 
+
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
