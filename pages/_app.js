@@ -4,6 +4,7 @@ import Header from "../components/header/Header";
 import { Provider } from "react-redux";
 import { store } from "../redux";
 import Footer from "../components/Footer/Footer";
+import Prefooter from "../components/Prefooter";
 
 
 function MyApp({ Component, pageProps }) {
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }) {
       <Meta />
       <Header />
       <Component {...pageProps} />
+      <Prefooter />
       <Footer />
     </Provider>
   );
