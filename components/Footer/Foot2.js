@@ -6,7 +6,7 @@ const Foot2 = () => {
     <div className={style.container2}>
       <div className={style.tablediv}>
         <table className={style.table}>
-          <tbody>
+          <tbody className={style.tbody}>
             <tr className={style.row}>
               <td className={style.col1}>
                 <a
@@ -15,7 +15,7 @@ const Foot2 = () => {
                 >
                   Amazon Music
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Stream millions
                     <br />
                     of songs
@@ -29,7 +29,7 @@ const Foot2 = () => {
                 >
                   Amazon Advertising
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Find, attract, and
                     <br />
                     engage customers
@@ -39,14 +39,14 @@ const Foot2 = () => {
               <td className={style.col3}>
                 <a
                   className={style.link}
-                  href="https://advertising.amazon.com/?ref=footer_advtsing_amzn_com"
+                  href="/gp/browse.html?node=15547130011&amp;ref_=_us_footer_drive"
                 >
-                  Amazon Advertising
+                  Amazon Drive
                   <br />
-                  <span>
-                    Find, attract, and
+                  <span className={style.spanColor}>
+                    Cloud storage
                     <br />
-                    engage customers
+                    from Amazon
                   </span>
                 </a>
               </td>
@@ -54,7 +54,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://www.6pm.com">
                   6pm
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Score deals
                     <br />
                     on fashion brands
@@ -65,7 +65,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://www.abebooks.com">
                   AbeBooks
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Books, art
                     <br />
                     &amp; collectibles
@@ -75,7 +75,7 @@ const Foot2 = () => {
               <td className={style.col6}>
                 <a className={style.link} href="https://www.acx.com/">
                   ACX <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Audiobook Publishing
                     <br />
                     Made Easy
@@ -86,7 +86,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://www.alexa.com">
                   Alexa
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Actionable Analytics
                     <br />
                     for the Web
@@ -102,7 +102,9 @@ const Foot2 = () => {
                 >
                   Sell on Amazon
                   <br />
-                  <span>Start a Selling Account</span>
+                  <span className={style.spanColor}>
+                    Start a Selling Account
+                  </span>
                 </a>
               </td>
               <td className={style.col2}>
@@ -112,7 +114,7 @@ const Foot2 = () => {
                 >
                   Amazon Business
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Everything For
                     <br />
                     Your Business
@@ -126,7 +128,7 @@ const Foot2 = () => {
                 >
                   Amazon Fresh
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Groceries &amp; More
                     <br />
                     Right To Your Door
@@ -140,7 +142,7 @@ const Foot2 = () => {
                 >
                   AmazonGlobal
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Ship Orders
                     <br />
                     Internationally
@@ -151,7 +153,7 @@ const Foot2 = () => {
                 <a className={style.link} href="/services?ref_=footer_services">
                   Home Services
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Experienced Pros
                     <br />
                     Happiness Guarantee
@@ -165,7 +167,7 @@ const Foot2 = () => {
                 >
                   Amazon Ignite
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Sell your original
                     <br />
                     Digital Educational
@@ -181,7 +183,7 @@ const Foot2 = () => {
                 >
                   Amazon Web Services
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Scalable Cloud
                     <br />
                     Computing Services
@@ -194,7 +196,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://www.audible.com">
                   Audible
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Listen to Books &amp; Original
                     <br />
                     Audio Performances
@@ -205,7 +207,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://www.bookdepository.com">
                   Book Depository
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Books With Free
                     <br />
                     Delivery Worldwide
@@ -219,7 +221,7 @@ const Foot2 = () => {
                 >
                   Box Office Mojo
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Find Movie
                     <br />
                     Box Office Data
@@ -230,7 +232,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://www.comixology.com">
                   ComiXology
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Thousands of
                     <br />
                     Digital Comics
@@ -241,7 +243,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://www.dpreview.com">
                   DPReview
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Digital
                     <br />
                     Photography
@@ -252,7 +254,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://www.fabric.com">
                   Fabric
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Sewing, Quilting
                     <br />
                     &amp; Knitting
@@ -263,7 +265,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://www.goodreads.com">
                   Goodreads
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Book reviews
                     <br />
                     &amp; recommendations
@@ -276,7 +278,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://www.imdb.com">
                   IMDb
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Movies, TV
                     <br />
                     &amp; Celebrities
@@ -290,7 +292,7 @@ const Foot2 = () => {
                 >
                   IMDbPro
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Get Info Entertainment
                     <br />
                     Professionals Need
@@ -301,7 +303,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://kdp.amazon.com">
                   Kindle Direct Publishing
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Indie Digital &amp; Print Publishing
                     <br />
                     Made Easy
@@ -315,7 +317,7 @@ const Foot2 = () => {
                 >
                   Amazon Photos
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Unlimited Photo Storage
                     <br />
                     Free With Prime
@@ -329,7 +331,7 @@ const Foot2 = () => {
                 >
                   Prime Video Direct
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Video Distribution
                     <br />
                     Made Easy
@@ -343,7 +345,7 @@ const Foot2 = () => {
                 >
                   Shopbop
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Designer
                     <br />
                     Fashion Brands
@@ -357,7 +359,7 @@ const Foot2 = () => {
                 >
                   Amazon Warehouse
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Great Deals on
                     <br />
                     Quality Used Products
@@ -373,7 +375,7 @@ const Foot2 = () => {
                 >
                   Whole Foods Market
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     America’s Healthiest
                     <br />
                     Grocery Store
@@ -384,7 +386,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://www.woot.com/">
                   Woot!
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Deals and <br />
                     Shenanigans
                   </span>
@@ -394,7 +396,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://www.zappos.com">
                   Zappos
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Shoes &amp;
                     <br />
                     Clothing
@@ -405,7 +407,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://ring.com">
                   Ring
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Smart Home
                     <br />
                     Security Systems
@@ -416,7 +418,7 @@ const Foot2 = () => {
                 <a className={style.link} href="https://eero.com/">
                   eero WiFi
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Stream 4K Video
                     <br />
                     in Every Room
@@ -430,7 +432,7 @@ const Foot2 = () => {
                 >
                   Blink
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Smart Security
                     <br />
                     for Every Home
@@ -443,7 +445,7 @@ const Foot2 = () => {
                   href="https://shop.ring.com/pages/neighbors-app"
                 >
                   Neighbors App <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Real-Time Crime
                     <br />
                     &amp; Safety Alerts
@@ -459,18 +461,16 @@ const Foot2 = () => {
                 >
                   Amazon Subscription Boxes
                   <br />
-                  <span>Top subscription boxes – right to your door</span>
+                  <span className={style.spanColor}>
+                    Top subscription boxes – right to your door
+                  </span>
                 </a>
               </td>
               <td className={style.col2last}>
-                <a
-                  className={style.link}
-                  href="https://www.pillpack.com"
-                  class="nav_a"
-                >
+                <a className={style.link} href="https://www.pillpack.com">
                   PillPack
                   <br />
-                  <span>Pharmacy Simplified</span>
+                  <span className={style.spanColor}>Pharmacy Simplified</span>
                 </a>
               </td>
               <td className={style.col3last}>
@@ -480,7 +480,7 @@ const Foot2 = () => {
                 >
                   Amazon Renewed
                   <br />
-                  <span>
+                  <span className={style.spanColor}>
                     Like-new products
                     <br />
                     you can trust
@@ -492,22 +492,35 @@ const Foot2 = () => {
         </table>
       </div>
       <div className={style.footerLine}>
-        <ul>
+        <ul className={style.list}>
           <li>
-            <a href="/gp/help/customer/display.html?nodeId=508088&amp;ref_=footer_cou">
+            <a
+              className={style.bottomLink}
+              href="/gp/help/customer/display.html?nodeId=508088&amp;ref_=footer_cou"
+            >
               Conditions of Use
             </a>
           </li>
           <li>
-            <a href="/gp/help/customer/display.html?nodeId=468496&amp;ref_=footer_privacy">
+            <a
+              className={style.bottomLink}
+              href="/gp/help/customer/display.html?nodeId=468496&amp;ref_=footer_privacy"
+            >
               Privacy Notice
             </a>
           </li>
           <li>
-            <a href="/interestbasedads/ref=footer_iba">Interest-Based Ads</a>
+            <a
+              className={style.bottomLink}
+              href="/interestbasedads/ref=footer_iba"
+            >
+              Interest-Based Ads
+            </a>
           </li>
         </ul>
-        <span>© 1996-2022, Amazon.com, Inc. or its affiliates</span>
+        <span className={style.cspan}>
+          © 1996-2022, Amazon.com, Inc. or its affiliates
+        </span>
       </div>
     </div>
   );
