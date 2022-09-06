@@ -60,7 +60,7 @@ const T_shirt_line = () => {
                       <div>
                         <h5 className={styles.tShirt_description}>{tShirtArray[index].description}</h5>
                         <h6 className={styles.starSpan}>{<StarRating/>}</h6>
-                        <h7>{tShirtArray[index].price}</h7>
+                        <h7 className={styles.price}>{tShirtArray[index].price}</h7>
                       </div>
                     </button>
                   </div>
