@@ -198,7 +198,9 @@ const Foot1 = () => {
     <div className={style.container1}>
       {/* Button to go back to the top */}
       <div className={style.btnDiv}>
-        <span className={style.topBtn}>Back to top</span>
+        <span className={style.topBtn} onClick={() => window.scrollTo(0, 0)}>
+          Back to top
+        </span>
       </div>
       {/* Each Set of Links */}
       <div className={style.allLinks}>
@@ -261,15 +263,19 @@ const Foot1 = () => {
           href="https://www.amazon.com/?ref_=footer_logo"
         ></a>
         <div className={style.cont}>
-          <a>
-            <div className={style.globe}></div>
-            <span className={style.lan}></span>
-            <span className={style.arrows}></span>
-          </a>
-          <a className={style.country}>
-            <span className={style.flag}></span>
-            <span className={style.us}></span>
-          </a>
+          <div className={style.wrap}>
+            <a className={style.language}>
+              <div className={style.globe}></div>
+              <span className={style.lan}>English</span>
+              <span className={style.arrows}></span>
+            </a>
+          </div>
+          <div className={style.wrap}>
+            <a className={style.country}>
+              <span className={style.flag}></span>
+              <span className={style.us}>United States</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

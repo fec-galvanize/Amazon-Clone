@@ -18,16 +18,16 @@
     justify-content: center;
 }
 
-.btnDiv {
-   display: flex;
-   width: 100%;
-} 
+.topBtn:hover {
+    cursor: pointer;
+    background-color: #485769;
+}
 
 .allLinks {
     font-size: 14px;
     color: #DDD;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-left: 150px;
     margin-right: 150px;
     height: 480px;
@@ -53,6 +53,8 @@
     padding: 10px;
     justify-content: left;
     margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .links1 {
@@ -85,6 +87,10 @@
 .bottom {
     border-top: 1px solid #3a4553;
     height: 80px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
 }
 
 .img {
@@ -94,4 +100,63 @@
     color: #DDD;
     padding: .6em;
     display: flex;
+    border: 1px solid white;
+    margin-top: 18px;
+}
+
+.language {
+    border: 1px solid #848688;
+    border-radius: 3px;
+    padding: 6px, 18px, 6px, 8px;
+    font-size: 13px;
+    margin-right: 4px;
+    width: 88px;
+    height: 20px;
+    text-align: center;
+    color: #ccc;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.language:hover {
+    color: #ccc;
+}
+
+.country {
+    border: 1px solid #848688;
+    border-radius: 3px;
+    font-size: 13px;
+    text-align: center;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.country:hover {
+    color: #ccc;
+}
+
+.cont {
+    margin-top: 18px;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: row;
+}
+
+.globe {
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
+}
+
+.lan {
+    padding: 0 0.6em;
+    line-height: 18px;
+}
+
+.arrows {
+    width: 12px;
+    height: 12px;
+    border: 1px solid white;
 }
