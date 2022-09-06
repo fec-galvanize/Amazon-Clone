@@ -1,3 +1,90 @@
-.container{
-    display: inline-block;
+.container {
+  font-size: 0.75rem;
+  max-width: 50%;
+  padding-left: 7rem;
+  padding-top: 2rem;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.reviewType{
+    width: 9rem;
+    border-radius: 1rem;
+    padding: .1rem;
+    background: #F0F2F2;
+    box-shadow: 0 2px 5px rgb(15 17 17 / 15%);
+    border: 1px solid rgba(15,17,17,.2);
+}
+.reviewType:focus,
+.reviewType:hover{
+    cursor: pointer;
+    background: #edfdff;
+    outline: 1px solid #38dbf0 !important;
+}
+
+.reviewContainer{
+  border-bottom:1px solid rgba(15,17,17,.2) ;
+  margin-bottom: 1rem;
+}
+.review{
+    margin: 1.5rem 0;
+}
+.profilePic {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.profilePic > img {
+  height: 1.75rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  object-fit: fill;
+}
+
+.subject {
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+.date {
+  margin: 0.5rem 0;
+  color: #565959;
+}
+
+.verified {
+  color: #c45500;
+  font-weight: bold;
+}
+
+.helpful{
+    width: 5rem;
+    padding: 0.5rem 0;
+    border-radius: 0.7rem;
+    border: 1px solid rgba(15,17,17,.2);
+    background-color: transparent;
+    cursor: pointer;
+
+}
+.helpful:hover {
+    background-color: rgba(244,244,244,.4);
+  
+  }
+.pipe{
+  color: #565959;
+  margin: 0 .75rem;
+
+}
+
+.abuse,
+.abuse:hover{
+  color: #565959;
+
+}
+
+.seeAll{
+    font-weight: bold;
+}
+
+.seeAll:hover,
+.subject:hover{
+    text-decoration: underline;
 }

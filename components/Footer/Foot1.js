@@ -263,7 +263,13 @@ const Foot1 = () => {
         <a
           className={style.img}
           href="https://www.amazon.com/?ref_=footer_logo"
-        ></a>
+        >
+          <img
+            className={style.logo}
+            src="https://ljhitide.net/wp-content/uploads/2019/10/Screen-Shot-2019-10-14-at-1.41.07-PM.png"
+            alt="Logo"
+          ></img>
+        </a>
         <div className={style.cont}>
           <div className={style.wrap}>
             <a className={style.language}>
@@ -278,7 +284,11 @@ const Foot1 = () => {
           </div>
           <div className={style.wrap}>
             <a className={style.country}>
-              <span className={style.flag}></span>
+              <img
+                className={style.flag}
+                src="https://media.istockphoto.com/vectors/the-united-states-of-america-flag-vector-illustration-vector-id961747352?k=20&m=961747352&s=612x612&w=0&h=Hje8pMjiIxNZZX0lTZFvUfoZyPmCGcQANK3k0Y3XvZs="
+                alt="Flag"
+              ></img>
               <span className={style.us}>United States</span>
             </a>
           </div>
