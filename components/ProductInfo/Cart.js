@@ -129,10 +129,6 @@ const addToList = () => {
             </div><br></br>
             <a id={style.primetext} href="#">Try Prime and start saving today with Fast, FREE Delivery</a>
 
-        
-
-
-
              <div>
                 <button className={`${style.btnAdd}`} onClick={addToList}>Add to List</button>
              </div>
