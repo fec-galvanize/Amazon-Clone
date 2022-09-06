@@ -1,6 +1,10 @@
 import style from "../../../styles/Middle.module.css";
+import StarRating from "../../StarRating";
+import { useState, useEffect } from "react";
 
 const Title = () => {
+  const [totalRatings] = useState(23);
+
   return (
     <div className={style.title}>
       <div className={style.brand}>
@@ -11,9 +15,9 @@ const Title = () => {
       </div>
       <div className={style.ratings}>
         <div className={style.stars}>
-          <i className={style.starsPic}></i>
+          <StarRating />
         </div>
-        <div className={style.numRatings}>23 ratings</div>
+        <div className={style.numRatings}>{totalRatings} Ratings</div>
       </div>
     </div>
   );

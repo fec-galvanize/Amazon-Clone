@@ -38,6 +38,12 @@
 .free,
 .numRatings {
   color: #007185;
+  cursor: pointer;
+}
+
+.numRatings:hover {
+  color: #e77600;
+  text-decoration: underline;
 }
 
 .merchpic {
