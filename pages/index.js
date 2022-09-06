@@ -7,7 +7,6 @@ import Video from "../components/Video";
 import Questions from "../components/Questions";
 
 export default function Home() {
-
   return (
     <div className={styles.container}>
       <ProductInfo />

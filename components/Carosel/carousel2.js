@@ -13,7 +13,7 @@ const T_shirt_line = () => {
       infinite: true,
       speed: 500,
       slidesToShow: 7,
-      slidesToScroll: 1,
+      slidesToScroll: 7,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />
     };
