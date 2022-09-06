@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
 import StarRating from "../StarRating";
 import style from "../../styles/RevStats.module.css";
+import { updateRating } from "../../redux/features/prodInfo-slice";
+import { useSelector, useDispatch } from "react-redux";
+import popupStyle from "../../styles/Middle.module.css";
 
-const RatingSnapshot = () => {
-  const [totalRatings] = useState(23);
+const RatingSnapshot = ({ popup }) => {
+  const dispatch = useDispatch();
+  const { rating, totalRatings } = useSelector(({ prodInfo }) => {
+    return { rating: prodInfo.rating, totalRatings: prodInfo.totalRatings };
+  });
+
   const [ratingDistribution] = useState([
     { star: 5, count: 18 },
     { star: 4, count: 3 },
@@ -11,24 +18,12 @@ const RatingSnapshot = () => {
     { star: 2, count: 0 },
     { star: 1, count: 0 },
   ]);
-  const [rating, setRating] = useState(0);
-
-  const findRating = () =>
-    setRating(
-      ratingDistribution.reduce((prev, current, i) => {
-        let prior = i === 1 ? prev.count * prev.star : prev;
-        let present = current.count * current.star;
-        return i === ratingDistribution.length - 1
-          ? Math.round(((prior + present) / totalRatings) * 10) / 10
-          : prior + present;
-      })
-    );
 
   useEffect(() => {
-    findRating();
+    dispatch(updateRating({ ratingDistribution }));
   }, [totalRatings, ratingDistribution]);
   return (
-    <>
+    <div className={popup && popupStyle.ratingsnap}>
       <div>
         <StarRating rating={rating} /> <span>{rating} out of 5</span>
       </div>
@@ -60,7 +55,7 @@ const RatingSnapshot = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 
