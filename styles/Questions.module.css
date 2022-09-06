@@ -1,4 +1,11 @@
-
+.mainContainer {
+    margin-top: 25px;
+    padding-top: 2%;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
 
 .customer {
     font-weight: bold;
@@ -21,7 +28,7 @@
     word-wrap: break-word;
 }
 
-.searchBox {
+#searchBox {
     background-color: #fff;
     height: 31px;
     padding: 3px 7px;
@@ -34,10 +41,12 @@
     border-radius: 3px;
     box-shadow: 0 1px 2px rgb(15 17 17 / 15%) inset;
     outline: 0;
-    background-image: url(https://m.media-amazon.com/images/S/sash/McBZv0ZvnbehkIx.png);
-    -webkit-background-size: 400px 900px;
-    background-size: 400px 900px;
-    background-repeat: no-repeat;
+}
+
+#search {
+   transform: translate(8px, -23px);
+   height: 12px;
+   width: 12px;
 }
 
 .questionExamples {

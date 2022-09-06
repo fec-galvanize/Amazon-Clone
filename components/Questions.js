@@ -1,5 +1,6 @@
 import React from "react";
 import style from "../styles/Questions.module.css";
+import { FaSearch } from "react-icons/fa";
 
 const Questions = () => {
 
@@ -13,7 +14,8 @@ return (
            
         </div>
         <div className={style.search}>
-         <input typeof={style.searchBox} placeholder="Have a question? Search for answers"></input>
+         <input typeof='text' id={style.searchBox} placeholder="Have a question? Search for answers"/>
+            <FaSearch id={style.search} />
          </div>
          <div className={style.questionExamples}>
             <div className={style.typicalQuestion}>Typical questions asked about products:</div>

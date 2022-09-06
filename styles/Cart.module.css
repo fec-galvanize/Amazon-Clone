@@ -7,6 +7,7 @@
     width: auto;
     height: fit-content;
     margin-left: 10px;
+    flex-direction: column;
 }
 
 #pinPoint {
@@ -137,10 +138,10 @@
     font-size: 13px;
     padding: 0 10px 0 11px;
     line-height: 25px;
-    margin-top: 20px;
+    margin-top: 15px;
     cursor: pointer;
-    
 }
+.btnAdd:hover {background-color: #c7c9ccd9;}
 
 .shipsold {
     display: grid;
@@ -186,9 +187,11 @@
 
 #primetext {
     font-size: 14px;
-    padding-bottom: 10px;
-    margin-bottom: 3px;
-    
+    padding-bottom: 15px;
+    margin-bottom: 1px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom: 1px solid #e7e7e7;
 }
 
 #icon {
