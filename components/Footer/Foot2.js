@@ -8,7 +8,7 @@ const Foot2 = () => {
         <table className={style.table}>
           <tbody>
             <tr className={style.row}>
-              <td>
+              <td className={style.col1}>
                 <a
                   className={style.link}
                   href="https://music.amazon.com?ref=dm_aff_amz_com"
@@ -22,7 +22,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col2}>
                 <a
                   className={style.link}
                   href="https://advertising.amazon.com/?ref=footer_advtsing_amzn_com"
@@ -36,7 +36,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col3}>
                 <a
                   className={style.link}
                   href="https://advertising.amazon.com/?ref=footer_advtsing_amzn_com"
@@ -50,7 +50,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col4}>
                 <a className={style.link} href="https://www.6pm.com">
                   6pm
                   <br />
@@ -61,7 +61,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col5}>
                 <a className={style.link} href="https://www.abebooks.com">
                   AbeBooks
                   <br />
@@ -72,7 +72,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col6}>
                 <a className={style.link} href="https://www.acx.com/">
                   ACX <br />
                   <span>
@@ -82,7 +82,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col7}>
                 <a className={style.link} href="https://www.alexa.com">
                   Alexa
                   <br />
@@ -95,7 +95,7 @@ const Foot2 = () => {
               </td>
             </tr>
             <tr className={style.row}>
-              <td>
+              <td className={style.col1}>
                 <a
                   className={style.link}
                   href="https://sell.amazon.com/?ld=AZUSSOA-footer-aff&amp;ref_=footer_sell"
@@ -105,7 +105,7 @@ const Foot2 = () => {
                   <span>Start a Selling Account</span>
                 </a>
               </td>
-              <td>
+              <td className={style.col2}>
                 <a
                   className={style.link}
                   href="/business?ref_=footer_retail_b2b"
@@ -119,7 +119,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col3}>
                 <a
                   className={style.link}
                   href="/alm/storefront?almBrandId=QW1hem9uIEZyZXNo&amp;ref_=footer_aff_fresh"
@@ -133,7 +133,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col4}>
                 <a
                   className={style.link}
                   href="/gp/browse.html?node=230659011&amp;ref_=footer_amazonglobal"
@@ -147,7 +147,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col5}>
                 <a className={style.link} href="/services?ref_=footer_services">
                   Home Services
                   <br />
@@ -158,7 +158,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col6}>
                 <a
                   className={style.link}
                   href="https://ignite.amazon.com/?ref=amazon_footer_ignite"
@@ -174,7 +174,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col7}>
                 <a
                   className={style.link}
                   href="https://aws.amazon.com/what-is-cloud-computing/?sc_channel=EL&amp;sc_campaign=amazonfooter"
@@ -190,7 +190,7 @@ const Foot2 = () => {
               </td>
             </tr>
             <tr className={style.row}>
-              <td>
+              <td className={style.col1}>
                 <a className={style.link} href="https://www.audible.com">
                   Audible
                   <br />
@@ -201,7 +201,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col2}>
                 <a className={style.link} href="https://www.bookdepository.com">
                   Book Depository
                   <br />
@@ -212,7 +212,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col3}>
                 <a
                   className={style.link}
                   href="https://www.boxofficemojo.com/?ref_=amzn_nav_ftr"
@@ -226,7 +226,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col4}>
                 <a className={style.link} href="https://www.comixology.com">
                   ComiXology
                   <br />
@@ -237,7 +237,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col5}>
                 <a className={style.link} href="https://www.dpreview.com">
                   DPReview
                   <br />
@@ -248,7 +248,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col6}>
                 <a className={style.link} href="https://www.fabric.com">
                   Fabric
                   <br />
@@ -259,7 +259,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col7}>
                 <a className={style.link} href="https://www.goodreads.com">
                   Goodreads
                   <br />
@@ -272,7 +272,7 @@ const Foot2 = () => {
               </td>
             </tr>
             <tr className={style.row}>
-              <td>
+              <td className={style.col1}>
                 <a className={style.link} href="https://www.imdb.com">
                   IMDb
                   <br />
@@ -283,7 +283,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col2}>
                 <a
                   className={style.link}
                   href="https://pro.imdb.com?ref_=amzn_nav_ftr"
@@ -297,7 +297,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col3}>
                 <a className={style.link} href="https://kdp.amazon.com">
                   Kindle Direct Publishing
                   <br />
@@ -308,7 +308,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col4}>
                 <a
                   className={style.link}
                   href="/gp/browse.html?node=13234696011&amp;ref_=_gno_p_foot"
@@ -322,7 +322,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col5}>
                 <a
                   className={style.link}
                   href="https://videodirect.amazon.com/home/landing"
@@ -336,7 +336,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col6}>
                 <a
                   className={style.link}
                   href="https://www.shopbop.com/welcome"
@@ -350,7 +350,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col7}>
                 <a
                   className={style.link}
                   href="/gp/browse.html?node=10158976011&amp;ref_=footer_wrhsdls"
@@ -366,7 +366,7 @@ const Foot2 = () => {
               </td>
             </tr>
             <tr className={style.row}>
-              <td>
+              <td className={style.col1}>
                 <a
                   className={style.link}
                   href="https://www.wholefoodsmarket.com"
@@ -380,7 +380,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col2}>
                 <a className={style.link} href="https://www.woot.com/">
                   Woot!
                   <br />
@@ -390,7 +390,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col3}>
                 <a className={style.link} href="https://www.zappos.com">
                   Zappos
                   <br />
@@ -401,7 +401,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col4}>
                 <a className={style.link} href="https://ring.com">
                   Ring
                   <br />
@@ -412,7 +412,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col5}>
                 <a className={style.link} href="https://eero.com/">
                   eero WiFi
                   <br />
@@ -423,7 +423,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col6}>
                 <a
                   className={style.link}
                   href="https://blinkforhome.com/?ref=nav_footer"
@@ -437,7 +437,7 @@ const Foot2 = () => {
                   </span>
                 </a>
               </td>
-              <td>
+              <td className={style.col7}>
                 <a
                   className={style.link}
                   href="https://shop.ring.com/pages/neighbors-app"
@@ -452,7 +452,7 @@ const Foot2 = () => {
               </td>
             </tr>
             <tr className={style.lastRow}>
-              <td>
+              <td className={style.col1last}>
                 <a
                   className={style.link}
                   href="/gp/browse.html?node=14498690011&amp;ref_=amzn_nav_ftr_swa"
@@ -462,7 +462,7 @@ const Foot2 = () => {
                   <span>Top subscription boxes – right to your door</span>
                 </a>
               </td>
-              <td>
+              <td className={style.col2last}>
                 <a
                   className={style.link}
                   href="https://www.pillpack.com"
@@ -473,7 +473,7 @@ const Foot2 = () => {
                   <span>Pharmacy Simplified</span>
                 </a>
               </td>
-              <td>
+              <td className={style.col3last}>
                 <a
                   className={style.link}
                   href="/gp/browse.html?node=12653393011&amp;ref_=footer_usrenew"
