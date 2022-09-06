@@ -43,7 +43,7 @@ const Stats = () => {
           return (
             <span key={star}>
               <a
-                href="#"
+                href="https://www.amazon.com/product-reviews/B08QV53WTG/ref=acr_dp_hist_5?ie=UTF8&filterByStar=five_star&reviewerType=all_reviews#reviews-filter-bar"
                 title={`${star} stars represents ${percent} of rating`}
                 className={`${style.meterContainer} ${
                   count > 0 ? style.hoverable : style.zero
@@ -108,7 +108,7 @@ const Description = () => {
             things like how recent a review is and if the reviewer bought the
             item on Amazon. It also analyzed reviews to verify trustworthiness.
           </p>
-          <a href="#">Learn more how customers reviews work on Amazon</a>
+          <a href="https://www.amazon.com/gp/help/customer/display.html/ref=cm_cr_dp_d_omni_lm_btn?nodeId=G8UYX7LALQC8V9KA">Learn more how customers reviews work on Amazon</a>
         </div>
       )}
     </div>
