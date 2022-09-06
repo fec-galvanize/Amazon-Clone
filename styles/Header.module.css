@@ -69,7 +69,7 @@
 }
 
 .cats{
-    color:white;
+    
     display:flex;
     flex-direction: row;
     list-style: none;
@@ -77,12 +77,33 @@
 }
 
 .li{
+    color:white;
     justify-content:baseline;
     margin-top:2px;
     margin-bottom:2px;
     margin-left:20px;
 }
 
+.lif{
+    justify-content:center;
+    margin-top:2px;
+    margin-bottom:2px;
+    margin-left:20px;
+    color:black;
+    font-size:smaller;
+}
+
 .afash{
+    display:flex;
+    flex-direction: row;
     background-color: #fff;
+    color:black;
+}
+
+.catsf{
+    color:black;
+    display:flex;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 4px;
 }
