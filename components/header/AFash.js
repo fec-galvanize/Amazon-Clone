@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import style from "../../styles/Header.module.css";
 
 export default function AFash() {
@@ -6,7 +6,7 @@ export default function AFash() {
     <div className={`${style.afash}`}>
       <div className="fashcats">
         <ul className={`${style.catsf}`}>
-          AMAZON FASHION
+          <strong>AMAZON FASHION</strong>
           <li className={`${style.lif}`}>Women</li>
           <li className={`${style.lif}`}>Men</li>
           <li className={`${style.lif}`}>Kids</li>
@@ -14,6 +14,7 @@ export default function AFash() {
           <li className={`${style.lif}`}>Sales and Deals</li>
           <li className={`${style.lif}`}>New Arrivals</li>
           <li className={`${style.lif}`}>Our Brands</li>
+          <li className={`${style.lif}`}>Primo try before you buy</li>
         </ul>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { FaSearch } from "react-icons/fa";
 import style from "../../styles/Header.module.css";
 
 export default function Top() {
@@ -9,7 +9,7 @@ export default function Top() {
       <form className={`${style.form}`}>
         <input className={`${style.input}`} type="text" />
         <button className={`${style.sbtn}`} type="submit">
-          <i className={`${style.sbm}`}></i>
+          <FaSearch />
         </button>
       </form>
     </div>
@@ -17,4 +17,3 @@ export default function Top() {
 }
 
 //sbtn=> submit button
-//sbm=>submit button magnifying glass
