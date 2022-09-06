@@ -21,7 +21,7 @@ const TopReviews = () => {
   ];
   return (
     <div className={style.container}>
-      <select name="reviewType" id="reviewType">
+      <select name="reviewType" className={style.reviewType}>
         <option value="top_reviews">Top Reviews</option>
         <option value="most_recent">Most Recent</option>
       </select>
@@ -54,7 +54,7 @@ const TopReviews = () => {
         )}
         <Review />
       </div>
-      <a  className={style.seeAll} >See all reviews {'>'}</a>
+      <a className={style.seeAll}>See all reviews {">"}</a>
     </div>
   );
 };
@@ -77,8 +77,10 @@ const Review = ({
         <img src={profilePicture} alt="Profile Picture" />
         <span>{customerName}</span>
       </div>
-      <StarRating rating={rating} size={"1rem"} />
-      <span className={style.subject}>{subject}</span>
+      <a href="">
+        <StarRating rating={rating} size={"1rem"} />
+        <span className={style.subject}>{subject}</span>
+      </a>
       <p className={style.date}>
         Reviewed in the {country} on {date}
       </p>
@@ -91,9 +93,7 @@ const Review = ({
           <button className={style.helpful}>Helpful</button>
         </a>
         <span className={style.pipe}>|</span>
-        <a className={style.abuse}>
-          Report Abuse
-        </a>
+        <a className={style.abuse}>Report Abuse</a>
       </div>
     </div>
   );
