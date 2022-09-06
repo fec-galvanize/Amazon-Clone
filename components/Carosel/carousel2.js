@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -14,11 +14,11 @@ const getRandomInt = (max) => {
   return Math.floor(Math.random() * max);
 };
 
-const Page = () => {
+// const Page = () => {
 
-  const [currentPage, setCurrentPage] = useState(1)
+//   const [currentPage, setCurrentPage] = useState(1)
 
-};
+// };
 
 const T_shirt_line = () => {
 
