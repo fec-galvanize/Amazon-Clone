@@ -44,6 +44,7 @@
   margin-left: 1rem;
   font-weight: bold;
 }
+
 .date {
   margin: 0.5rem 0;
   color: #565959;
@@ -83,6 +84,7 @@
     font-weight: bold;
 }
 
-.seeAll:hover{
+.seeAll:hover,
+.subject:hover{
     text-decoration: underline;
 }

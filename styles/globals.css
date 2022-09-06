@@ -12,7 +12,7 @@ a {
 }
 
 a:hover{
-  color: orange;
+  color: #c45500;
   cursor: pointer;
 }
 * {
