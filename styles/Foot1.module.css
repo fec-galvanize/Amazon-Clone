@@ -147,16 +147,21 @@
 .globe {
     width: 15px;
     height: 15px;
-    border: 1px solid white;
+    display: flex;
+    justify-content: center;
 }
 
 .lan {
     padding: 0 0.6em;
     line-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .arrows {
     width: 12px;
     height: 12px;
-    border: 1px solid white;
+    display: flex;
+    justify-content: center;
 }

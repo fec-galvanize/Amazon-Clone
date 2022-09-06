@@ -1,5 +1,7 @@
 import React from "react";
 import style from "../../styles/Foot1.module.css";
+import { AiOutlineGlobal } from "react-icons/ai";
+import { FaSort } from "react-icons/fa";
 
 const getToKnowUs = [
   {
@@ -265,9 +267,13 @@ const Foot1 = () => {
         <div className={style.cont}>
           <div className={style.wrap}>
             <a className={style.language}>
-              <div className={style.globe}></div>
+              <div>
+                <AiOutlineGlobal className={style.globe} />
+              </div>
               <span className={style.lan}>English</span>
-              <span className={style.arrows}></span>
+              <span>
+                <FaSort className={style.arrows} />
+              </span>
             </a>
           </div>
           <div className={style.wrap}>
