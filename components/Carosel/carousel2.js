@@ -13,7 +13,7 @@ const T_shirt_line = () => {
       infinite: true,
       speed: 500,
       slidesToShow: 7,
-      slidesToScroll: 1,
+      slidesToScroll: 7,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />
     };
@@ -46,7 +46,7 @@ const T_shirt_line = () => {
         <footer>
         <div className={styles.App}>
           <div className={styles.title_pageNumber}>
-            <h3 className={styles.carousel_header}>Customers who viewed this item aslo viewed</h3>
+            <h3 className={styles.carousel_header}>Customers who viewed this item also viewed</h3>
           </div>
           {/*use .length to see how many pages, index to what page is being rendered */}
           <div className={styles.slide_container}>
