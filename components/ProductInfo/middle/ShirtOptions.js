@@ -5,12 +5,13 @@ import {
   changeCurrentImage,
   changeVisibleImage,
   updImageBtnArr,
+  updateSize,
 } from "../../../redux/features/prodInfo-slice";
 
 const ShirtOptions = () => {
   const [gender, setGender] = useState("male");
   const [color, setColor] = useState("");
-  const [see, setSee] = useState(false);
+  const [see, setSee] = useState(true);
 
   const dispatch = useDispatch();
   const { currentImage, imageDisplayBtnArr } = useSelector(({ prodInfo }) => ({
@@ -25,11 +26,16 @@ const ShirtOptions = () => {
   const mouseLeave = () => {
     dispatch(changeVisibleImage(currentImage.url));
   };
+
+
+
+
   const mouseClick = (newImage) => {
     currentImage.isProd && dispatch(changeVisibleImage(newImage));
     currentImage.isProd && dispatch(changeCurrentImage({ url: newImage }));
     dispatch(updImageBtnArr({ index: 0, url: newImage }));
   };
+
   const shirtColors = [
     {
       color: "Black",
@@ -153,16 +159,16 @@ const ShirtOptions = () => {
             <label className={style.sizeLabel}>Size:</label>
           </div>
           <span className={style.dropdownContainer}>
-            <select className={style.sizeDropDown}>
-              <option className={style.sizeOption} value="-1">
+            <select className={style.sizeDropDown} onChange={(e) => dispatch(updateSize(e.target.value))}>
+              <option className={style.sizeOption}  value={false}>
                 Select
               </option>
-              <option className={style.sizeOption}>Small</option>
-              <option className={style.sizeOption}>Medium</option>
-              <option className={style.sizeOption}>Large</option>
-              <option className={style.sizeOption}>X-Large</option>
-              <option className={style.sizeOption}>XX-Large</option>
-              <option className={style.sizeOption}>3X-Large</option>
+              <option className={style.sizeOption} value={true}>Small</option>
+              <option className={style.sizeOption} value={true}>Medium</option>
+              <option className={style.sizeOption} value={true}>Large</option>
+              <option className={style.sizeOption} value={true}>X-Large</option>
+              <option className={style.sizeOption} value={true}>XX-Large</option>
+              <option className={style.sizeOption} value={true}>3X-Large</option>
             </select>
           </span>
         </div>
@@ -172,3 +178,4 @@ const ShirtOptions = () => {
 };
 
 export default ShirtOptions;
+

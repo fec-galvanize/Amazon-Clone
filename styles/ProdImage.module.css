@@ -20,6 +20,8 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.5rem;
   position: relative;
+  width: max-content;
+  height: auto;
 }
 .btnDisplay {
   display: flex;
