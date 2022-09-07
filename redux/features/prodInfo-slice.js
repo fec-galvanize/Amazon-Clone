@@ -15,7 +15,6 @@ const initialState = {
   ],
   rating: 0,
   totalRatings: 23,
-  size: false,
 };
 
 export const prodInfoSlice = createSlice({
@@ -23,45 +22,41 @@ export const prodInfoSlice = createSlice({
   initialState,
   reducers: {
     // Add functions as keys here to update state abopve the firat parameter is the state object, the second parameter is the action object, for our purposes we only need the payload key, you can write as regular mutating js as it does the copying for us in the background
-    changeVisibleImage: ({visibleImage}, { payload }) => {
-      visibleImage = payload;
+    changeVisibleImage: (state, { payload }) => {
+      state.visibleImage = payload;
     },
 
-    changeCurrentImage: ({currentImage}, { payload }) => {
+    changeCurrentImage: (state, { payload }) => {
       if (typeof payload.isProd !== "boolean") {
-        currentImage.url = payload.url;
+        state.currentImage.url = payload.url;
       } else if (!payload.url) {
-        currentImage.isProd = payload.isProd;
+        state.currentImage.isProd = payload.isProd;
       } else if (typeof payload.isProd === "boolean" && payload.url) {
-        currentImage = payload;
+        state.currentImage = payload;
       }
     },
 
-    updImageBtnArr: ({imageBtnArr}, { payload }) => {
+    updImageBtnArr: (state, { payload }) => {
       if (typeof payload.index === "number") {
-        imageBtnArr[payload.index] = payload.url;
+        state.imageBtnArr[payload.index] = payload.url;
       } else {
         payload.imageBtnArr = payload;
       }
     },
 
-    updateRating: ({rating,totalRatings}, { payload:{ratingDistribution} }) => {
+    updateRating: (state, { payload:{ratingDistribution} }) => {
       // Use reduce to get the average of all ratings
-      rating = ratingDistribution.reduce((prev, current, i) => {
+      state.rating = ratingDistribution.reduce((prev, current, i) => {
         // if we are on the first index then prev is equal to the count * the star, otherwise it is equal to the regular prev, which is the same as count * stars
         let prior = i === 1 ? prev.count * prev.star : prev;
         // present is the current count * the current stars,
         let present = current.count * current.star;
         // when on the last index get the average of all the ratings and make it so it round to one decimal place
         return i === ratingDistribution.length - 1
-          ? Math.round(((prior + present) / totalRatings) * 10) / 10
+          ? Math.round(((prior + present) / state.totalRatings) * 10) / 10
           // other wise keep adding the prior product with the current product resulting in a new value of prev
           : prior + present;
       });
-    },
-
-    setSizeBoolean: ({ size }, { payload }) => {
-      if (typeof payload === "boolean") size = payload;
     },
   },
 });
@@ -71,7 +66,6 @@ export const {
   changeCurrentImage,
   changeVisibleImage,
   updImageBtnArr,
-  updateRating,
-  setSizeBoolean
+  updateRating
 } = prodInfoSlice.actions;
 export default prodInfoSlice.reducer;
