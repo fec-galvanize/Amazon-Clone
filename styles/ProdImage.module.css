@@ -15,8 +15,8 @@
   object-fit: fill;
 }
 .display {
-  height: min(100%, 23rem);
-  width: min(100%, 20rem);
+  height: min(23rem, 23rem);
+  width: min(20rem, 20rem);
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.5rem;
   position: relative;
