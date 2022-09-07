@@ -50,7 +50,7 @@ export default function AFash() {
           <strong>AMAZON FASHION</strong>
           {fashCat.map((e) => {
             return (
-              <li className={`${style.lif}`}>
+              <li key={e.title} className={`${style.lif}`}>
                 <a className={`${style.lif}`} href={e.ulink}>
                   {e.title}
                 </a>
