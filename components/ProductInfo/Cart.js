@@ -1,10 +1,45 @@
 import React from "react";
 import style from "../../styles/Cart.module.css";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
 
 
+const { size } = useSelector(({prodInfo: {size}}) => ({
+        size
+}));
+
+
+const addToCart = () => {
+
+}
+
+
     return (
+<div className={style.mainCart}>
+           { !size ? (
+             <div className={style.smallContainer}>
+                        <div className={style.addTo}>
+                            <span className={style.selectSize}>To buy, select <b> Size </b></span>
+                        </div>
+                        <div>
+                            <button id={style.btnAddCart}>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div className={style.emptyDiv}></div>
+                        <div>
+                        <a href="https://www.amazon.com/cart/add-to-cart/ref=dp_start-bbf_1_glance">
+                            <button className={style.btnListAdd}>
+                                Add to List
+                            </button>
+                            </a>
+                        </div>
+
+            </div>
+
+            ) : (
+
     <div className={`${style.container}`}> 
         <div>
             <div className="pricing">
@@ -77,7 +112,7 @@ const Cart = () => {
              <div>
               <span>
                 <a href="https://www.amazon.com/cart/add-to-cart/ref=dp_start-bbf_1_glance">
-                 <button className="button" id={`${style.btnCart}`} title="Add to Shopping Cart">Add to Cart</button> 
+                 <button className="button" id={`${style.btnCart}`} title="Add to Shopping Cart" onClick={addToCart}>Add to Cart</button> 
                  </a>
               </span>
              </div>
@@ -88,10 +123,10 @@ const Cart = () => {
                  </a>
             </div><br></br>
             
-            <div id={style.secure}>
+            <div>
              <div> 
-                <img src="https://images-na.ssl-images-amazon.com/images/G/01/x-locale/checkout/truespc/secured-ssl._CB485936932_.png" height="15px"></img>
-                <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201909010&ref_=buybox-secureTransaction-learnMore-web"> 
+                <img src="https://images-na.ssl-images-amazon.com/images/G/01/x-locale/checkout/truespc/secured-ssl._CB485936932_.png" height="15px" ></img>
+                <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201909010&ref_=buybox-secureTransaction-learnMore-web" id={style.secure}> 
                 Secure transaction
                 </a>
             </div>
@@ -132,13 +167,13 @@ const Cart = () => {
                 <a href="https://www.amazon.com/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Faw%2Fd%2FB08QV53WTG&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&">
                 <button className={`${style.btnAdd}`}>Add to List</button>
                 </a>
-             </div>
-             
-            
+             </div> 
         </div>
-        
-    
 
+
+
+    )}
+        </div>
     )
   };
   
