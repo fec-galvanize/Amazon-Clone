@@ -13,6 +13,7 @@ import {
 
 import style from "../../styles/ProdImage.module.css";
 const ProdImage = () => {
+  // Grabs state form redux
   const { displayImg, imgArray } = useSelector(({ prodInfo }) => ({
     displayImg: prodInfo.visibleImage,
     imgArray: prodInfo.imageBtnArr,
@@ -21,6 +22,7 @@ const ProdImage = () => {
   return (
     <div className={`${style.container}`}>
       <div className={`${style.btnDisplay}`}>
+        {/* Maps through ImgArray fro redux state and creates btns, that preview the display image */}
         {imgArray.map((image, i) => {
           return <ImgBtn key={i} image={image} imgArray={imgArray} />;
         })}
@@ -39,7 +41,9 @@ const ProdImage = () => {
 
 export default ProdImage;
 
+// Component For each Image Display Preview Button
 const ImgBtn = ({ image }) => {
+  // Gets redux state and declares dispatch function, to be used later when updating redux state
   const dispatch = useDispatch();
   const { imgArray, currentImage } = useSelector(({ prodInfo }) => ({
     imgArray: prodInfo.imageBtnArr,
@@ -50,8 +54,10 @@ const ImgBtn = ({ image }) => {
     <button
       className={`${style.btn} ${currentImage.url === image && style.active}`}
       onMouseEnter={() => {
+        // On MouseEnter changes the main display Image to its respective preview image
         dispatch(changeVisibleImage(image));
         dispatch(
+          // Since the first button is the actual product nad the second button isnt if the current display image is not the same as the first image button then set isProduct to false
           changeCurrentImage({ url: image, isProd: image !== imgArray[1] })
         );
       }}
@@ -66,6 +72,7 @@ const ShareBtn = () => {
   const [linksDisplay, setLinksDisplay] = useState({ display: "none" });
   const copyUrl = useSelector(({ prodInfo }) => prodInfo.pageUrl);
   const copyLink = () => {
+    // Onclick of the then copylink button, copy the current page url to the users clipboard
     navigator.clipboard
       .writeText(copyUrl)
       .then(() => setCopyText("Link Copied!"))
@@ -85,6 +92,7 @@ const ShareBtn = () => {
     }, 500);
   return (
     <>
+    {/* Beginning of pop up share link display */}
       <div className={`${style.linksDisplay}`} style={linksDisplay}>
         <a
           href={href.email}
@@ -130,6 +138,8 @@ const ShareBtn = () => {
           <span>{copyText}</span>
         </a>
       </div>
+    {/* End of pop up share link display */}
+
       <button
         aria-label="share"
         title="Share"

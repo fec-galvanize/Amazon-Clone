@@ -14,9 +14,9 @@ const ShirtOptions = () => {
   const [see, setSee] = useState(true);
 
   const dispatch = useDispatch();
-  const { currentImage, imageDisplayBtnArr } = useSelector(({ prodInfo }) => ({
-    currentImage: prodInfo.currentImage,
-    imageDisplayBtnArr: prodInfo.imageBtnArr,
+  const { currentImage, imageDisplayBtnArr } = useSelector(({ prodInfo:{currentImage, imageBtnArr} }) => ({
+    currentImage,
+    imageDisplayBtnArr:imageBtnArr,
   }));
 
   const mouseEnter = (newImage) => {
