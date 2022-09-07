@@ -27,9 +27,6 @@ const ShirtOptions = () => {
     dispatch(changeVisibleImage(currentImage.url));
   };
 
-
-
-
   const mouseClick = (newImage) => {
     currentImage.isProd && dispatch(changeVisibleImage(newImage));
     currentImage.isProd && dispatch(changeCurrentImage({ url: newImage }));
@@ -159,16 +156,14 @@ const ShirtOptions = () => {
             <label className={style.sizeLabel}>Size:</label>
           </div>
           <span className={style.dropdownContainer}>
-            <select className={style.sizeDropDown} onChange={(e) => dispatch(updateSize(e.target.value))}>
-              <option className={style.sizeOption}  value={false}>
-                Select
-              </option>
-              <option className={style.sizeOption} value={true}>Small</option>
-              <option className={style.sizeOption} value={true}>Medium</option>
-              <option className={style.sizeOption} value={true}>Large</option>
-              <option className={style.sizeOption} value={true}>X-Large</option>
-              <option className={style.sizeOption} value={true}>XX-Large</option>
-              <option className={style.sizeOption} value={true}>3X-Large</option>
+            <select className={style.sizeDropDown}>
+              <option className={style.sizeOption}>Select</option>
+              <option className={style.sizeOption}>Small</option>
+              <option className={style.sizeOption}>Medium</option>
+              <option className={style.sizeOption}>Large</option>
+              <option className={style.sizeOption}>X-Large</option>
+              <option className={style.sizeOption}>XX-Large</option>
+              <option className={style.sizeOption}>3X-Large</option>
             </select>
           </span>
         </div>
@@ -178,4 +173,3 @@ const ShirtOptions = () => {
 };
 
 export default ShirtOptions;
-
