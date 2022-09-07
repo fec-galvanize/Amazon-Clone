@@ -3,6 +3,7 @@ import StarRating from "../../StarRating";
 import { useSelector } from "react-redux";
 import RatingSnapshot from "../../Reviews/RatingSnapshot";
 import { useState } from "react";
+import { BsChevronDown } from "react-icons/bs";
 
 const Title = () => {
   const { rating, totalRatings } = useSelector(({ prodInfo }) => {
@@ -31,13 +32,25 @@ const Title = () => {
               <div className={style.popupDiv}>
                 <RatingSnapshot popup={true} />
                 <div>
-                  <a className={style.reviews}>
+                  <a
+                    className={style.reviews}
+                    onClick={() =>
+                      window.scrollTo({
+                        left: 0,
+                        top: 2300,
+                        behavior: "smooth",
+                      })
+                    }
+                  >
                     See All Customer Reviews {">"}
                   </a>
                 </div>
               </div>
             </div>
           )}
+        </div>
+        <div className={style.chevy}>
+          <BsChevronDown />
         </div>
         <div className={style.numRatings}>{totalRatings} Ratings</div>
       </div>
