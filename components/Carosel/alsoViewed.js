@@ -6,13 +6,7 @@ import styles from "../../styles/caoursel2.module.css";
 import tshirts from "./tShirtData";
 import StarRating from "../StarRating";
 
-// const Page = () => {
-
-//   const [currentPage, setCurrentPage] = useState(1)
-
-// };
-
-const T_shirt_line = () => {
+const Alsoviewed = () => {
   const settings = {
     dots: false,
     infinite: true,
@@ -80,7 +74,7 @@ const T_shirt_line = () => {
                           <h6 className={styles.starSpan}>
                             {<StarRating rating={rating} suppressHydrationWarning />}
                           </h6>
-                          <p className={styles.rating} suppressHydrationWarning>
+                          <p className={styles.reviews} suppressHydrationWarning>
                             {totalReviews}
                           </p>
                         </div>
@@ -106,4 +100,4 @@ const T_shirt_line = () => {
   );
 };
 
-export default T_shirt_line;
+export default Alsoviewed;
