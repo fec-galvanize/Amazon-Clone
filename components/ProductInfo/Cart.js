@@ -88,10 +88,10 @@ const Cart = () => {
                  </a>
             </div><br></br>
             
-            <div id={style.secure}>
+            <div>
              <div> 
-                <img src="https://images-na.ssl-images-amazon.com/images/G/01/x-locale/checkout/truespc/secured-ssl._CB485936932_.png" height="15px"></img>
-                <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201909010&ref_=buybox-secureTransaction-learnMore-web"> 
+                <img src="https://images-na.ssl-images-amazon.com/images/G/01/x-locale/checkout/truespc/secured-ssl._CB485936932_.png" height="15px" ></img>
+                <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201909010&ref_=buybox-secureTransaction-learnMore-web" id={style.secure}> 
                 Secure transaction
                 </a>
             </div>

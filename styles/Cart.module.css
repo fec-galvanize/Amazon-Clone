@@ -6,8 +6,8 @@
     font-family: "Amazon Ember", Arial, sans-serif;
     width: auto;
     height: fit-content;
-    margin-left: 10px;
     flex-direction: column;
+    position: relative;
 }
 
 #pinPoint {
@@ -63,8 +63,11 @@
     font-size: 12px;
 }
 
+
+
 #secure {
     font-size: 14px;
+    padding-left: 15px;
 }
 
 .quantity {
