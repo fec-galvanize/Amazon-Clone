@@ -75,7 +75,7 @@ export default {
                 "id":"11",
                 "img":"https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/81fUpXBkSzL._AC_UX679_.jpg",
                 "description":"Women Funny Saying T Shirt Summer Rock Lover Shirts If You Ain't Crocin You Aint Rockin Short Sleeve Tee Top",
-                "price": "$8.99-$9.99",
+                "price": "$8.99 - $9.99",
                 "route":"https://www.amazon.com/Crocin-Rockin-Vintage-Letter-Graphic/dp/B098K4TWPK/ref=sr_1_1?crid=26BTIIKL0CRN1&keywords=womens+funny+saying+tshirt+summer+rock+lover&qid=1662498855&sprefix=womens+funny+sayint+tshirt+summer+rock+lover%2Caps%2C101&sr=8-1"
             },
             {
