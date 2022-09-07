@@ -4,11 +4,13 @@ import { FaSearch } from "react-icons/fa";
 import { BiCart } from "react-icons/bi";
 import { IoLocationOutline } from "react-icons/io5";
 import style from "../../styles/Header.module.css";
+import { useSelector } from "react-redux";
 
 export default function Top() {
   //useState to loggedin true, loggedin false
   const [loggedIn, setLoggedIn] = useState(false);
-  const cartCount = 0;
+  const cartCount = useSelector(({ prodInfo: { cartCount } }) => cartCount);
+
   return (
     <div className={`${style.search}`}>
       <div className={`${style.logo}`}>
