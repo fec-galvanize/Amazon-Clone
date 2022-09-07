@@ -10,6 +10,19 @@
     position: relative;
 }
 
+.smallContainer {
+    display: block;
+    border-radius: 8px;
+    background-color: #fff;
+    border-radius: 8px;
+    position: relative;
+    padding: 14px 18px;
+    border: 1px #D5D9D9 solid;
+    box-sizing: border-box;
+    min-width: 235px;
+    height: 150px;
+}
+
 .addTo {
     display: flex;
     justify-content: center;

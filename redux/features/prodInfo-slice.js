@@ -55,11 +55,7 @@ export const prodInfoSlice = createSlice({
       });
     },
     updateSize: (state, { payload }) => {
-      if (typeof payload.size === "boolen") {
-        state.size[payload.size] = payload.url;
-      } else {
-        payload.imageBtnArr = payload;
-      }
+      state.size = payload;
     }
   },
 });
@@ -69,5 +65,6 @@ export const {
   changeVisibleImage,
   updImageBtnArr,
   updateRating,
+  updateSize,
 } = prodInfoSlice.actions;
 export default prodInfoSlice.reducer;

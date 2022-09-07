@@ -1,17 +1,24 @@
 import React from "react";
 import style from "../../styles/Cart.module.css";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
 
+
+const { size } = useSelector(({prodInfo: {size}}) => ({
+        size
+}));
+
+
 const addToCart = () => {
-    
+
 }
 
 
     return (
 <div className={style.mainCart}>
-
-             <div className={style.container}>
+           { !size ? (
+             <div className={style.smallContainer}>
                         <div className={style.addTo}>
                             <span className={style.selectSize}>To buy, select <b> Size </b></span>
                         </div>
@@ -31,7 +38,7 @@ const addToCart = () => {
 
             </div>
 
-            {/* : */}
+            ) : (
 
     <div className={`${style.container}`}> 
         <div>
@@ -165,7 +172,7 @@ const addToCart = () => {
 
 
 
-
+    )}
         </div>
     )
   };
