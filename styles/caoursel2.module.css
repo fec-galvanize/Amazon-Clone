@@ -1,4 +1,9 @@
+.title_and_pageNumber{
+    display: flex;
+}
+
 .carousel_header{
+    flex: 1;
     font-weight: 700;
     font-style: bold;
     font-size: x-large;
@@ -36,10 +41,59 @@
     padding-top: 8px;
     text-align: left;
     color: #007185;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    font-size: 14px;
 }
 
-.starSpan{
+.star_and_rating{
+    display: flex;
+    height: 50px;
+    width: 160px;
+}
+
+.widget{
+    flex: 1;
+    max-height: 10;
     align-items: left;
     padding-left: 0%;
-    
+    max-width: 20px;
+}
+
+.reviews{
+    color: #007185;
+    padding-top: 7%;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+    padding-left: 8px;
+}
+
+
+.priceAndPrime{
+    display: flex;
+    height: 24px;
+    width: 160px;
+}
+
+.price{
+    flex: 1;
+    color: #b12704;
+    text-align: left;
+    padding-top: 0%;
+    margin-top: 0%;
+    padding-left: 0%;
+    margin-left: 0%;
+    padding-right: 0%;
+    margin-right: 5%;
+    font-size: 14px;
+    display: flex;
+    justify-self: start;
+    max-width: fit-content;
+}
+
+.primeImg{
+    max-width: 42px;
+    max-height: 12px;
+    display: flex;
+    justify-self: start;
 }
