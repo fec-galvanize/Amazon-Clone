@@ -49,12 +49,12 @@
 .linksDisplay {
   display: flex;
   flex-direction: column;
-  position: absolute;
   z-index: 1;
   background: white;
   width: 7rem;
   padding: 0.5rem 0;
   border: 1px solid rgba(0, 0, 0, 0.2);
+  position: absolute;
   right: 3%;
   top: 11%;
 }

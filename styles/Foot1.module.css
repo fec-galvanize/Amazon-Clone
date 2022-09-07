@@ -1,5 +1,5 @@
 .container1 {
-    height: 610px;
+    height: 637px;
     background-color: #232F3E;
     width: 100%;
     color: #fff;
@@ -86,22 +86,17 @@
 
 .bottom {
     border-top: 1px solid #3a4553;
-    height: 80px;
+    height: 108px;
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: center;
 }
 
-.img {
-    background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gc/designs/livepreview/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png);
-    width: 76px;
-    height: 23px;
-    color: #DDD;
-    padding: .6em;
-    display: flex;
-    border: 1px solid white;
-    margin-top: 18px;
+.logo {
+    width: 100px;
+    height: 52px;
+    margin-top: 26px;
 }
 
 .language {
@@ -110,14 +105,15 @@
     padding: 6px, 18px, 6px, 8px;
     font-size: 13px;
     margin-right: 4px;
-    width: 88px;
-    height: 20px;
     text-align: center;
     color: #ccc;
     cursor: pointer;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    width: 115px;
+    height: 32px;
 }
 
 .language:hover {
@@ -131,6 +127,12 @@
     text-align: center;
     color: #ccc;
     cursor: pointer;
+    width: 139px;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .country:hover {
@@ -138,7 +140,7 @@
 }
 
 .cont {
-    margin-top: 18px;
+    margin-top: 26px;
     margin-left: 70px;
     display: flex;
     flex-direction: row;
@@ -148,7 +150,6 @@
     width: 15px;
     height: 15px;
     display: flex;
-    justify-content: center;
 }
 
 .lan {
@@ -164,4 +165,14 @@
     height: 12px;
     display: flex;
     justify-content: center;
+    color: #73777d;
+    margin-left: 12px;
+    margin-right: -12px;
+
+}
+
+.flag {
+    width: 18px;
+    height: 12px;
+    margin-right: 14px;
 }

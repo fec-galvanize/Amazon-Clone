@@ -1,8 +1,15 @@
 .container2 {
-    height: 600px;
-    background-color: #131a32;
+    height: 640px;
+    background-color: #131a22;
     width: 100%;
     color: #dddddd;
+}
+
+.tbody {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .link {
@@ -10,7 +17,9 @@
     cursor: pointer;
     font-size: 11px;
     text-align: left;
-    width: 140px;
+    line-height: 115%;
+    display: flex;
+    flex-direction: column;
 }
 
 .link:hover {
@@ -20,15 +29,106 @@
 
 .row {
     padding: 8px 0px;
+    vertical-align: top;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .lastRow {
     display: flex;
-    justify-self: center;
+    justify-content: flex-start;
+    margin-left: 530px;
 }
 
 .table {
-    padding: 30px 0px;
+    padding: 26px 0px;
     display: flex;
     justify-content: center;
+}
+
+.col1 {
+    width: 112px;
+    margin-right: 49px;
+}
+
+.col2 {
+    width: 67px;
+    margin-right: 87px;
+}
+
+.col3 {
+    width: 53px;
+    margin-right: 70px;
+}
+
+.col4 {
+    width: 74px;
+    margin-right: 70px;
+}
+
+.col5 {
+    width: 59px;
+    margin-right: 48px;
+}
+
+.col6 {
+    width: 94px;
+    margin-right: 48px;
+}
+
+.col7 {
+    width: 106px;
+}
+
+.spanColor {
+    color: #999;
+    font-size: 10px;
+    line-height: 110%;
+}
+
+.col1last {
+    width: 63px;
+    margin-right: 77px;
+}
+
+.col2last {
+    width: 46px;
+    margin-right: 98px;
+}
+
+.col3last {
+    width: 46px;
+}
+
+.footerLine {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    line-height: 18px;
+    justify-content: center;
+    
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.bottomLink {
+    color: #DDD;
+    padding: 0.6em;
+    cursor: pointer;
+}
+
+.bottomLink:hover {
+    color: #DDD;
+    text-decoration: underline;
+}
+
+.cspan {
+    display: flex;
+    align-items: center;
+    padding: 0px;
 }

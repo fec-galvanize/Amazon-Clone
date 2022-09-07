@@ -1,12 +1,14 @@
-import Stats from "./Stats"
-import TopReviews from "./TopReviews"
+import Stats from "./Stats";
+import TopReviews from "./TopReviews";
+import style from "../../styles/Reviews.module.css";
+
 const Reviews = () => {
   return (
-    <div>
+    <div className={style.container}>
       <Stats />
-      <TopReviews /> 
+      <TopReviews />
     </div>
-  )
-}
+  );
+};
 
-export default Reviews
+export default Reviews;
