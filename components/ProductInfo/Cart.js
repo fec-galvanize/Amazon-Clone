@@ -17,7 +17,7 @@ const addToCart = () => {
 
     return (
 <div className={style.mainCart}>
-           { !size ? (
+           { !size || size === "false" ? (
              <div className={style.smallContainer}>
                         <div className={style.addTo}>
                             <span className={style.selectSize}>To buy, select <b> Size </b></span>
