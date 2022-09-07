@@ -40,6 +40,7 @@ const TopReviews = () => {
           }) => {
             return (
               <Review
+              key={subject}
                 profilePicture={profilePicture}
                 customerName={customerName}
                 rating={rating}

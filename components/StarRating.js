@@ -11,7 +11,7 @@ const StarRating = ({rating, size, spacing}) => {
       widgetDimensions={size}
       widgetSpacings={spacing}
     >
-      <Ratings.Widget style={{border:'1px solid red'}} />
+      <Ratings.Widget />
       <Ratings.Widget />
       <Ratings.Widget />
       <Ratings.Widget />
