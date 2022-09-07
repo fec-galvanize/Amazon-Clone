@@ -14,6 +14,7 @@ const initialState = {
   ],
   rating: 0,
   totalRatings: 23,
+  cartCount: 0,
 };
 
 export const prodInfoSlice = createSlice({
@@ -53,6 +54,10 @@ export const prodInfoSlice = createSlice({
           : prior + present;
       });
     },
+
+    updateCartCount: (state) => {
+      state.cartCount++;
+    },
   },
 });
 
@@ -61,5 +66,6 @@ export const {
   changeVisibleImage,
   updImageBtnArr,
   updateRating,
+  updateCartCount,
 } = prodInfoSlice.actions;
 export default prodInfoSlice.reducer;
