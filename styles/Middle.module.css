@@ -38,6 +38,12 @@
 .free,
 .numRatings {
   color: #007185;
+  cursor: pointer;
+}
+
+.numRatings:hover {
+  color: #e77600;
+  text-decoration: underline;
 }
 
 .merchpic {
@@ -60,6 +66,7 @@
 .stars {
   height: 18px;
   width: 80px;
+  position: relative;
 }
 
 .starsPic {
@@ -220,4 +227,63 @@
 
 .descriptiondata {
   margin: 0px;
+}
+
+.ratingsnap {
+  width: fit-content;
+}
+
+.popupDiv {
+  z-index: 4;
+  background-color: white;
+  width: 280px;
+  height: 340px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.popupDiv:after {
+  content: "";
+  margin-top: -10px;
+  margin-left: -10px;
+  width: 0px;
+  height: 0px;
+  border: 10px solid transparent;
+  border-bottom: 10px solid rgba(0, 0, 0, 1);                
+  position: absolute;
+  top: 0.7%;
+  left: 50%;
+  z-index: 4;
+}
+.popupDiv:before {
+  content: "";
+  margin-top: -9px;
+  margin-left: -9px;
+  width: 0px;
+  height: 0px;
+  border: 9px solid transparent;
+  border-bottom: 9px solid white;                
+  position: absolute;
+  top: 0.8%;
+  left: 50%;
+  z-index: 5;
+}
+
+.reviews {
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.grab {
+  width: 300px;
+  height: 360px;
+  position: absolute;
+  top: 94%;
+  left: -130%;
+  z-index: 1;
+  padding: 10px;
 }

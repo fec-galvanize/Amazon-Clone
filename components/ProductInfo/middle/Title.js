@@ -1,6 +1,16 @@
 import style from "../../../styles/Middle.module.css";
+import StarRating from "../../StarRating";
+import { useSelector } from "react-redux";
+import RatingSnapshot from "../../Reviews/RatingSnapshot";
+import { useState } from "react";
 
 const Title = () => {
+  const { rating, totalRatings } = useSelector(({ prodInfo }) => {
+    return { rating: prodInfo.rating, totalRatings: prodInfo.totalRatings };
+  });
+
+  const [showPop, setShowPop] = useState(false);
+
   return (
     <div className={style.title}>
       <div className={style.brand}>
@@ -10,10 +20,26 @@ const Title = () => {
         The Party Don't Start Til I Croc In T-Shirt
       </div>
       <div className={style.ratings}>
-        <div className={style.stars}>
-          <i className={style.starsPic}></i>
+        <div
+          className={style.stars}
+          onMouseEnter={() => setShowPop(true)}
+          onMouseLeave={() => setShowPop(false)}
+        >
+          <StarRating rating={rating} size={"15px"} spacing={".2px"} />
+          {showPop && (
+            <div className={style.grab}>
+              <div className={style.popupDiv}>
+                <RatingSnapshot popup={true} />
+                <div>
+                  <a className={style.reviews}>
+                    See All Customer Reviews {">"}
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-        <div className={style.numRatings}>23 ratings</div>
+        <div className={style.numRatings}>{totalRatings} Ratings</div>
       </div>
     </div>
   );
