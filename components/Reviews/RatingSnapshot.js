@@ -6,10 +6,11 @@ import { useSelector, useDispatch } from "react-redux";
 import popupStyle from "../../styles/Middle.module.css";
 
 const RatingSnapshot = ({ popup }) => {
+  // Grab rating and totalRating from redux 
   const dispatch = useDispatch();
-  const { rating, totalRatings } = useSelector(({ prodInfo }) => {
-    return { rating: prodInfo.rating, totalRatings: prodInfo.totalRatings };
-  });
+  const { rating, totalRatings } = useSelector(
+    ({ prodInfo: { rating, totalRatings } }) => ({ rating, totalRatings })
+  );
 
   const [ratingDistribution] = useState([
     { star: 5, count: 18 },
@@ -18,7 +19,7 @@ const RatingSnapshot = ({ popup }) => {
     { star: 2, count: 0 },
     { star: 1, count: 0 },
   ]);
-
+// wheneever the total ratings change or rating distribution changes, update the rating
   useEffect(() => {
     dispatch(updateRating({ ratingDistribution }));
   }, [totalRatings, ratingDistribution]);

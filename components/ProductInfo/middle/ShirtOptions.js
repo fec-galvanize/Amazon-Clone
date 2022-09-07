@@ -13,9 +13,9 @@ const ShirtOptions = () => {
   const [see, setSee] = useState(false);
 
   const dispatch = useDispatch();
-  const { currentImage, imageDisplayBtnArr } = useSelector(({ prodInfo }) => ({
-    currentImage: prodInfo.currentImage,
-    imageDisplayBtnArr: prodInfo.imageBtnArr,
+  const { currentImage, imageDisplayBtnArr } = useSelector(({ prodInfo:{currentImage, imageBtnArr} }) => ({
+    currentImage,
+    imageDisplayBtnArr:imageBtnArr,
   }));
 
   const mouseEnter = (newImage) => {
@@ -153,7 +153,9 @@ const ShirtOptions = () => {
             <label className={style.sizeLabel}>Size:</label>
           </div>
           <span className={style.dropdownContainer}>
-            <select className={style.sizeDropDown}>
+            <select className={style.sizeDropDown}
+            
+            >
               <option className={style.sizeOption} value="-1">
                 Select
               </option>

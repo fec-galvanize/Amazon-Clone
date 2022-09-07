@@ -76,9 +76,9 @@ const Cart = () => {
 
              <div>
               <span>
-                <a href="https://www.amazon.com/cart/add-to-cart/ref=dp_start-bbf_1_glance">
+                {/* <a > */}
                  <button className="button" id={`${style.btnCart}`} title="Add to Shopping Cart">Add to Cart</button> 
-                 </a>
+                 {/* </a> */}
               </span>
              </div>
 
