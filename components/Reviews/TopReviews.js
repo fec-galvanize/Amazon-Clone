@@ -1,24 +1,15 @@
 import StarRating from "../StarRating";
 import style from "../../styles/RevTopRevs.module.css";
+import { useEffect, useState } from "react";
 
 const TopReviews = () => {
-  const reviews = [
-    {
-      profilePicture:
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.andina-ingham.co.uk%2Fwp-content%2Fuploads%2F2019%2F09%2Fmiguel-andrade-nAOZCYcLND8-unsplash_pineapple.jpg&f=1&nofb=1",
-      customerName: "Pineapples",
-      rating: 5,
-      subject: "Funny Shirt",
-      country: "United States",
-      date: new Date(Date.now()).toLocaleDateString(undefined, {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-      }),
-      verifiedPurchase: false,
-      reviewBody: "Made me laugh",
-    },
-  ];
+  const [reviews, setReviews] = useState([]);
+  useEffect(() => {
+    (async () => {
+      setReviews(await (await fetch("/api/reviews")).json());
+    })();
+  }, []);
+
   return (
     <div className={style.container}>
       <select name="reviewType" className={style.reviewType}>
@@ -29,26 +20,26 @@ const TopReviews = () => {
       <div className={style.reviewContainer}>
         {reviews.map(
           ({
-            profilePicture,
-            customerName,
+            picture,
+            name,
             rating,
             subject,
             country,
             date,
-            verifiedPurchase,
-            reviewBody,
+            verified_purchase,
+            review_body,
           }) => {
             return (
               <Review
-              key={subject}
-                profilePicture={profilePicture}
-                customerName={customerName}
+                key={subject}
+                profilePicture={picture}
+                customerName={name}
                 rating={rating}
                 subject={subject}
                 country={country}
                 date={date}
-                verifiedPurchase={verifiedPurchase}
-                reviewBody={reviewBody}
+                verifiedPurchase={verified_purchase}
+                reviewBody={review_body}
               />
             );
           }
