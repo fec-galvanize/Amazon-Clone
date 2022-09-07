@@ -11,6 +11,7 @@ const ShirtOptions = () => {
   const [gender, setGender] = useState("male");
   const [color, setColor] = useState("");
   const [see, setSee] = useState(false);
+  const [size, setSize] = useState(false)
 
   const dispatch = useDispatch();
   const { currentImage, imageDisplayBtnArr } = useSelector(({ prodInfo }) => ({
@@ -153,16 +154,16 @@ const ShirtOptions = () => {
             <label className={style.sizeLabel}>Size:</label>
           </div>
           <span className={style.dropdownContainer}>
-            <select className={style.sizeDropDown}>
+            <select className={style.sizeDropDown} onSelect={()=> setSize(false)}>
               <option className={style.sizeOption} value="-1">
                 Select
               </option>
-              <option className={style.sizeOption}>Small</option>
-              <option className={style.sizeOption}>Medium</option>
-              <option className={style.sizeOption}>Large</option>
-              <option className={style.sizeOption}>X-Large</option>
-              <option className={style.sizeOption}>XX-Large</option>
-              <option className={style.sizeOption}>3X-Large</option>
+              <option className={style.sizeOption} onSelect={()=> setSize(true)}>Small</option>
+              <option className={style.sizeOption} onSelect={()=> setSize(true)}>Medium</option>
+              <option className={style.sizeOption} onSelect={()=> setSize(true)}>Large</option>
+              <option className={style.sizeOption} onSelect={()=> setSize(true)}>X-Large</option>
+              <option className={style.sizeOption} onSelect={()=> setSize(true)}>XX-Large</option>
+              <option className={style.sizeOption} onSelect={()=> setSize(true)}>3X-Large</option>
             </select>
           </span>
         </div>
@@ -172,3 +173,4 @@ const ShirtOptions = () => {
 };
 
 export default ShirtOptions;
+

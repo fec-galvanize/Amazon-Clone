@@ -10,6 +10,58 @@
     position: relative;
 }
 
+.addTo {
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#btnAddCart {
+    border-radius: 20px;
+    background: #FFD814;
+    border-color: #FCD200;
+    text-align: center;
+    vertical-align: middle;
+    border-style: solid;
+    border-width: 1px;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    line-height: 19px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+}
+#btnAddCart:hover {background-color: #f4cb00}
+
+.emptyDiv {
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.btnListAdd {
+    border-radius: 3px;
+    background: #f4f5f7;
+    border-color: #adb1b8 #a2a6ac #8d9096;
+    border: .5px solid;
+    height: 100%;
+    width: 100%;
+    text-align: left!important;
+    font-size: 13px;
+    padding: 0 10px 0 11px;
+    line-height: 25px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+}
+
+.btnListAdd:hover {background-color: #c7c9ccd9;}
+
 #pinPoint {
     min-width: 16px;
     height: 14px;
@@ -130,11 +182,12 @@
 }
 #btnBuyNow:hover {background-color: #FF8F00}
 
+
 .btnAdd {
     border-radius: 3px;
-    background: #e7e9ec;
+    background: #f4f5f7;
     border-color: #adb1b8 #a2a6ac #8d9096;
-    border: 1px solid;
+    border: .5px solid;
     height: 100%;
     width: 100%;
     text-align: left!important;
@@ -143,6 +196,7 @@
     line-height: 25px;
     margin-top: 15px;
     cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
 }
 .btnAdd:hover {background-color: #c7c9ccd9;}
 

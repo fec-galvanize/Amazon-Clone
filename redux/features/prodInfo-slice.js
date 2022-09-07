@@ -14,6 +14,7 @@ const initialState = {
   ],
   rating: 0,
   totalRatings: 23,
+  size: false,
 };
 
 export const prodInfoSlice = createSlice({
@@ -53,6 +54,13 @@ export const prodInfoSlice = createSlice({
           : prior + present;
       });
     },
+    updateSize: (state, { payload }) => {
+      if (typeof payload.size === "boolen") {
+        state.size[payload.size] = payload.url;
+      } else {
+        payload.imageBtnArr = payload;
+      }
+    }
   },
 });
 
