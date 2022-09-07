@@ -11,30 +11,35 @@ const Cart = () => {
     size,
   }));
 
-  const addToCart = () => {};
 
-  return (
-    <div className={style.mainCart}>
-      {!size ? (
-        <div className={style.smallContainer}>
-          <div className={style.addTo}>
-            <span className={style.selectSize}>
-              To buy, select <b> Size </b>
-            </span>
-          </div>
-          <div>
-            <button id={style.btnAddCart}>Add to Cart</button>
-          </div>
-          <div className={style.emptyDiv}></div>
-          <div>
-            <a href="https://www.amazon.com/cart/add-to-cart/ref=dp_start-bbf_1_glance">
-              <button className={style.btnListAdd}>Add to List</button>
-            </a>
-          </div>
-        </div>
-      ) : (
+    return (
+<div className={style.mainCart}>
+           { !size || size === "false" ? (
+             <div className={style.smallContainer}>
+                        <div className={style.addTo}>
+                            <span className={style.selectSize}>To buy, select <b> Size </b></span>
+                        </div>
+                        <div>
+                            <button id={style.btnAddCart}>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div className={style.emptyDiv}></div>
+                        <div>
+                        <a href="https://www.amazon.com/cart/add-to-cart/ref=dp_start-bbf_1_glance">
+                            <button className={style.btnListAdd}>
+                                Add to List
+                            </button>
+                            </a>
+                        </div>
+
+            </div>
+
+            ) : (
+                
         <div className={`${style.container}`}>
           <div>
+
             <div className="pricing">
               <span id={style.symbol}>$</span>
               <span id={style.dollars}>17</span>
@@ -226,9 +231,9 @@ const Cart = () => {
             </a>
           </div>
         </div>
-      )}
-    </div>
-  );
+   )}
+   </div>
+)
 };
 
 export default Cart;
