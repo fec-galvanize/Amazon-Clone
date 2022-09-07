@@ -15,6 +15,7 @@ const initialState = {
   ],
   rating: 0,
   totalRatings: 23,
+  size: false,
 };
 
 export const prodInfoSlice = createSlice({
@@ -58,6 +59,9 @@ export const prodInfoSlice = createSlice({
           : prior + present;
       });
     },
+    updateSize: (state, { payload }) => {
+      state.size = payload;
+    }
   },
 });
 
@@ -66,6 +70,7 @@ export const {
   changeCurrentImage,
   changeVisibleImage,
   updImageBtnArr,
-  updateRating
+  updateRating,
+  updateSize,
 } = prodInfoSlice.actions;
 export default prodInfoSlice.reducer;
