@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 
-.numRatings:hover {
+.numRatings:hover, .prime:hover, .free:hover, .brand:hover, .learn:hover {
   color: #e77600;
   text-decoration: underline;
 }
@@ -236,10 +236,15 @@
 .popupDiv {
   z-index: 4;
   background-color: white;
-  width: 280px;
+  width: 360px;
   height: 340px;
   padding: 10px;
-  border: 1px solid black;
+  border: .5px solid rgb(94, 93, 93);
+  border-radius: 4px;
+  box-shadow: 2px 2px 1px #bcbbbb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .popupDiv:after {
@@ -251,7 +256,7 @@
   border: 10px solid transparent;
   border-bottom: 10px solid rgba(0, 0, 0, 1);                
   position: absolute;
-  top: 0.7%;
+  top: 0.6%;
   left: 50%;
   z-index: 4;
 }
@@ -270,12 +275,12 @@
 }
 
 .reviews {
-  border-top: 1px solid black;
+  border-top: .5px solid rgb(214, 213, 213);
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 20px;
-  padding-top: 20px;
+  margin-top: 3px;
+  padding-top: 25px;
 }
 
 .grab {
@@ -288,3 +293,9 @@
   padding: 10px;
 }
 
+.chevy {
+  height: 5px;
+  width: 7px;
+  display: flex;
+  color: black;
+}
