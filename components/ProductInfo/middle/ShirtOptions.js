@@ -19,6 +19,8 @@ const ShirtOptions = () => {
     imageDisplayBtnArr: prodInfo.imageBtnArr,
   }));
 
+ 
+
   const mouseEnter = (newImage) => {
     currentImage.isProd && dispatch(changeVisibleImage(newImage));
   };

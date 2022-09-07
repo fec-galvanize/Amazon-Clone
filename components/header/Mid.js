@@ -49,7 +49,7 @@ export default function Mid() {
       <ul className={`${style.cats}`}>
         {categories.map((e) => {
           return (
-            <li className={`${style.li}`}>
+            <li key={e.title} className={`${style.li}`}>
               <a className={`${style.li}`} href={e.ulink}>
                 {e.title}
               </a>
