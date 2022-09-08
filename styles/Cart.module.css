@@ -101,7 +101,9 @@
     font-size: 14px;
 }
 
-
+.pricing {
+    line-height: 22px;
+}
 
 #dollars {
     font-size: 28px;
@@ -113,6 +115,7 @@
 #symbol, #fraction {
     font-size: 13px;
     vertical-align: top;
+    
     color: #0F1111;
     font-family: "Amazon Ember", Arial, sans-serif;
 }

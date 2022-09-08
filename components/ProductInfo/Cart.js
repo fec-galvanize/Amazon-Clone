@@ -40,7 +40,7 @@ const Cart = () => {
         <div className={`${style.container}`}>
           <div>
 
-            <div className="pricing">
+            <div className={style.pricing}>
               <span id={style.symbol}>$</span>
               <span id={style.dollars}>17</span>
               <span id={style.fraction}>99</span>
