@@ -140,7 +140,7 @@ const Cart = () => {
 
           <div>
             <span>
-              {/* <a href="https://www.amazon.com/cart/add-to-cart/ref=dp_start-bbf_1_glance"> */}
+              <a href="https://www.amazon.com/cart/smart-wagon?newItems=055f2472-6dfa-4353-95b1-322c69ca7660,2">  
               <button
                 className="button"
                 id={`${style.btnCart}`}
@@ -148,10 +148,12 @@ const Cart = () => {
                 onClick={() => {
                   dispatch(updateCartCount());
                 }}
-              >
+                
+                >
+            
                 Add to Cart
               </button>
-              {/* </a> */}
+              </a>
             </span>
           </div>
 
