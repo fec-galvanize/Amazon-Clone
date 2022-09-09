@@ -14,8 +14,8 @@ import {
 import style from "../../styles/ProdImage.module.css";
 const ProdImage = () => {
   // Grabs state form redux
-  const { displayImg, imgArray } = useSelector(({ prodInfo }) => ({
-    displayImg: prodInfo.visibleImage,
+  const { display_img, imgArray } = useSelector(({ prodInfo }) => ({
+    display_img: prodInfo.visibleImage,
     imgArray: prodInfo.imageBtnArr,
   }));
 
@@ -31,7 +31,7 @@ const ProdImage = () => {
         <ShareBtn />
         <img
           className={`${style.img}`}
-          src={displayImg}
+          src={display_img}
           alt="the party dont start til i croc in"
         />
       </div>
@@ -92,7 +92,7 @@ const ShareBtn = () => {
     }, 500);
   return (
     <>
-    {/* Beginning of pop up share link display */}
+      {/* Beginning of pop up share link display */}
       <div className={`${style.linksDisplay}`} style={linksDisplay}>
         <a
           href={href.email}
@@ -138,7 +138,7 @@ const ShareBtn = () => {
           <span>{copyText}</span>
         </a>
       </div>
-    {/* End of pop up share link display */}
+      {/* End of pop up share link display */}
 
       <button
         aria-label="share"

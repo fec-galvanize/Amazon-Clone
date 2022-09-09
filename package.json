@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
+    "@zeit/next-css": "^1.0.1",
+    "bootstrap": "^5.2.1",
+    "express": "^4.18.1",
     "next": "^12.2.5",
     "postgres": "^3.2.4",
     "react": "^18.2.0",
