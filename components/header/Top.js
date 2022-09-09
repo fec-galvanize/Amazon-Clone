@@ -5,10 +5,12 @@ import { BiCart } from "react-icons/bi";
 import { IoLocationOutline } from "react-icons/io5";
 import style from "../../styles/Header.module.css";
 import { useSelector } from "react-redux";
+import { Popover, OverlayTrigger } from "react-bootstrap";
 
 export default function Top() {
   //useState to loggedin true, loggedin false
   const [loggedIn, setLoggedIn] = useState(false);
+
   const cartCount = useSelector(({ prodInfo: { cartCount } }) => cartCount);
 
   return (
@@ -28,7 +30,9 @@ export default function Top() {
       </form>
       <div className={`${style.login}`}>
         {loggedIn ? (
-          <div>Welcome, User</div>
+          <div>
+            <h5>Hello, Webhead</h5>
+          </div>
         ) : (
           <div>
             Log In
@@ -44,10 +48,24 @@ export default function Top() {
           </div>
         )}
       </div>
-      <div className={`${style.shoppingCart}`}>
-        <BiCart className={`${style.SCI}`} />
-        {`Cart ${cartCount}`}
-      </div>
+      <OverlayTrigger
+        trigger="click"
+        placement="right"
+        overlay={
+          <Popover id={`popover-positioned-right`}>
+            <Popover.Header as="h3">{`subtotal`}</Popover.Header>
+            <Popover.Body>
+              {cartCount !== 0 ? <p>$17.99</p> : <p>$0</p>}
+              <button> add to cart </button>
+            </Popover.Body>
+          </Popover>
+        }
+      >
+        <div className={`${style.shoppingCart}`}>
+          <BiCart className={`${style.SCI}`} />
+          {`Cart ${cartCount}`}
+        </div>
+      </OverlayTrigger>
     </div>
   );
 }
