@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import style from "../../../styles/Middle.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -11,6 +11,21 @@ import {
 const ShirtOptions = () => {
   const [color, setColor] = useState("Black");
   const [gender, setGender] = useState("Men");
+  const [shirts, setShirts] = useState([]);
+
+  function getShirts() {
+    fetch("/api/shirts")
+      .then((data) => {
+        return data.json();
+      })
+      .then((shirts) => {
+        setShirts(shirts);
+      });
+  }
+
+  useEffect(() => {
+    getShirts();
+  }, []);
 
   const dispatch = useDispatch();
   const { currentImage, imageDisplayBtnArr } = useSelector(({ prodInfo }) => ({
@@ -31,69 +46,6 @@ const ShirtOptions = () => {
     currentImage.isProd && dispatch(changeCurrentImage({ url: newImage }));
     dispatch(updImageBtnArr({ index: 0, url: newImage }));
   };
-
-  const shirtColors = [
-    {
-      color: "Black",
-      img: "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C500%2C468%7C81t54H7ZpXL.png%7C0%2C0%2C500%2C468%2B0.0%2C0.0%2C500.0%2C468.0._SX38_SY50_CR,0,0,38,50_.png",
-      displayImg:
-        "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C81t54H7ZpXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UX385_.png",
-    },
-    {
-      color: "Navy",
-      img: "https://m.media-amazon.com/images/I/A1vJUKBjc2L._CLa%7C500%2C468%7C81t54H7ZpXL.png%7C0%2C0%2C500%2C468%2B0.0%2C0.0%2C500.0%2C468.0._SX38_SY50_CR,0,0,38,50_.png",
-      displayImg:
-        "https://m.media-amazon.com/images/I/A1vJUKBjc2L._CLa%7C2140%2C2000%7C81t54H7ZpXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX466._SX._UX._SY._UY_.png",
-    },
-    {
-      color: "Ashphalt",
-      img: "https://m.media-amazon.com/images/I/A1rcXo55giL._CLa%7C500%2C468%7C819u1EpKTtL.png%7C0%2C0%2C500%2C468%2B0.0%2C0.0%2C500.0%2C468.0._SX38_SY50_CR,0,0,38,50_.png",
-      displayImg:
-        "https://m.media-amazon.com/images/I/B1OGJ8t+8ZS._CLa%7C2140%2C2000%7C81t54H7ZpXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX466._SX._UX._SY._UY_.png",
-    },
-    {
-      color: "Cranberry",
-      img: "https://m.media-amazon.com/images/I/B1fs3pzGnVS._CLa%7C500%2C468%7C819u1EpKTtL.png%7C0%2C0%2C500%2C468%2B0.0%2C0.0%2C500.0%2C468.0._SX38_SY50_CR,0,0,38,50_.png",
-      displayImg:
-        "https://m.media-amazon.com/images/I/B1DnWZEQ8ES._CLa%7C2140%2C2000%7C81t54H7ZpXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX466._SX._UX._SY._UY_.png",
-    },
-    {
-      color: "Kelly Green",
-      img: "https://m.media-amazon.com/images/I/B1VMTBKtipS._CLa%7C500%2C468%7C819u1EpKTtL.png%7C0%2C0%2C500%2C468%2B0.0%2C0.0%2C500.0%2C468.0._SX38_SY50_CR,0,0,38,50_.png",
-      displayImg:
-        "https://m.media-amazon.com/images/I/B1SqOvJ6PXS._CLa%7C2140%2C2000%7C81t54H7ZpXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX466._SX._UX._SY._UY_.png",
-    },
-    {
-      color: "Dark Heather",
-      img: "https://m.media-amazon.com/images/I/B1MuEgxHlwS._CLa%7C500%2C468%7C819u1EpKTtL.png%7C0%2C0%2C500%2C468%2B0.0%2C0.0%2C500.0%2C468.0._SX38_SY50_CR,0,0,38,50_.png",
-      displayImg:
-        "https://m.media-amazon.com/images/I/B17H79+I8tS._CLa%7C2140%2C2000%7C81t54H7ZpXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX466._SX._UX._SY._UY_.png",
-    },
-    {
-      color: "Heather Grey",
-      img: "https://m.media-amazon.com/images/I/C1ce8y0uOwS._CLa%7C500%2C468%7C81t54H7ZpXL.png%7C0%2C0%2C500%2C468%2B0.0%2C0.0%2C500.0%2C468.0._SX38_SY50_CR,0,0,38,50_.png",
-      displayImg:
-        "https://m.media-amazon.com/images/I/C1ce8y0uOwS._CLa%7C2140%2C2000%7C81t54H7ZpXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX466._SX._UX._SY._UY_.png",
-    },
-    {
-      color: "Heather Blue",
-      img: "https://m.media-amazon.com/images/I/B1Rv34VM9pS._CLa%7C500%2C468%7C819u1EpKTtL.png%7C0%2C0%2C500%2C468%2B0.0%2C0.0%2C500.0%2C468.0._SX38_SY50_CR,0,0,38,50_.png",
-      displayImg:
-        "https://m.media-amazon.com/images/I/B1DBWbloIpS._CLa%7C2140%2C2000%7C81t54H7ZpXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX466._SX._UX._SY._UY_.png",
-    },
-    {
-      color: "Purple",
-      img: "https://m.media-amazon.com/images/I/B1el7IZypsS._CLa%7C500%2C468%7C819u1EpKTtL.png%7C0%2C0%2C500%2C468%2B0.0%2C0.0%2C500.0%2C468.0._SX38_SY50_CR,0,0,38,50_.png",
-      displayImg:
-        "https://m.media-amazon.com/images/I/B14oNsg5tJS._CLa%7C2140%2C2000%7C81t54H7ZpXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX466._SX._UX._SY._UY_.png",
-    },
-    {
-      color: "Royal Blue",
-      img: "https://m.media-amazon.com/images/I/B1EryObaEWS._CLa%7C500%2C468%7C81t54H7ZpXL.png%7C0%2C0%2C500%2C468%2B0.0%2C0.0%2C500.0%2C468.0._SX38_SY50_CR,0,0,38,50_.png",
-      displayImg:
-        "https://m.media-amazon.com/images/I/B1EryObaEWS._CLa%7C2140%2C2000%7C81t54H7ZpXL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX466._SX._UX._SY._UY_.png",
-    },
-  ];
 
   return (
     <div className={style.options}>
@@ -139,20 +91,20 @@ const ShirtOptions = () => {
             <span className={style.selectedColor}>{color}</span>
           </div>
           <ul className={style.colorOptions}>
-            {shirtColors.map(({ color, img, displayImg }, i) => {
+            {shirts.map(({ color, img, display_img }, i) => {
               return (
                 <li className={style.option} key={i}>
                   <div className={style.optionBox}>
                     <button
                       type="submit"
                       className={`${
-                        imageDisplayBtnArr[0] === displayImg && style.active
+                        imageDisplayBtnArr[0] === display_img && style.active
                       } ${style.optionBtn}`}
-                      onMouseEnter={() => mouseEnter(displayImg)}
+                      onMouseEnter={() => mouseEnter(display_img)}
                       onMouseLeave={() => mouseLeave()}
                       onClick={(e) => {
                         e.preventDefault();
-                        mouseClick(displayImg);
+                        mouseClick(display_img);
                         setColor(color);
                       }}
                     >
