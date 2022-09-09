@@ -312,7 +312,7 @@ const Cart = () => {
           
           <div className={style.primeTextDiv}
                 onMouseEnter={() => setShowPrimeAlert(true)}
-                onMouseLeave={() => setShowPrimeAlert(true)}
+                onMouseLeave={() => setShowPrimeAlert(false)}
           >
               <a
                 id={style.primetext}
