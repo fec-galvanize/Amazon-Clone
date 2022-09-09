@@ -9,17 +9,14 @@ import {
 } from "../../../redux/features/prodInfo-slice";
 
 const ShirtOptions = () => {
-  const [gender, setGender] = useState("male");
-  const [color, setColor] = useState("");
-  const [see, setSee] = useState(true);
+  const [color, setColor] = useState("Black");
+  const [gender, setGender] = useState("Men");
 
   const dispatch = useDispatch();
   const { currentImage, imageDisplayBtnArr } = useSelector(({ prodInfo }) => ({
     currentImage: prodInfo.currentImage,
     imageDisplayBtnArr: prodInfo.imageBtnArr,
   }));
-
- 
 
   const mouseEnter = (newImage) => {
     currentImage.isProd && dispatch(changeVisibleImage(newImage));
@@ -28,9 +25,6 @@ const ShirtOptions = () => {
   const mouseLeave = () => {
     dispatch(changeVisibleImage(currentImage.url));
   };
-
-
-
 
   const mouseClick = (newImage) => {
     currentImage.isProd && dispatch(changeVisibleImage(newImage));
@@ -107,14 +101,34 @@ const ShirtOptions = () => {
         <div className={style.genderContainer}>
           <div className={style.fit}>
             <label className={style.type}>Fit Type: </label>
-            <span>Men- needs to be dynamic</span>
+            <span>{gender}</span>
           </div>
           <ul className={style.genderSelect}>
             <li className={style.genderli}>
-              <button className={style.genderBtn}>Men</button>
+              <button
+                className={
+                  gender === "Men" ? style.selectedgenderBtn : style.genderBtn
+                }
+                onClick={(e) => {
+                  e.preventDefault();
+                  setGender("Men");
+                }}
+              >
+                Men
+              </button>
             </li>
             <li className={style.genderli}>
-              <button className={style.genderBtn}>Women</button>
+              <button
+                className={
+                  gender === "Women" ? style.selectedgenderBtn : style.genderBtn
+                }
+                onClick={(e) => {
+                  e.preventDefault();
+                  setGender("Women");
+                }}
+              >
+                Women
+              </button>
             </li>
           </ul>
         </div>
@@ -122,9 +136,7 @@ const ShirtOptions = () => {
         <div className={style.colorContainer}>
           <div className={style.color}>
             <label className={style.colorLabel}>Color: </label>
-            <span className={style.selectedColor}>
-              Black- needs to be dynamic
-            </span>
+            <span className={style.selectedColor}>{color}</span>
           </div>
           <ul className={style.colorOptions}>
             {shirtColors.map(({ color, img, displayImg }, i) => {
@@ -141,6 +153,7 @@ const ShirtOptions = () => {
                       onClick={(e) => {
                         e.preventDefault();
                         mouseClick(displayImg);
+                        setColor(color);
                       }}
                     >
                       <img
@@ -161,16 +174,31 @@ const ShirtOptions = () => {
             <label className={style.sizeLabel}>Size:</label>
           </div>
           <span className={style.dropdownContainer}>
-            <select className={style.sizeDropDown} onChange={(e) => dispatch(updateSize(e.target.value))}>
-              <option className={style.sizeOption}  value={false}>
+            <select
+              className={style.sizeDropDown}
+              onChange={(e) => dispatch(updateSize(e.target.value))}
+            >
+              <option className={style.sizeOption} value={false}>
                 Select
               </option>
-              <option className={style.sizeOption} value={true}>Small</option>
-              <option className={style.sizeOption} value={true}>Medium</option>
-              <option className={style.sizeOption} value={true}>Large</option>
-              <option className={style.sizeOption} value={true}>X-Large</option>
-              <option className={style.sizeOption} value={true}>XX-Large</option>
-              <option className={style.sizeOption} value={true}>3X-Large</option>
+              <option className={style.sizeOption} value={true}>
+                Small
+              </option>
+              <option className={style.sizeOption} value={true}>
+                Medium
+              </option>
+              <option className={style.sizeOption} value={true}>
+                Large
+              </option>
+              <option className={style.sizeOption} value={true}>
+                X-Large
+              </option>
+              <option className={style.sizeOption} value={true}>
+                XX-Large
+              </option>
+              <option className={style.sizeOption} value={true}>
+                3X-Large
+              </option>
             </select>
           </span>
         </div>
@@ -180,4 +208,3 @@ const ShirtOptions = () => {
 };
 
 export default ShirtOptions;
-
