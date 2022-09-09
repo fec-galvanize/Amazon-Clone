@@ -1,8 +1,9 @@
-import React from "react";
+import { useState } from "react";
 import style from "../../styles/Cart.module.css";
 import { useDispatch } from "react-redux";
 import { updateCartCount } from "../../redux/features/prodInfo-slice";
 import { useSelector } from "react-redux";
+
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -11,35 +12,52 @@ const Cart = () => {
     size,
   }));
 
+  const [showPop, setShowPop] = useState(false);
+  const [showList, setShowList] = useState(false);
+  const [showAlert, setShowAlert] =useState(false);
+  const [showSecureAlert, setShowSecureAlert] =useState(false);
+  const [showReturnAlert, setShowReturnAlert] =useState(false);
+  const [showPrimeAlert, setShowPrimeAlert] =useState(false)
 
-    return (
-<div className={style.mainCart}>
-           { !size || size === "false" ? (
-             <div className={style.smallContainer}>
-                        <div className={style.addTo}>
-                            <span className={style.selectSize}>To buy, select <b> Size </b></span>
-                        </div>
-                        <div>
-                            <button id={style.btnAddCart}>
-                                Add to Cart
-                            </button>
-                        </div>
-                        <div className={style.emptyDiv}></div>
-                        <div>
-                        <a href="https://www.amazon.com/cart/add-to-cart/ref=dp_start-bbf_1_glance">
-                            <button className={style.btnListAdd}>
-                                Add to List
-                            </button>
-                            </a>
-                        </div>
 
+  return (
+    <div className={style.mainCart}>
+      {!size || size === "false" ? (
+        <div className={style.smallContainer}>
+          <div className={style.addTo}>
+            <span className={style.selectSize}>
+              To buy, select <b> Size </b>
+            </span>
+          </div>
+          <div
+          onMouseEnter={() => setShowAlert(true)}
+          onMouseLeave={() => setShowAlert(false)}>
+            <div>
+            <button id={style.btnAddCart}>Add to Cart</button>
             </div>
 
-            ) : (
-                
+                {showAlert && (
+                  <div className={style.grabAgain}>
+                  <div className={style.selectItemDiv}>
+                     <span>
+                       <p>Select from the left to add to Shopping Cart</p>
+                     </span>
+                   </div>
+                   </div>
+                )}
+              
+          </div>
+          
+          <div className={style.emptyDiv}></div>
+          <div>
+            <a href="https://www.amazon.com/cart/add-to-cart/ref=dp_start-bbf_1_glance">
+              <button className={style.btnListAdd}>Add to List</button>
+            </a>
+          </div>
+        </div>
+      ) : (
         <div className={`${style.container}`}>
           <div>
-
             <div className={style.pricing}>
               <span id={style.symbol}>$</span>
               <span id={style.dollars}>17</span>
@@ -60,14 +78,51 @@ const Cart = () => {
             <br></br>
             <span>
               <a
-                className="popover-trigger"
-                href="https://www.amazon.com/gp/help/customer/display.html/ref=mk_fr_ret_dp_1?ie=UTF8&nodeId=201532130"
+                className={style.popoverTrigger}
+                href="#"
+                onClick={() => {
+                  setShowPop(!showPop);
+                }}
               >
                 FREE Returns
                 <div id={style.icon}></div>
                 <div className={style.arrowBox} aria-modal="true"></div>
               </a>
             </span>
+            {showPop && (
+              <div className={style.grab}>
+                <div className={style.freeReturnsDiv}>
+                  <span>
+                    <b>Return this item for free</b>
+                  </span>
+                  <p>
+                    You can return this item for any reason: no shipping
+                    charges. The item must be returned in a new and unused
+                    condition.
+                  </p>
+                  <a href="https://www.amazon.com/gp/help/customer/display.html/ref=mk_fr_ret_dp_1?ie=UTF8&nodeId=201532130">
+                    Read the full returns policy
+                  </a>
+                  <div className={style.returnDiv}>
+                  <div id={style.icon}></div>
+                  <div className={style.arrowBox} aria-modal="true"></div>
+                  <a href="#"  
+                    onClick={() => {
+                    setShowList(!showList);
+                    }}
+                  >How to return this item:</a></div>
+                  {showList && (
+                     <div className={style.returnList}>
+                        <ul>
+                          <li>1. Go to Your Orders to start the return</li>
+                          <li>2. Print the return shipping label</li>
+                          <li>3. Ship it!</li>
+                        </ul>
+                      </div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
           <br></br>
           <div className={style.delivery}>
@@ -93,7 +148,7 @@ const Cart = () => {
           <div className={style.delivery}>
             <span className="text-bold">
               <span>
-                Or fastest delivary <b>Saturday,</b>
+                Or fastest delivery <b>Saturday,</b>
                 <br></br>
                 <b>September 3. </b> Order within{" "}
               </span>{" "}
@@ -140,19 +195,17 @@ const Cart = () => {
 
           <div>
             <span>
-              <a href="https://www.amazon.com/cart/smart-wagon?newItems=055f2472-6dfa-4353-95b1-322c69ca7660,2">  
-              <button
-                className="button"
-                id={`${style.btnCart}`}
-                title="Add to Shopping Cart"
-                onClick={() => {
-                  dispatch(updateCartCount());
-                }}
-                
+              <a href="https://www.amazon.com/cart/smart-wagon?newItems=055f2472-6dfa-4353-95b1-322c69ca7660,2">
+                <button
+                  className="button"
+                  id={`${style.btnCart}`}
+                  title="Add to Shopping Cart"
+                  onClick={() => {
+                    dispatch(updateCartCount());
+                  }}
                 >
-            
-                Add to Cart
-              </button>
+                  Add to Cart
+                </button>
               </a>
             </span>
           </div>
@@ -174,12 +227,33 @@ const Cart = () => {
                 height="15px"
               ></img>
               <a
-                href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201909010&ref_=buybox-secureTransaction-learnMore-web"
+                href="#"
                 id={style.secure}
+                onClick={() => {
+                  setShowSecureAlert(!showSecureAlert);
+                }}
               >
                 Secure transaction
               </a>
             </div>
+            {showSecureAlert && (
+              <div className={style.grabSecure}>
+                <div className={style.secureDiv}>
+                  <span>
+                    <b>Your transaction is secure</b>
+                  </span>
+                  <p>
+                  We work hard to protect your security and privacy. 
+                  Our payment security system encrypts your information during transmission. 
+                  We don’t share your credit card details with third-party sellers, and we don’t sell 
+                  your information to others.  <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201909010&ref_=buybox-secureTransaction-learnMore-web">
+                    Learn more
+                  </a>
+                  </p>
+                 
+                  </div>
+                  </div>
+              )}
           </div>
           <br></br>
 
@@ -191,17 +265,32 @@ const Cart = () => {
           </div>
           <br></br>
 
-          <div className={style.returnpolicy}>
+          <div className={style.returnpolicy}
+           onMouseEnter={() => setShowReturnAlert(true)}
+           onMouseLeave={() => setShowReturnAlert(false)}
+          >
             <span>Return policy: </span>
             <a
-              href="https://www.amazon.com/gp/help/customer/display.html?nodeId=GKM69DUUYKQWKWX7&ref_=dp_ret_policy"
+              href="#"
               role="button"
             >
               Eligible for Return, Refund or Replacement within 30 days of
-              receipt
+              receipt</a>
               <div id={style.icon}></div>
-            </a>
-          </div>
+              {showReturnAlert && (
+                  <div className={style.grabReturn}>
+                  <div className={style.selectReturnDiv}>
+                     <span>
+                       <p>This item can be returned in its original condition 
+                        for a full refund or replacement within 30 days of receipt.</p>
+                        <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=GKM69DUUYKQWKWX7&ref_=dp_ret_policy">
+                        Read full return policy. 
+                        </a>  
+                     </span>
+                   </div>
+                   </div>
+                )}
+              </div>
           <br></br>
 
           <div className={style.primerow}>
@@ -215,17 +304,53 @@ const Cart = () => {
               </a>
             </span>
             <span className={style.text}>
-              Enjoy fast, FREE delivary, exclusive deals and award-winning
+              Enjoy fast, FREE delivery, exclusive deals and award-winning
               movies & TV shows with Prime{" "}
             </span>
           </div>
-          <br></br>
-          <a
-            id={style.primetext}
-            href="https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_wlpmember_us&openid.mode=checkid_setup&language=en_US&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2FParty-Dont-Start-Til-Croc%2Fdp%2FB08QV53WTG%2Fref%3Dsr_1_3%3Fcrid%3D1H26Y1PRDYWQS%26keywords%3Dt%252Bshirt%252Bwith%252Bcrocs%26qid%3D1661871366%26sprefix%3Dt%252Bshirt%252Bwith%252Bcrocs%252Caps%252C122%26sr%3D8-3%26customId%3DB07537P4T9%26th%3D1%26psc%3D1%23%26load-pop-up%3D1"
+          
+          
+          <div className={style.primeTextDiv}
+                onMouseEnter={() => setShowPrimeAlert(true)}
+                onMouseLeave={() => setShowPrimeAlert(true)}
           >
-            Try Prime and start saving today with Fast, FREE Delivery
-          </a>
+              <a
+                id={style.primetext}
+                href="https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_wlpmember_us&openid.mode=checkid_setup&language=en_US&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2FParty-Dont-Start-Til-Croc%2Fdp%2FB08QV53WTG%2Fref%3Dsr_1_3%3Fcrid%3D1H26Y1PRDYWQS%26keywords%3Dt%252Bshirt%252Bwith%252Bcrocs%26qid%3D1661871366%26sprefix%3Dt%252Bshirt%252Bwith%252Bcrocs%252Caps%252C122%26sr%3D8-3%26customId%3DB07537P4T9%26th%3D1%26psc%3D1%23%26load-pop-up%3D1"
+              >
+                 Try Prime and start saving today with Fast, FREE Delivery
+              </a>
+          <div id={style.icon}></div>
+              {showPrimeAlert && (
+                  <div className={style.grabPrime}>
+
+                    {/*not sure if i want to add this header or not
+                   <header className={style.grabPrimeHeader}></header>*/}
+                  <div className={style.selectPrimeDiv}>
+                     <span>
+                       <p>
+                       <h1 id={style.h1}>Amazon Prime includes:</h1>
+                        Fast, FREE Delivery is available to Prime members. To join, select "Try Amazon Prime and start saving today with Fast, 
+                        FREE Delivery" below the Add to Cart button.
+
+                        <p><b>Amazon Prime members enjoy:</b>
+                      
+                          <li>Cardmembers earn 5% Back at Amazon.com with a Prime Credit Card.</li>
+                        <li>Unlimited Free Two-Day Delivery</li>
+                        <li>Instant streaming of thousands of movies and TV episodes with Prime Video</li>
+                        <li>A Kindle book to borrow for free each month - with no due dates</li>
+                        <li>Listen to over 2 million songs and hundreds of playlists</li>
+                        <li>Unlimited photo storage with anywhere access</li>
+                        </p>
+                        <p><b>Important:  </b>Your credit card will NOT be charged when you start your free trial or if you cancel during the trial period. 
+                        If you're happy with Amazon Prime, do nothing. At the end of the free trial, your membership will automatically upgrade to 
+                        a monthly membership.</p>
+                       </p>
+                     </span>
+                   </div>
+                   </div>
+                )}
+            </div>
 
           <div>
             <a href="https://www.amazon.com/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Faw%2Fd%2FB08QV53WTG&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&">
@@ -233,9 +358,9 @@ const Cart = () => {
             </a>
           </div>
         </div>
-   )}
-   </div>
-)
+      )}
+    </div>
+  );
 };
 
 export default Cart;
