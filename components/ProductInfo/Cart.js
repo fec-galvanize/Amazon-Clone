@@ -148,9 +148,9 @@ const Cart = () => {
           <div className={style.delivery}>
             <span className="text-bold">
               <span>
-                Or fastest delivery <b>Saturday,</b>
+                Or fastest delivery <b>Sunday,</b>
                 <br></br>
-                <b>September 3. </b> Order within{" "}
+                <b>September 11. </b> Order within{" "}
               </span>{" "}
               <br></br>
               <span id="countdown">
