@@ -46,42 +46,51 @@ const T_shirt_line = () => {
       <div className={styles.App}>
         <div className={styles.title_and_pageNumber}>
           <h3 className={styles.carousel_header}>
-          Related products with free delivery on eligible orders
+            Related products with free delivery on eligible orders
           </h3>
           <p className={styles.pageNumber}>Page 1 of 3</p>
         </div>
-        {/*use .length to see how many pages, index to what page is being rendered */}
         <div className={styles.slide_container}>
-          {/*replace this */}
           <Slider {...settings}>
             {tShirtArray.map((product, index) => {
               const rating = Math.random() * 6;
-              const totalReviews = Math.floor(Math.random() * 300)
+              const totalReviews = Math.floor(Math.random() * 300);
               return (
                 <div key={index} className={styles.product_slide}>
                   <div className={styles.card_entire}>
-                    <button className={styles.cardAction_area} type="button">
+                    <a href={product.route}>
+                    <button
+                      onClick={() => console.log(product.route)}
+                      className={styles.cardAction_area}
+                      type="button"
+                    >
                       <img
                         className={styles.tShirtImage}
                         src={product.img}
                         alt="sample"
                       />
-                      <div>
+                      <div className={styles.spacer}>
                         <h5 className={styles.tShirt_description}>
                           {product.description}
                         </h5>
                         <div className={styles.star_and_rating}>
                           <h6 className={styles.starSpan}>
-                            {<StarRating rating={rating} suppressHydrationWarning />}
+                            {
+                              <StarRating
+                                rating={rating}
+                                suppressHydrationWarning
+                              />
+                            }
                           </h6>
-                          <p className={styles.reviews} suppressHydrationWarning>
+                          <p
+                            className={styles.reviews}
+                            suppressHydrationWarning
+                          >
                             {totalReviews}
                           </p>
                         </div>
                         <div className={styles.priceAndPrime}>
-                          <h7 className={styles.price}>
-                            {product.price}
-                          </h7>
+                          <h7 className={styles.price}>{product.price}</h7>
                           <img
                             className={styles.primeImg}
                             src="https://seeklogo.com/images/A/amazon-prime-icon-logo-484A50E84F-seeklogo.com.png"
@@ -89,6 +98,7 @@ const T_shirt_line = () => {
                         </div>
                       </div>
                     </button>
+                    </a>
                   </div>
                 </div>
               );
