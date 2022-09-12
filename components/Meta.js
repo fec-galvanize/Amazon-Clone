@@ -5,6 +5,7 @@ const Meta = () => {
     <Head>
       <title>Amazon Clone </title>
       <meta name="description" content="Amazon Clone" />
+      <meta name="viewport" content="width=device, initial-scale=1"/>
       <link rel="icon" href="/favicon.ico" />
       <link
         rel="stylesheet"
@@ -12,6 +13,7 @@ const Meta = () => {
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
         crossorigin="anonymous"
       />
+      <link rel="stylesheet" href="globals.css"></link>
     </Head>
   );
 };
