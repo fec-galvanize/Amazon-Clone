@@ -111,7 +111,7 @@
     width:100%;
     display:flex;
     flex-direction: row;
-    color: white;
+    color: white !important;
     background-color: #232f3e;
     padding:5px;
 }
@@ -133,7 +133,7 @@
 }
 
 .li{
-    color:white;
+    color:white !important;
     justify-content:baseline;
     margin-top:2px;
     margin-bottom:2px;
@@ -156,7 +156,7 @@
 
 
 .catsf{
-    color:black;
+    color:black !important;
     font-size: larger;
     display:flex;
     flex-direction: row;
