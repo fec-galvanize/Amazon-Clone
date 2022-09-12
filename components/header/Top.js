@@ -5,7 +5,8 @@ import { BiCart } from "react-icons/bi";
 import { IoLocationOutline } from "react-icons/io5";
 import style from "../../styles/Header.module.css";
 import { useSelector } from "react-redux";
-import { Popover, OverlayTrigger } from "react-bootstrap";
+import { Popover, OverlayTrigger, Image } from "react-bootstrap";
+import flag from "../../public/images/flag.jpg";
 
 export default function Top() {
   //useState to loggedin true, loggedin false
@@ -28,6 +29,9 @@ export default function Top() {
           <FaSearch />
         </button>
       </form>
+      <div className={`${style.flag}`}>
+        <Image src={flag} fluid thumbnail />
+      </div>
       <div className={`${style.login}`}>
         {loggedIn ? (
           <div>
