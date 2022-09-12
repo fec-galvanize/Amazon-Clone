@@ -3,7 +3,10 @@ import style from "../../styles/Cart.module.css";
 import { useDispatch } from "react-redux";
 import { updateCartCount } from "../../redux/features/prodInfo-slice";
 import { useSelector } from "react-redux";
+import Modal from 'react-bootstrap/Modal';
 
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -18,7 +21,10 @@ const Cart = () => {
   const [showSecureAlert, setShowSecureAlert] =useState(false);
   const [showReturnAlert, setShowReturnAlert] =useState(false);
   const [showPrimeAlert, setShowPrimeAlert] =useState(false)
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <div className={style.mainCart}>
@@ -31,7 +37,7 @@ const Cart = () => {
           </div>
           <div
           onMouseEnter={() => setShowAlert(true)}
-          onMouseLeave={() => setShowAlert(false)}>
+          onMouseLeave={() => setShowAlert(true)}>
             <div>
             <button id={style.btnAddCart}>Add to Cart</button>
             </div>
@@ -160,14 +166,70 @@ const Cart = () => {
             </span>
           </div>
           <br></br>
+          <div>
           <div className="select-location">
             <div id={`${style.pinPoint}`}></div>
-            <a href="#" id={style.location}>
+            <a href="#" id={style.location} onClick={handleShow}>
               {" "}
               Select delivary location{" "}
             </a>
           </div>
+          <div className={style.modal}>
 
+          <Modal show={show}   aria-labelledby="contained-modal-title-vcenter"
+      centered onHide={handleClose}>
+        <Modal.Header className={style.modalHeader} >
+          <Modal.Title className={style.modalTitle}>Choose your location</Modal.Title>
+        </Modal.Header>
+        <p className={style.upperText}>Delivery options and delivary speeds may vary for different locations</p>
+        <button className={style.signInAddress}>Sign in to see your addresses</button>
+        <Modal.Body>
+        <div className={style.lineBreak}>
+        <span className={style.zip}>or enter a US zip code</span>
+        </div><br></br>
+        <div className={style.enterZip}>
+        <InputGroup className="mb-3">
+        <Form.Control
+          placeholder=""
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+        />
+        <button variant="outline-secondary" id={style.applyBtn}>
+          Apply
+        </button>
+      </InputGroup>
+        </div>
+        <div className={style.lineOr}>
+        <span className={style.or}>or</span>
+        </div><br></br>
+        <Form.Select className={style.countryBtn} aria-label="Default select example">
+      <option>Ship outside the US</option>
+      <option value="1">Australia</option>
+      <option value="2">Canada</option>
+      <option value="3">China</option>
+      <option value="4">Japan</option>
+      <option value="5">Mexico</option>
+      <option value="6">Singapore</option>
+      <option value="7">United Kingdom</option>
+      <option value="8">----------------------------</option>
+      <option value="9">Afghanistan</option>
+      <option value="10">Aland Islands</option>
+      <option value="11">Albania</option>
+      <option value="12">etc....</option>
+      <option value="13">etc....</option>
+      <option value="14">etc....</option>
+    </Form.Select>
+        </Modal.Body>
+        <Modal.Footer>
+          <button className={style.doneBtn} variant="primary" onClick={handleClose}>
+            Done
+          </button>
+        </Modal.Footer>
+      </Modal>
+
+      </div>
+
+            </div>
           <div>
             <p className={style.stock}> In Stock. </p>
             <span className={style.boxshadow}>
