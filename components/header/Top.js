@@ -5,12 +5,10 @@ import { BiCart } from "react-icons/bi";
 import { IoLocationOutline } from "react-icons/io5";
 import style from "../../styles/Header.module.css";
 import { useSelector } from "react-redux";
-import { Popover, OverlayTrigger, Image } from "react-bootstrap";
-import flag from "../../public/images/flag.jpg";
+import { Popover, OverlayTrigger } from "react-bootstrap";
 
 export default function Top() {
   //useState to loggedin true, loggedin false
-  const [loggedIn, setLoggedIn] = useState(false);
 
   const cartCount = useSelector(({ prodInfo: { cartCount } }) => cartCount);
 
@@ -30,28 +28,30 @@ export default function Top() {
         </button>
       </form>
       <div className={`${style.flag}`}>
-        <Image src={flag} fluid thumbnail />
+        <p>English</p>
+        <div className={`${style.galf}`}></div>
       </div>
-      <div className={`${style.login}`}>
-        {loggedIn ? (
+      <OverlayTrigger
+        trigger="click"
+        placement="bottom"
+        overlay={
+          <Popover id={`popover-positioned-bottom`}>
+            <Popover.Body>
+              <h5>Accounts and Lists</h5>
+              <p>Webhead Account</p>
+              <p>Make It Primo</p>
+              <p>Primo List</p>
+            </Popover.Body>
+          </Popover>
+        }
+      >
+        <div className={`${style.login}`}>
           <div>
             <h5>Hello, Webhead</h5>
+            <h4>Account</h4>
           </div>
-        ) : (
-          <div>
-            Log In
-            <form className={`${style.userLogin}`}>
-              <input type="text" placeholder="user name" />
-              <input type="text" placeholder="password" />
-              <button
-                className={`${style.logbutton}`}
-                type="submit"
-                onClick={setLoggedIn(true)}
-              ></button>
-            </form>
-          </div>
-        )}
-      </div>
+        </div>
+      </OverlayTrigger>
       <OverlayTrigger
         trigger="click"
         placement="right"
@@ -60,7 +60,7 @@ export default function Top() {
             <Popover.Header as="h3">{`subtotal`}</Popover.Header>
             <Popover.Body>
               {cartCount !== 0 ? <p>$17.99</p> : <p>$0</p>}
-              <button> add to cart </button>
+              <button className={style.btnAddCart}> Add to cart </button>
             </Popover.Body>
           </Popover>
         }
