@@ -7,8 +7,8 @@ body {
 }
 
 a {
-  color: #007185;
-  text-decoration: none;
+  color: #007185 !important;
+  text-decoration: none !important;
 }
 
 a:hover{
@@ -19,6 +19,18 @@ a:hover{
   box-sizing: border-box;
 }
 
+.modal-content {
+  max-width: 79% !important;
+ margin-left: 25%;
+}
+
+.input-group {
+  position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center !important;
+    width: 100%;
+}
 
 /* @media (prefers-color-scheme: dark) {
   html {
