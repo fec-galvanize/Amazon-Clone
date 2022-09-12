@@ -37,7 +37,7 @@ const Cart = () => {
           </div>
           <div
           onMouseEnter={() => setShowAlert(true)}
-          onMouseLeave={() => setShowAlert(true)}>
+          onMouseLeave={() => setShowAlert(false)}>
             <div>
             <button id={style.btnAddCart}>Add to Cart</button>
             </div>
