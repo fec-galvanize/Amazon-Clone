@@ -14,6 +14,7 @@
     text-align: center;
     height: 60px;
     padding: 5px;
+    justify-content: space-around;
 }
 
 .logo{
@@ -47,7 +48,7 @@
     width: 20px;
 }
 .input{
-    width:500px;
+    width:750px;
     height:40px;
     padding:10px;
     border-radius: 5px;
@@ -62,7 +63,7 @@
     margin-top:10px;
     margin-left:0;
     margin-right:15px;
-    padding: 10px;
+    padding: 8px;
     height:40px;
     width:40px;
     background-color: #febd69; 
@@ -86,6 +87,41 @@
     margin-right: 25px;
 }
 
+.login h5{
+    color: white;
+    font-size: small;
+    margin-bottom: 1px;
+}
+.login h4{
+    margin-top:0;
+    font-size: 1.3em;
+}
+
+.flag{
+    display:flex;
+    flex-direction: column;
+    margin-right: 25px;
+
+}
+
+.flag p{
+    color: white;
+    font-size: smaller;
+    margin-bottom: 0;
+}
+
+.galf{
+    height:1.5em;
+    width: 2em;
+    background-color: #131921;
+    background-size: cover;
+    background-image: url("../public/images/flag.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top:0;
+
+}
+
 .shoppingCart {
     display:flex;
     flex-direction:column;
@@ -99,6 +135,26 @@
     width:100%;
     align-self: center;
 }
+
+.btnAddCart {
+    border-radius: 20px;
+    background: #FFD814;
+    border-color: #FCD200;
+    text-align: center;
+    vertical-align: middle;
+    border-style: solid;
+    border-width: 1px;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    line-height: 19px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+}
+.btnAddCart:hover {background-color: #f4cb00}
 
 
 
@@ -114,14 +170,14 @@
     color: white !important;
     background-color: #232f3e;
     padding:5px;
+    
 }
 
 .allcat{
     display:flex;
     padding: 2px;
-    margin: 4px 4px 4px 4px;
+    margin: 4px 4px 4px 15px;
     width: 60px;
-
 }
 
 .cats{
@@ -130,14 +186,28 @@
     flex-direction: row;
     list-style: none;
     margin: 4px 4px 4px 4px;
+    justify-content: space-around;
 }
 
 .li{
     color:white !important;
-    justify-content:baseline;
+    justify-content:center;
     margin-top:2px;
     margin-bottom:2px;
-    margin-left:20px;
+    margin-left:30px;
+    height:fit-content;
+    width:fit-content;
+}
+
+.li:hover{
+    border-style: solid;
+    border-width: 1px;
+    border-color:#fff;
+    border-radius: 2px;
+}
+
+.li a {
+    border-style: none !important;
 }
 
 .iconlist{
