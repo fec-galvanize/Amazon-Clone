@@ -14,7 +14,7 @@
   text-decoration: underline;
 }
 .zero {
-  color: #565959;
+  color: #565959 !important;
   cursor: default;
 }
 .zero:hover {

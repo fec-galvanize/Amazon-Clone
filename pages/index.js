@@ -6,6 +6,7 @@ import Reviews from '../components/Reviews';
 import Video from "../components/Video";
 import Questions from "../components/Questions";
 import Alsoviewed from "../components/Carosel/alsoViewed";
+import Trends from "../components/Carosel/shoppingTrends";
 
 export default function Home() {
   return (
@@ -16,9 +17,7 @@ export default function Home() {
       <T_shirt_line />
       <Questions />
       <Reviews />
-      <T_shirt_line />
-      <T_shirt_line />
-      <T_shirt_line />
+      <Trends />
     </div>
   );
 }

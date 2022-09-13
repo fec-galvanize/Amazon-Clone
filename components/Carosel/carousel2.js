@@ -3,8 +3,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "../../styles/caoursel2.module.css";
-import tshirts from "./relatedData";
+import tshirts from "./tShirtData";
 import StarRating from "../StarRating";
+
+// const Page = () => {
+
+//   const [currentPage, setCurrentPage] = useState(1)
+
+// };
 
 const T_shirt_line = () => {
   const settings = {
@@ -46,51 +52,42 @@ const T_shirt_line = () => {
       <div className={styles.App}>
         <div className={styles.title_and_pageNumber}>
           <h3 className={styles.carousel_header}>
-            Related products with free delivery on eligible orders
+            Customers who viewed this item also viewed
           </h3>
           <p className={styles.pageNumber}>Page 1 of 3</p>
         </div>
+        {/*use .length to see how many pages, index to what page is being rendered */}
         <div className={styles.slide_container}>
+          {/*replace this */}
           <Slider {...settings}>
             {tShirtArray.map((product, index) => {
               const rating = Math.random() * 6;
-              const totalReviews = Math.floor(Math.random() * 300);
+              const totalReviews = Math.floor(Math.random() * 300)
               return (
                 <div key={index} className={styles.product_slide}>
                   <div className={styles.card_entire}>
-                    <a href={product.route}>
-                    <button
-                      onClick={() => console.log(product.route)}
-                      className={styles.cardAction_area}
-                      type="button"
-                    >
+                    <button className={styles.cardAction_area} type="button">
                       <img
                         className={styles.tShirtImage}
                         src={product.img}
                         alt="sample"
                       />
-                      <div className={styles.spacer}>
+                      <div>
                         <h5 className={styles.tShirt_description}>
                           {product.description}
                         </h5>
                         <div className={styles.star_and_rating}>
                           <h6 className={styles.starSpan}>
-                            {
-                              <StarRating
-                                rating={rating}
-                                suppressHydrationWarning
-                              />
-                            }
+                            {<StarRating rating={rating} suppressHydrationWarning />}
                           </h6>
-                          <p
-                            className={styles.reviews}
-                            suppressHydrationWarning
-                          >
+                          <p className={styles.rating} suppressHydrationWarning>
                             {totalReviews}
                           </p>
                         </div>
                         <div className={styles.priceAndPrime}>
-                          <h7 className={styles.price}>{product.price}</h7>
+                          <h7 className={styles.price}>
+                            {product.price}
+                          </h7>
                           <img
                             className={styles.primeImg}
                             src="https://seeklogo.com/images/A/amazon-prime-icon-logo-484A50E84F-seeklogo.com.png"
@@ -98,7 +95,6 @@ const T_shirt_line = () => {
                         </div>
                       </div>
                     </button>
-                    </a>
                   </div>
                 </div>
               );

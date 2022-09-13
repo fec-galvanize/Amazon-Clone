@@ -43,6 +43,7 @@
 .subject {
   margin-left: 1rem;
   font-weight: bold;
+  color: black;
 }
 
 .date {
@@ -51,8 +52,8 @@
 }
 
 .verified {
-  color: #c45500;
-  font-weight: bold;
+  color: #c45500 !important;
+  font-weight: bold !important;
 }
 
 .helpful{
@@ -85,6 +86,8 @@
 }
 
 .seeAll:hover,
-.subject:hover{
-    text-decoration: underline;
+.subject:hover,
+.verified:hover {
+    text-decoration: underline !important;
+    color: #c45500 !important;
 }
