@@ -4,10 +4,16 @@ import { useEffect, useState } from "react";
 
 const TopReviews = () => {
   const [reviews, setReviews] = useState([]);
+
+  const getReviews = async () => {
+    const res = await fetch("http://localhost:3000/api/reviews");
+    const { data } = await res.json();
+
+    await setReviews(data);
+  };
+
   useEffect(() => {
-    (async () => {
-      setReviews(await (await fetch("/api/reviews")).json());
-    })();
+    getReviews();
   }, []);
 
   return (

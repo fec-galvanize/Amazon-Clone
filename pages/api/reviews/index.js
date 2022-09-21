@@ -1,6 +1,7 @@
-// import sql from "../../../database/review";
+import Reviews from "../../../models/reviewsModel";
+import dbConnect from "../../../utils/connectMongo";
 
-const reviews = [
+const reviewsData = [
   {
     picture:
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.andina-ingham.co.uk%2Fwp-content%2Fuploads%2F2019%2F09%2Fmiguel-andrade-nAOZCYcLND8-unsplash_pineapple.jpg&f=1&nofb=1",
@@ -33,22 +34,51 @@ const reviews = [
   },
 ];
 
-// export default async function handler(req, res) {
-//   switch (req.method) {
-//     case "GET":
-//       const response = await sql`SELECT * FROM reviews`;
+dbConnect();
 
-//       if (response[0]) {
-//         return res.status(200).json(response);
-//       } else {
-//         let addedReviews = [];
-//         for (let review of reviews) {
-//           const item = (
-//             await sql`INSERT INTO reviews ${sql(review)} returning *`
-//           )[0];
-//           addedReviews.push(item);
-//         }
-//         return res.status(200).json(addedReviews);
-//       }
-//   }
-// }
+export default async (req, res) => {
+  switch (req.method) {
+    case "GET":
+      try {
+        console.log("looking for reviews");
+        let reviews = await Reviews.find({});
+
+        if (reviews[0]) {
+          console.log("found reviews");
+          return res.status(200).json({ success: true, data: reviews });
+        } else {
+          console.log("seeding array of reviews");
+
+          reviews = await Reviews.insertMany(reviewsData);
+
+          console.log("reviews put in to database");
+          res.status(200).json({ success: true, body: reviews });
+        }
+      } catch (error) {
+        console.error(error);
+        res.status(400).json({ success: false });
+      }
+      break;
+    case "POST":
+      try {
+        const newReview = await Reviews.create(req.body);
+        res.status(201).json({ success: true, body: newReview });
+      } catch (error) {
+        console.error(error);
+        res.status(400).json({ success: false });
+      }
+      break;
+    case "DELETE":
+      try {
+        await Reviews.deleteMany();
+        res.status(200).json({ success: true });
+      } catch (error) {
+        console.error(error);
+        res.status(400).json({ success: false });
+      }
+      break;
+    default:
+      res.status(400).json({ success: false });
+      break;
+  }
+};
