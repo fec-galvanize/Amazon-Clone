@@ -1,4 +1,4 @@
-import sql from "../../../database/review";
+// import sql from "../../../database/review";
 
 const reviews = [
   {
@@ -33,22 +33,22 @@ const reviews = [
   },
 ];
 
-export default async function handler(req, res) {
-  switch (req.method) {
-    case "GET":
-      const response = await sql`SELECT * FROM reviews`;
+// export default async function handler(req, res) {
+//   switch (req.method) {
+//     case "GET":
+//       const response = await sql`SELECT * FROM reviews`;
 
-      if (response[0]) {
-        return res.status(200).json(response);
-      } else {
-        let addedReviews = [];
-        for (let review of reviews) {
-          const item = (
-            await sql`INSERT INTO reviews ${sql(review)} returning *`
-          )[0];
-          addedReviews.push(item);
-        }
-        return res.status(200).json(addedReviews);
-      }
-  }
-}
+//       if (response[0]) {
+//         return res.status(200).json(response);
+//       } else {
+//         let addedReviews = [];
+//         for (let review of reviews) {
+//           const item = (
+//             await sql`INSERT INTO reviews ${sql(review)} returning *`
+//           )[0];
+//           addedReviews.push(item);
+//         }
+//         return res.status(200).json(addedReviews);
+//       }
+//   }
+// }

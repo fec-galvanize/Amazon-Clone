@@ -13,18 +13,15 @@ const ShirtOptions = () => {
   const [gender, setGender] = useState("Men");
   const [shirts, setShirts] = useState([]);
 
-  function getShirts() {
-    fetch("/api/shirts")
-      .then((data) => {
-        return data.json();
-      })
-      .then((shirts) => {
-        setShirts(shirts);
-      });
-  }
+  const getOptions = async () => {
+    const res = fetch("../../../pages/api/options");
+    const { data } = (await res).json;
+
+    await console.log(data);
+  };
 
   useEffect(() => {
-    getShirts();
+    getOptions();
   }, []);
 
   const dispatch = useDispatch();

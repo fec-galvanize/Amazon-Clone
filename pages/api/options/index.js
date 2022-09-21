@@ -1,4 +1,10 @@
-import sql from "../../../database/review";
+import dbConnect from "../../../utils/connectMongo";
+import Options from "../../../models/optionsModel";
+
+/**
+ * @param {import('next').NextApiRequest} req
+ * @param {import('next').NextApiResponse} res
+ */
 
 const shirtColors = [
   {
@@ -63,22 +69,51 @@ const shirtColors = [
   },
 ];
 
-export default async function handler(req, res) {
+dbConnect();
+
+export default async (req, res) => {
   switch (req.method) {
     case "GET":
-      const response = await sql`SELECT * FROM shirts`;
+      try {
+        console.log("looking for documents");
+        let options = await Options.find({});
 
-      if (response[0]) {
-        return res.status(200).json(response);
-      } else {
-        let addedShirts = [];
-        for (let shirt of shirtColors) {
-          const item = (
-            await sql`INSERT INTO shirts ${sql(shirt)} returning *`
-          )[0];
-          addedShirts.push(item);
+        if (options[0]) {
+          console.log("found documents");
+          return res.status(200).json({ success: true, data: options });
+        } else {
+          console.log("seeding array of objects");
+
+          options = await Options.insertMany(shirtColors);
+
+          console.log("shirts put in to database");
+          res.status(200).json({ success: true, body: options });
         }
-        return res.status(200).json(addedShirts);
+      } catch (error) {
+        console.error(error);
+        res.status(400).json({ success: false });
       }
+      break;
+    case "POST":
+      try {
+        const newOption = await Options.create(req.body);
+        res.status(201).json({ success: true, body: newOption });
+      } catch (error) {
+        console.error(error);
+        res.status(400).json({ success: false });
+      }
+      break;
+    case "DELETE":
+      try {
+        await Options.deleteMany();
+        res.status(200).json({ success: true });
+      } catch (error) {
+        console.error(error);
+        res.status(400).json({ success: false });
+      }
+      break;
+    default:
+      res.status(400).json({ success: false });
+      break;
   }
-}
+};

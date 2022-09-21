@@ -1,4 +1,4 @@
-import sql from "../../../database/review/index";
+// import sql from "../../../database/review/index";
 
 const fashCat = [
   {
@@ -41,22 +41,22 @@ const fashCat = [
   },
 ];
 
-export default async function handler(req, res) {
-  switch (req.method) {
-    case "GET":
-      const response = await sql`SELECT * FROM fashcat`;
+// export default async function handler(req, res) {
+//   switch (req.method) {
+//     case "GET":
+//       const response = await sql`SELECT * FROM fashcat`;
 
-      if (response[0]) {
-        return res.status(200).json(response);
-      } else {
-        let addedCategories = [];
-        for (let cat of fashCat) {
-          const item = (
-            await sql`INSERT INTO fashcat ${sql(cat)} returning *`
-          )[0];
-          addedCategories.push(item);
-        }
-        return res.status(200).json(addedCategories);
-      }
-  }
-}
+//       if (response[0]) {
+//         return res.status(200).json(response);
+//       } else {
+//         let addedCategories = [];
+//         for (let cat of fashCat) {
+//           const item = (
+//             await sql`INSERT INTO fashcat ${sql(cat)} returning *`
+//           )[0];
+//           addedCategories.push(item);
+//         }
+//         return res.status(200).json(addedCategories);
+//       }
+//   }
+// }

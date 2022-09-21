@@ -1,4 +1,4 @@
-import sql from "../../../database/review";
+// import sql from "../../../database/review";
 
 //MID categories array
 const categories = [
@@ -83,22 +83,22 @@ const fashCat = [
 
 //req.params or req.url or req.route.path
 
-export default async function handler(req, res) {
-  switch (req.method) {
-    case "GET":
-      const response = await sql`SELECT * FROM categories`;
+// export default async function handler(req, res) {
+//   switch (req.method) {
+//     case "GET":
+//       const response = await sql`SELECT * FROM categories`;
 
-      if (response[0]) {
-        return res.status(200).json(response);
-      } else {
-        let addedCategories = [];
-        for (let cat of categories) {
-          const item = (
-            await sql`INSERT INTO categories ${sql(cat)} returning *`
-          )[0];
-          addedCategories.push(item);
-        }
-        return res.status(200).json(addedCategories);
-      }
-  }
-}
+//       if (response[0]) {
+//         return res.status(200).json(response);
+//       } else {
+//         let addedCategories = [];
+//         for (let cat of categories) {
+//           const item = (
+//             await sql`INSERT INTO categories ${sql(cat)} returning *`
+//           )[0];
+//           addedCategories.push(item);
+//         }
+//         return res.status(200).json(addedCategories);
+//       }
+//   }
+// }
