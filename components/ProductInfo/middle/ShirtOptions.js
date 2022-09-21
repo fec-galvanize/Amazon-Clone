@@ -14,10 +14,10 @@ const ShirtOptions = () => {
   const [shirts, setShirts] = useState([]);
 
   const getOptions = async () => {
-    const res = fetch("../../../pages/api/options");
-    const { data } = (await res).json;
+    const res = await fetch("http://localhost:3000/api/options");
+    const { data } = await res.json();
 
-    await console.log(data);
+    await setShirts(data);
   };
 
   useEffect(() => {
