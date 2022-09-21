@@ -1,13 +1,18 @@
-import { Schema, model, models } from "mongoose";
+import mongoose, { Schema, model, models } from "mongoose";
+
+const InfoSchema = new Schema({
+  title: String,
+  ulink: String,
+});
 
 const HeaderSchema = new Schema(
   {
-    title: String,
-    ulink: String,
+    name: String,
+    info: [InfoSchema],
   },
   { collection: "Header" }
 );
 
-const Header = models.Options || model("Options", OptionsSchema);
+const Header = models.Header || model("Header", HeaderSchema);
 
 export default Header;

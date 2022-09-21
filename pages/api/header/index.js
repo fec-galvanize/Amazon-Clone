@@ -1,4 +1,5 @@
-// import sql from "../../../database/review";
+import dbConnect from "../../../utils/connectMongo";
+import Header from "../../../models/headerModels";
 
 //MID categories array
 const categories = [
@@ -81,24 +82,56 @@ const fashCat = [
   },
 ];
 
-//req.params or req.url or req.route.path
+const headerInfo = [
+  { name: "categories", info: categories },
+  { name: "fashCat", info: fashCat },
+];
 
-// export default async function handler(req, res) {
-//   switch (req.method) {
-//     case "GET":
-//       const response = await sql`SELECT * FROM categories`;
+dbConnect();
 
-//       if (response[0]) {
-//         return res.status(200).json(response);
-//       } else {
-//         let addedCategories = [];
-//         for (let cat of categories) {
-//           const item = (
-//             await sql`INSERT INTO categories ${sql(cat)} returning *`
-//           )[0];
-//           addedCategories.push(item);
-//         }
-//         return res.status(200).json(addedCategories);
-//       }
-//   }
-// }
+export default async (req, res) => {
+  switch (req.method) {
+    case "GET":
+      try {
+        console.log("looking for info");
+        let info = await Header.find({});
+
+        if (info[0]) {
+          console.log("found info");
+          return res.status(200).json({ success: true, data: info });
+        } else {
+          console.log("seeding arrays of info");
+
+          info = await Header.insertMany(headerInfo);
+
+          console.log("reviews put in to database");
+          res.status(200).json({ success: true, body: info });
+        }
+      } catch (error) {
+        console.error(error);
+        res.status(400).json({ success: false });
+      }
+      break;
+    case "POST":
+      try {
+        const newInfo = await Header.create(req.body);
+        res.status(201).json({ success: true, body: newInfo });
+      } catch (error) {
+        console.error(error);
+        res.status(400).json({ success: false });
+      }
+      break;
+    case "DELETE":
+      try {
+        await Header.deleteMany();
+        res.status(200).json({ success: true });
+      } catch (error) {
+        console.error(error);
+        res.status(400).json({ success: false });
+      }
+      break;
+    default:
+      res.status(400).json({ success: false });
+      break;
+  }
+};
