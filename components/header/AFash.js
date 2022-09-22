@@ -4,15 +4,12 @@ import style from "../../styles/Header.module.css";
 export default function AFash() {
   const [fashCat, setFashCat] = useState([]);
 
-  function getFashCats() {
-    fetch("/api/fheader")
-      .then((data) => {
-        return data.json();
-      })
-      .then((fcats) => {
-        setFashCat(fcats);
-      });
-  }
+  const getFashCats = async () => {
+    const res = await fetch("http://localhost:3000/api/header/fashCat");
+    const { data } = await res.json();
+
+    await setFashCat(data[0].info);
+  };
 
   useEffect(() => {
     getFashCats();

@@ -6,15 +6,12 @@ import { BsList } from "react-icons/bs";
 export default function Mid() {
   const [categories, setCategories] = useState([]);
 
-  function getCat() {
-    fetch("/api/mheader")
-      .then((data) => {
-        return data.json();
-      })
-      .then((cats) => {
-        setCategories(cats);
-      });
-  }
+  const getCat = async () => {
+    const res = await fetch("http://localhost:3000/api/header/categories");
+    const { data } = await res.json();
+
+    await setCategories(data[0].info);
+  };
 
   useEffect(() => {
     getCat();
