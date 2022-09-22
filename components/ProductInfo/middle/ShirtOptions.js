@@ -14,7 +14,7 @@ const ShirtOptions = () => {
   const [shirts, setShirts] = useState([]);
 
   const getOptions = async () => {
-    const res = await fetch("http://localhost:3000/api/options");
+    const res = await fetch("/api/options");
     const { data } = await res.json();
 
     await setShirts(data);

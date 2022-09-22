@@ -7,7 +7,7 @@ export default function Mid() {
   const [categories, setCategories] = useState([]);
 
   const getCat = async () => {
-    const res = await fetch("http://localhost:3000/api/header/categories");
+    const res = await fetch("/api/header/categories");
     const { data } = await res.json();
 
     await setCategories(data[0].info);

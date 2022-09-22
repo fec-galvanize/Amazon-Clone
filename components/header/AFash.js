@@ -5,7 +5,7 @@ export default function AFash() {
   const [fashCat, setFashCat] = useState([]);
 
   const getFashCats = async () => {
-    const res = await fetch("http://localhost:3000/api/header/fashCat");
+    const res = await fetch("/api/header/fashCat");
     const { data } = await res.json();
 
     await setFashCat(data[0].info);

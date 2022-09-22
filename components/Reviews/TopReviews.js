@@ -6,7 +6,7 @@ const TopReviews = () => {
   const [reviews, setReviews] = useState([]);
 
   const getReviews = async () => {
-    const res = await fetch("http://localhost:3000/api/reviews");
+    const res = await fetch("/api/reviews");
     const { data } = await res.json();
 
     await setReviews(data);
