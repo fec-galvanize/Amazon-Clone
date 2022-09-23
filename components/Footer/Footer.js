@@ -4,7 +4,7 @@ import Foot2 from "./Foot2";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer" aria-label="big foot">
       <Foot1 />
       <Foot2 />
     </div>
