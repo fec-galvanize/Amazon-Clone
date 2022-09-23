@@ -54,7 +54,11 @@ const ProdPath = () => {
       {paths.map(({ text, url }, i) => {
         return (
           <span key={i}>
-            <a href={url} className={style.pathLink}>
+            <a
+              href={url}
+              className={style.pathLink}
+              aria-label="categories/path"
+            >
               {text}
             </a>
             {i !== paths.length - 1 && <span>{">"}</span>}

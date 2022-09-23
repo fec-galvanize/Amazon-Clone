@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import popupStyle from "../../styles/Middle.module.css";
 
 const RatingSnapshot = ({ popup }) => {
-  // Grab rating and totalRating from redux 
+  // Grab rating and totalRating from redux
   const dispatch = useDispatch();
   const { rating, totalRatings } = useSelector(
     ({ prodInfo: { rating, totalRatings } }) => ({ rating, totalRatings })
@@ -19,12 +19,12 @@ const RatingSnapshot = ({ popup }) => {
     { star: 2, count: 0 },
     { star: 1, count: 0 },
   ]);
-// wheneever the total ratings change or rating distribution changes, update the rating
+  // wheneever the total ratings change or rating distribution changes, update the rating
   useEffect(() => {
     dispatch(updateRating({ ratingDistribution }));
   }, [totalRatings, ratingDistribution]);
   return (
-    <div className={popup && popupStyle.ratingsnap}>
+    <div className={popup && popupStyle.ratingsnap} aria-label="pop up ratings">
       <div>
         <StarRating rating={rating} /> <span>{rating} out of 5</span>
       </div>
@@ -41,9 +41,10 @@ const RatingSnapshot = ({ popup }) => {
                 className={`${style.meterContainer} ${
                   count > 0 ? style.hoverable : style.zero
                 }`}
+                aria-label="hover over the stars"
               >
                 <span>{star} star</span>
-                <div className={style.meter}>
+                <div className={style.meter} aria-label="meter">
                   <div
                     className={`${style.meter} ${style.fill}`}
                     style={{ width: percent }}
