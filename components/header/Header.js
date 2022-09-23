@@ -96,7 +96,10 @@ export default function Header() {
                 <Popover.Header as="h3">{`subtotal`}</Popover.Header>
                 <Popover.Body>
                   {cartCount !== 0 ? <p>$17.99</p> : <p>$0</p>}
-                  <button className={style.btnAddCart}> Add to cart </button>
+                  <button className={style.btnAddCart} aria-label="add to cart">
+                    {" "}
+                    Add to cart{" "}
+                  </button>
                 </Popover.Body>
               </Popover>
             }

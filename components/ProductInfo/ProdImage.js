@@ -27,11 +27,18 @@ const ProdImage = () => {
       <div className={`${style.btnDisplay}`} aria-label="color">
         {/* Maps through ImgArray fro redux state and creates btns, that preview the display image */}
         {imgArray.map((image, i) => {
-          return <ImgBtn key={i} image={image} imgArray={imgArray} />;
+          return (
+            <ImgBtn
+              key={i}
+              image={image}
+              imgArray={imgArray}
+              aria-label="image button"
+            />
+          );
         })}
       </div>
       <div className={`${style.display}`}>
-        <ShareBtn />
+        <ShareBtn aria-label="share button" />
         <img
           className={`${style.img}`}
           src={display_img}
@@ -66,7 +73,7 @@ const ImgBtn = ({ image }) => {
       }}
       aria-label="change main display"
     >
-      <img src={image} className={`${style.img}`} />
+      <img src={image} className={`${style.img}`} alt="tshirt" />
     </button>
   );
 };
