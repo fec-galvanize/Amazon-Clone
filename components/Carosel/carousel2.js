@@ -62,7 +62,7 @@ const T_shirt_line = () => {
           <Slider {...settings}>
             {tShirtArray.map((product, index) => {
               const rating = Math.random() * 6;
-              const totalReviews = Math.floor(Math.random() * 300)
+              const totalReviews = Math.floor(Math.random() * 300);
               return (
                 <div key={index} className={styles.product_slide}>
                   <div className={styles.card_entire}>
@@ -78,16 +78,19 @@ const T_shirt_line = () => {
                         </h5>
                         <div className={styles.star_and_rating}>
                           <h6 className={styles.starSpan}>
-                            {<StarRating rating={rating} suppressHydrationWarning />}
+                            {
+                              <StarRating
+                                rating={rating}
+                                suppressHydrationWarning
+                              />
+                            }
                           </h6>
                           <p className={styles.rating} suppressHydrationWarning>
                             {totalReviews}
                           </p>
                         </div>
                         <div className={styles.priceAndPrime}>
-                          <h7 className={styles.price}>
-                            {product.price}
-                          </h7>
+                          <h7 className={styles.price}>{product.price}</h7>
                           <img
                             className={styles.primeImg}
                             src="https://seeklogo.com/images/A/amazon-prime-icon-logo-484A50E84F-seeklogo.com.png"
