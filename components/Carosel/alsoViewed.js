@@ -64,9 +64,14 @@ const Alsoviewed = () => {
                   aria-label="product slide"
                 >
                   <div className={styles.card_entire}>
-                    <button className={styles.cardAction_area} type="button">
+                    <button
+                      className={styles.cardAction_area}
+                      type="button"
+                      aria-label="tshirt card"
+                    >
                       <img
                         className={styles.tShirtImage}
+                        aria-label="tshirt image"
                         src={product.img}
                         alt="sample"
                       />
@@ -74,7 +79,10 @@ const Alsoviewed = () => {
                         <h5 className={styles.tShirt_description}>
                           {product.description}
                         </h5>
-                        <div className={styles.star_and_rating}>
+                        <div
+                          className={styles.star_and_rating}
+                          aria-label="star rating"
+                        >
                           <h6 className={styles.starSpan}>
                             {
                               <StarRating
@@ -90,11 +98,15 @@ const Alsoviewed = () => {
                             {totalReviews}
                           </p>
                         </div>
-                        <div className={styles.priceAndPrime}>
+                        <div
+                          className={styles.priceAndPrime}
+                          aria-label="price and prime"
+                        >
                           <h7 className={styles.price}>{product.price}</h7>
                           <img
                             className={styles.primeImg}
                             src="https://seeklogo.com/images/A/amazon-prime-icon-logo-484A50E84F-seeklogo.com.png"
+                            alt="prime image"
                           ></img>
                         </div>
                       </div>
