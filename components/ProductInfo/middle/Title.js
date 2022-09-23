@@ -50,7 +50,7 @@ const Title = () => {
             </div>
           )}
         </div>
-        <div className={style.chevy} aria-label="just a little chevy">
+        <div className={style.chevy}>
           <BsChevronDown />
         </div>
         <div className={style.numRatings} aria-label="ratings count">
