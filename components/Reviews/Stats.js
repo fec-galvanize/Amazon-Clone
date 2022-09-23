@@ -4,9 +4,6 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import style from "../../styles/RevStats.module.css";
 const Stats = () => {
-  
-
-
   return (
     <div className={`${style.container}`}>
       <h2>Customer Reviews</h2>
@@ -15,7 +12,11 @@ const Stats = () => {
       <div className={style.createReview}>
         <h3>Review this Product</h3>
         <p>Share your thoughts with other customers</p>
-        <a href="#"><button className={style.button}>Write a customer review</button></a>
+        <a href="#">
+          <button className={style.button} aria-label="share thoughts">
+            Write a customer review
+          </button>
+        </a>
       </div>
     </div>
   );
@@ -26,14 +27,13 @@ export default Stats;
 const Description = () => {
   const [showDropDown, setShowDropDown] = useState(false);
   return (
-    <div
-    className={style.description}
-    >
+    <div className={style.description}>
       <button
         className={style.showDropDown}
         onClick={() =>
           !showDropDown ? setShowDropDown(true) : setShowDropDown(false)
         }
+        aria-label="drop down"
       >
         {" "}
         {showDropDown ? (
@@ -56,7 +56,12 @@ const Description = () => {
             things like how recent a review is and if the reviewer bought the
             item on Amazon. It also analyzed reviews to verify trustworthiness.
           </p>
-          <a href="https://www.amazon.com/gp/help/customer/display.html/ref=cm_cr_dp_d_omni_lm_btn?nodeId=G8UYX7LALQC8V9KA">Learn more how customers reviews work on Amazon</a>
+          <a
+            href="https://www.amazon.com/gp/help/customer/display.html/ref=cm_cr_dp_d_omni_lm_btn?nodeId=G8UYX7LALQC8V9KA"
+            aria-lavel="amazon link"
+          >
+            Learn more how customers reviews work on Amazon
+          </a>
         </div>
       )}
     </div>

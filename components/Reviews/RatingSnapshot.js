@@ -44,7 +44,7 @@ const RatingSnapshot = ({ popup }) => {
                 aria-label="hover over the stars"
               >
                 <span>{star} star</span>
-                <div className={style.meter} aria-label="meter">
+                <div className={style.meter}>
                   <div
                     className={`${style.meter} ${style.fill}`}
                     style={{ width: percent }}

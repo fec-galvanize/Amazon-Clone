@@ -65,7 +65,7 @@ export default function Header() {
           </form>
           <div className={`${style.flag}`}>
             <p>English</p>
-            <div className={`${style.galf}`} aria-label="language option"></div>
+            <div className={`${style.galf}`}></div>
           </div>
           <OverlayTrigger
             trigger="click"
