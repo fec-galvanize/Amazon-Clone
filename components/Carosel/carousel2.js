@@ -50,7 +50,10 @@ const T_shirt_line = () => {
   return (
     <footer>
       <div className={styles.App}>
-        <div className={styles.title_and_pageNumber}>
+        <div
+          className={styles.title_and_pageNumber}
+          aria-label="Customers also viewed slider"
+        >
           <h3 className={styles.carousel_header}>
             Customers who viewed this item also viewed
           </h3>
@@ -64,9 +67,17 @@ const T_shirt_line = () => {
               const rating = Math.random() * 6;
               const totalReviews = Math.floor(Math.random() * 300);
               return (
-                <div key={index} className={styles.product_slide}>
+                <div
+                  key={index}
+                  className={styles.product_slide}
+                  aria-label="other viewed tshirts"
+                >
                   <div className={styles.card_entire}>
-                    <button className={styles.cardAction_area} type="button">
+                    <button
+                      className={styles.cardAction_area}
+                      type="button"
+                      aria-label="slide button"
+                    >
                       <img
                         className={styles.tShirtImage}
                         src={product.img}
@@ -76,7 +87,10 @@ const T_shirt_line = () => {
                         <h5 className={styles.tShirt_description}>
                           {product.description}
                         </h5>
-                        <div className={styles.star_and_rating}>
+                        <div
+                          className={styles.star_and_rating}
+                          aria-label="star rating"
+                        >
                           <h6 className={styles.starSpan}>
                             {
                               <StarRating
@@ -89,11 +103,15 @@ const T_shirt_line = () => {
                             {totalReviews}
                           </p>
                         </div>
-                        <div className={styles.priceAndPrime}>
+                        <div
+                          className={styles.priceAndPrime}
+                          aria-label={`price ${product.price}`}
+                        >
                           <h7 className={styles.price}>{product.price}</h7>
                           <img
                             className={styles.primeImg}
                             src="https://seeklogo.com/images/A/amazon-prime-icon-logo-484A50E84F-seeklogo.com.png"
+                            alt="logo"
                           ></img>
                         </div>
                       </div>
