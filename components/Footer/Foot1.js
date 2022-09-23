@@ -197,22 +197,34 @@ const letUsHelpYou = [
 
 const Foot1 = () => {
   return (
-    <div className={style.container1}>
+    <div className={style.container1} aria-label="footer element">
       {/* Button to go back to the top */}
-      <div className={style.btnDiv}>
-        <span className={style.topBtn} onClick={() => window.scrollTo(0, 0)}>
+      <div className={style.btnDiv} aria-label="back to top">
+        <span
+          className={style.topBtn}
+          onClick={() => window.scrollTo(0, 0)}
+          aria-label="click to go back to top"
+        >
           Back to top
         </span>
       </div>
       {/* Each Set of Links */}
-      <div className={style.allLinks}>
+      <div className={style.allLinks} aria-label="amazon related links">
         {/* 1st set of links */}
-        <div className={style.setOfLinks}>
+        <div
+          className={style.setOfLinks}
+          aria-label="amazon get to know us related links"
+        >
           <h4 className={style.title}>Get to Know Us</h4>
-          <ul className={style.links1}>
+          <ul className={style.links1} aria-label="amazon related links">
             {getToKnowUs.map((link) => {
               return (
-                <a key={link.id} className={style.link} href={link.link}>
+                <a
+                  key={link.id}
+                  className={style.link}
+                  href={link.link}
+                  aria-label={`${link.name} amazon link`}
+                >
                   {link.name}
                 </a>
               );
@@ -220,12 +232,20 @@ const Foot1 = () => {
           </ul>
         </div>
         {/* 2nd set of links */}
-        <div className={style.setOfLinks}>
+        <div
+          className={style.setOfLinks}
+          aria-label="amazon Make Money related links"
+        >
           <h4 className={style.title}>Make Money with Us</h4>
-          <ul className={style.links2}>
+          <ul className={style.links2} aria-label="amazon related links">
             {makeMoneyWithUs.map((link) => {
               return (
-                <a key={link.id} className={style.link} href={link.link}>
+                <a
+                  key={link.id}
+                  className={style.link}
+                  href={link.link}
+                  aria-label={`${link.name} amazon link`}
+                >
                   {link.name}
                 </a>
               );
@@ -233,12 +253,20 @@ const Foot1 = () => {
           </ul>
         </div>
         {/* 3rd set of links */}
-        <div className={style.setOfLinks}>
+        <div
+          className={style.setOfLinks}
+          aria-label="amazon Payment products related links"
+        >
           <h4 className={style.title}>Amazon Payment Products</h4>
           <ul className={style.links3}>
             {amazonPaymentProducts.map((link) => {
               return (
-                <a key={link.id} className={style.link} href={link.link}>
+                <a
+                  key={link.id}
+                  className={style.link}
+                  href={link.link}
+                  aria-label={`${link.name} amazon link`}
+                >
                   {link.name}
                 </a>
               );
@@ -246,12 +274,20 @@ const Foot1 = () => {
           </ul>
         </div>
         {/* 4th set of links */}
-        <div className={style.setOfLinks}>
+        <div
+          className={style.setOfLinks}
+          aria-label="amazon Let Us Help you related links"
+        >
           <h4 className={style.title}>Let Us Help You</h4>
-          <ul className={style.links4}>
+          <ul className={style.links4} aria-label="amazon related links">
             {letUsHelpYou.map((link) => {
               return (
-                <a key={link.id} className={style.link} href={link.link}>
+                <a
+                  key={link.id}
+                  className={style.link}
+                  href={link.link}
+                  aria-label={`${link.name} amazon link`}
+                >
                   {link.name}
                 </a>
               );
@@ -263,6 +299,7 @@ const Foot1 = () => {
         <a
           className={style.img}
           href="https://www.amazon.com/?ref_=footer_logo"
+          aria-label="amazon link"
         >
           <img
             className={style.logo}
@@ -272,24 +309,40 @@ const Foot1 = () => {
         </a>
         <div className={style.cont}>
           <div className={style.wrap}>
-            <a className={style.language}>
-              <div>
+            <a
+              className={style.language}
+              aria-label="language related amazon links"
+            >
+              <div aria-label="globe icon">
                 <AiOutlineGlobal className={style.globe} />
               </div>
-              <span className={style.lan}>English</span>
+              <span
+                className={style.lan}
+                aria-label="language specified: english"
+              >
+                English
+              </span>
               <span>
                 <FaSort className={style.arrows} />
               </span>
             </a>
           </div>
-          <div className={style.wrap}>
-            <a className={style.country}>
+          <div className={style.wrap} aria-label="country">
+            <a
+              className={style.country}
+              aria-label="country selected amazon link"
+            >
               <img
                 className={style.flag}
                 src="https://media.istockphoto.com/vectors/the-united-states-of-america-flag-vector-illustration-vector-id961747352?k=20&m=961747352&s=612x612&w=0&h=Hje8pMjiIxNZZX0lTZFvUfoZyPmCGcQANK3k0Y3XvZs="
                 alt="Flag"
               ></img>
-              <span className={style.us}>United States</span>
+              <span
+                className={style.us}
+                aria-label="country selected: united states"
+              >
+                United States
+              </span>
             </a>
           </div>
         </div>

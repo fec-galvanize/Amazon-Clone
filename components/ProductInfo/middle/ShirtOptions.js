@@ -48,15 +48,20 @@ const ShirtOptions = () => {
   };
 
   return (
-    <div className={style.options}>
-      <form className={style.optionsForm}>
+    <div className={style.options} aria-label="shirt options">
+      <form
+        className={style.optionsForm}
+        aria-label="shirt options select form"
+      >
         <div className={style.genderContainer}>
           <div className={style.fit}>
-            <label className={style.type}>Fit Type: </label>
-            <span>{gender}</span>
+            <label className={style.type} aria-label="fit type">
+              Fit Type:{" "}
+            </label>
+            <span aria-label={`fit type:${gender}`}>{gender}</span>
           </div>
-          <ul className={style.genderSelect}>
-            <li className={style.genderli}>
+          <ul className={style.genderSelect} aria-label="fit type options">
+            <li className={style.genderli} aria-label="mens type">
               <button
                 className={
                   gender === "Men" ? style.selectedgenderBtn : style.genderBtn
@@ -65,11 +70,12 @@ const ShirtOptions = () => {
                   e.preventDefault();
                   setGender("Men");
                 }}
+                aria-label="mens type"
               >
                 Men
               </button>
             </li>
-            <li className={style.genderli}>
+            <li className={style.genderli} aria-label="womens type">
               <button
                 className={
                   gender === "Women" ? style.selectedgenderBtn : style.genderBtn
@@ -78,6 +84,7 @@ const ShirtOptions = () => {
                   e.preventDefault();
                   setGender("Women");
                 }}
+                aria-label="womens type"
               >
                 Women
               </button>
@@ -85,15 +92,20 @@ const ShirtOptions = () => {
           </ul>
         </div>
 
-        <div className={style.colorContainer}>
-          <div className={style.color}>
+        <div className={style.colorContainer} aria-label="color options">
+          <div className={style.color} aria-label="color">
             <label className={style.colorLabel}>Color: </label>
-            <span className={style.selectedColor}>{color}</span>
+            <span
+              className={style.selectedColor}
+              aria-label={`color: ${color}`}
+            >
+              {color}
+            </span>
           </div>
           <ul className={style.colorOptions}>
             {shirts.map(({ color, img, display_img }, i) => {
               return (
-                <li className={style.option} key={i}>
+                <li className={style.option} key={i} aria-label="option">
                   <div className={style.optionBox}>
                     <button
                       type="submit"
@@ -107,6 +119,7 @@ const ShirtOptions = () => {
                         mouseClick(display_img);
                         setColor(color);
                       }}
+                      aria-label="submit selections button"
                     >
                       <img
                         className={style.optionIMG}
@@ -121,8 +134,8 @@ const ShirtOptions = () => {
           </ul>
         </div>
 
-        <div className={style.sizeContainer}>
-          <div className={style.size}>
+        <div className={style.sizeContainer} aria-label="size selection">
+          <div className={style.size} aria-label="sizes">
             <label className={style.sizeLabel}>Size:</label>
           </div>
           <span className={style.dropdownContainer}>

@@ -40,25 +40,32 @@ export default function Header() {
     getFashCats();
   }, []);
   return (
-    <div className={`${style.allHead}`}>
+    <div className={`${style.allHead}`} aria-label="website header">
       <>
         <div className={`${style.search}`}>
-          <div className={`${style.logo}`}>
-            <a href="https://www.amazon.com/ref=nav_logo"></a>
+          <div className={`${style.logo}`} aria-label="webhead logo">
+            <a
+              href="https://www.amazon.com/ref=nav_logo"
+              aria-label="amazon link"
+            ></a>
           </div>
-          <div className={`${style.location}`}>
+          <div className={`${style.location}`} aria-label="location option">
             <IoLocationOutline className={`${style.locpin}`} />
             city, state
           </div>
           <form className={`${style.form}`}>
             <input className={`${style.input}`} type="text" />
-            <button className={`${style.sbtn}`} type="submit">
+            <button
+              className={`${style.sbtn}`}
+              type="submit"
+              aria-label="search button"
+            >
               <FaSearch />
             </button>
           </form>
           <div className={`${style.flag}`}>
             <p>English</p>
-            <div className={`${style.galf}`}></div>
+            <div className={`${style.galf}`} aria-label="language option"></div>
           </div>
           <OverlayTrigger
             trigger="click"
@@ -74,7 +81,7 @@ export default function Header() {
               </Popover>
             }
           >
-            <div className={`${style.login}`}>
+            <div className={`${style.login}`} aria-label="login here">
               <div>
                 <h5>Hello, Webhead</h5>
                 <h4>Account</h4>
@@ -94,21 +101,35 @@ export default function Header() {
               </Popover>
             }
           >
-            <div className={`${style.shoppingCart}`}>
+            <div
+              className={`${style.shoppingCart}`}
+              aria-label="shopping cart and total"
+            >
               <BiCart className={`${style.SCI}`} />
               {`Cart ${cartCount}`}
             </div>
           </OverlayTrigger>
         </div>
-        <div className={`${style.midhead}`}>
+        <div
+          className={`${style.midhead}`}
+          aria-label="Amazon product categories"
+        >
           <div className={`${style.allcat}`}>
             <BsList className={`${style.iconlist}`} />
           </div>
-          <ul className={`${style.cats}`}>
+          <ul className={`${style.cats}`} aria-label="category">
             {categories.map((e) => {
               return (
-                <li key={e.title} className={`${style.li}`}>
-                  <a className={`${style.li}`} href={e.ulink}>
+                <li
+                  key={e.title}
+                  className={`${style.li}`}
+                  aria-label={e.title}
+                >
+                  <a
+                    className={`${style.li}`}
+                    href={e.ulink}
+                    aria-label={e.title}
+                  >
                     {e.title}
                   </a>
                 </li>
@@ -116,14 +137,22 @@ export default function Header() {
             })}
           </ul>
         </div>
-        <div className={`${style.afash}`}>
+        <div className={`${style.afash}`} aria-label="fashion categories">
           <div className="fashcats">
             <ul className={`${style.catsf}`}>
               <strong>AMAZON FASHION</strong>
               {fashCat.map((e) => {
                 return (
-                  <li key={e.title} className={`${style.lif}`}>
-                    <a className={`${style.lif}`} href={e.ulink}>
+                  <li
+                    key={e.title}
+                    className={`${style.lif}`}
+                    aria-label={e.title}
+                  >
+                    <a
+                      className={`${style.lif}`}
+                      href={e.ulink}
+                      aria-label={e.title}
+                    >
                       {e.title}
                     </a>
                   </li>

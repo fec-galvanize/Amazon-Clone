@@ -20,8 +20,11 @@ const ProdImage = () => {
   }));
 
   return (
-    <div className={`${style.container}`}>
-      <div className={`${style.btnDisplay}`}>
+    <div
+      className={`${style.container}`}
+      aria-label="big ol image of product goes here"
+    >
+      <div className={`${style.btnDisplay}`} aria-label="color">
         {/* Maps through ImgArray fro redux state and creates btns, that preview the display image */}
         {imgArray.map((image, i) => {
           return <ImgBtn key={i} image={image} imgArray={imgArray} />;
@@ -61,6 +64,7 @@ const ImgBtn = ({ image }) => {
           changeCurrentImage({ url: image, isProd: image !== imgArray[1] })
         );
       }}
+      aria-label="change main display"
     >
       <img src={image} className={`${style.img}`} />
     </button>
@@ -93,12 +97,17 @@ const ShareBtn = () => {
   return (
     <>
       {/* Beginning of pop up share link display */}
-      <div className={`${style.linksDisplay}`} style={linksDisplay}>
+      <div
+        className={`${style.linksDisplay}`}
+        style={linksDisplay}
+        aria-label="displaying all the share links"
+      >
         <a
           href={href.email}
           target="_"
           title="Share via Email"
           onClick={() => closeDisplay()}
+          aria-label="share via email"
         >
           <AiOutlineMail className={style.pin} style={{ color: "black" }} />{" "}
           <span>Email</span>
@@ -108,6 +117,7 @@ const ShareBtn = () => {
           target="_"
           title="Pin it on Pinterest"
           onClick={() => closeDisplay()}
+          aria-label="very pinteresting"
         >
           <FaPinterest className={style.pin} style={{ color: "darkred" }} />
           <span>Pinterest</span>
@@ -117,6 +127,7 @@ const ShareBtn = () => {
           target="_"
           title="Share on Facebook"
           onClick={() => closeDisplay()}
+          aria-label="share on facebook"
         >
           <FaFacebook className={style.pin} style={{ color: "blue" }} />
           <span>Facebook</span>
@@ -126,6 +137,7 @@ const ShareBtn = () => {
           target="_"
           title="Share on Twitter"
           onClick={() => closeDisplay()}
+          aria-label="share on twitter"
         >
           <AiFillTwitterCircle
             className={style.pin}
@@ -133,7 +145,12 @@ const ShareBtn = () => {
           />
           <span>Twitter</span>
         </a>
-        <a href="#" title="Copy Links" onClick={() => copyLink()}>
+        <a
+          href="#"
+          title="Copy Links"
+          onClick={() => copyLink()}
+          aria-label="copy links"
+        >
           <ImLink className={style.pin} style={{ color: "black" }} />{" "}
           <span>{copyText}</span>
         </a>
