@@ -13,14 +13,14 @@ const Title = () => {
   const [showPop, setShowPop] = useState(false);
 
   return (
-    <div className={style.title}>
-      <div className={style.brand}>
+    <div className={style.title} aria-label="product title">
+      <div className={style.brand} aria-label="product brand">
         Brand: The Party Don't Start Til I Croc in Shirts & Gifts
       </div>
-      <div className={style.productTitle}>
+      <div className={style.productTitle} aria-label="title">
         The Party Don't Start Til I Croc In T-Shirt
       </div>
-      <div className={style.ratings}>
+      <div className={style.ratings} aria-label="rating">
         <div
           className={style.stars}
           onMouseEnter={() => setShowPop(true)}
@@ -28,8 +28,8 @@ const Title = () => {
         >
           <StarRating rating={rating} size={"15px"} spacing={".2px"} />
           {showPop && (
-            <div className={style.grab}>
-              <div className={style.popupDiv}>
+            <div className={style.grab} aria-label="peak at the rating">
+              <div className={style.popupDiv} aria-label="pop up rating">
                 <RatingSnapshot popup={true} />
                 <div>
                   <a
@@ -41,6 +41,7 @@ const Title = () => {
                         behavior: "smooth",
                       })
                     }
+                    aria-label="move to reviews"
                   >
                     See All Customer Reviews {">"}
                   </a>
@@ -49,10 +50,12 @@ const Title = () => {
             </div>
           )}
         </div>
-        <div className={style.chevy}>
+        <div className={style.chevy} aria-label="just a little chevy">
           <BsChevronDown />
         </div>
-        <div className={style.numRatings}>{totalRatings} Ratings</div>
+        <div className={style.numRatings} aria-label="ratings count">
+          {totalRatings} Ratings
+        </div>
       </div>
     </div>
   );
