@@ -73,7 +73,7 @@ const ImgBtn = ({ image }) => {
       }}
       aria-label="change main display"
     >
-      <img src={image} className={`${style.img}`} />
+      <img src={image} className={`${style.img}`} alt="tshirt" />
     </button>
   );
 };
